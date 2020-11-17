@@ -16,6 +16,13 @@ class HomePageViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
+        setupTapGestureRecognizers()
+        setupLabelBorders()
+    }
+    
+    // MARK: Functions to Initialize View
+    func setupTapGestureRecognizers() {
+        
         // Add Tap Gesture Recognizer to Trivia Gauntlet
         let triviaGauntletLabelTap = UITapGestureRecognizer(target: self, action: #selector(self.segueToTriviaGauntletView(_:)))
         self.triviaGauntletLabel.isUserInteractionEnabled = true
@@ -25,6 +32,18 @@ class HomePageViewController: UIViewController {
         let customGameLabelTap = UITapGestureRecognizer(target: self, action: #selector(self.segueToCustomGameView(_:)))
         self.customGameLabel.isUserInteractionEnabled = true
         self.customGameLabel.addGestureRecognizer(customGameLabelTap)
+    }
+    
+    func setupLabelBorders() {
+        //  Add Border around Trivia Gauntlet Label
+        self.triviaGauntletLabel.layer.borderWidth = 3
+        self.triviaGauntletLabel.layer.borderColor = UIColor.link.cgColor
+        self.triviaGauntletLabel.layer.cornerRadius = 25
+        
+        //  Add Border around Custom Game Label
+        self.triviaGauntletLabel.layer.borderWidth = 3
+        self.triviaGauntletLabel.layer.borderColor = UIColor.link.cgColor
+        self.triviaGauntletLabel.layer.cornerRadius = 25
     }
     
     // MARK: Functions to Segue to Other Views
