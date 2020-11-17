@@ -41,9 +41,9 @@ class HomePageViewController: UIViewController {
         self.triviaGauntletLabel.layer.cornerRadius = 25
         
         //  Add Border around Custom Game Label
-        self.triviaGauntletLabel.layer.borderWidth = 3
-        self.triviaGauntletLabel.layer.borderColor = UIColor.link.cgColor
-        self.triviaGauntletLabel.layer.cornerRadius = 25
+        self.customGameLabel.layer.borderWidth = 3
+        self.customGameLabel.layer.borderColor = UIColor.link.cgColor
+        self.customGameLabel.layer.cornerRadius = 25
     }
     
     // MARK: Functions to Segue to Other Views

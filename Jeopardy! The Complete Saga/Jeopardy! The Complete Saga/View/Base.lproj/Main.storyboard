@@ -68,23 +68,17 @@
                                 <color key="shadowColor" red="0.59999999999999998" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <size key="shadowOffset" width="6" height="6"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MXK-0j-Cxs" userLabel="Trivia Guantlet Button">
-                                <rect key="frame" x="62" y="258" width="543" height="44.5"/>
-                            </button>
-                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trivia Gauntlet" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="IBf-rO-yaG" userLabel="Trivia Guantlet Label">
-                                <rect key="frame" x="62" y="258" width="543" height="44.5"/>
-                                <gestureRecognizers/>
+                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Custom Game" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="acx-1b-lk3" userLabel="Custom Game Label">
+                                <rect key="frame" x="197.5" y="310.5" width="272" height="44.5"/>
                                 <fontDescription key="fontDescription" name="Korinna-Regular" family="ITC Korinna" pointSize="128"/>
                                 <color key="textColor" systemColor="linkColor"/>
                                 <nil key="highlightedColor"/>
                                 <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <size key="shadowOffset" width="3" height="3"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C5M-xN-svK" userLabel="Custom Game Button">
-                                <rect key="frame" x="62" y="310.5" width="543" height="44.5"/>
-                            </button>
-                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Custom Game" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="acx-1b-lk3" userLabel="Custom Game Label">
-                                <rect key="frame" x="62" y="310.5" width="543" height="44.5"/>
+                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trivia Gauntlet" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="IBf-rO-yaG" userLabel="Trivia Guantlet Label">
+                                <rect key="frame" x="197.5" y="258" width="272" height="44.5"/>
+                                <gestureRecognizers/>
                                 <fontDescription key="fontDescription" name="Korinna-Regular" family="ITC Korinna" pointSize="128"/>
                                 <color key="textColor" systemColor="linkColor"/>
                                 <nil key="highlightedColor"/>
@@ -96,37 +90,29 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="9yx-VZ-2le" secondAttribute="trailing" id="0RP-PW-eb0"/>
-                            <constraint firstItem="MXK-0j-Cxs" firstAttribute="leading" secondItem="piD-c0-KcP" secondAttribute="leading" id="3S4-u7-OmB"/>
-                            <constraint firstItem="IBf-rO-yaG" firstAttribute="leading" secondItem="MXK-0j-Cxs" secondAttribute="leading" id="4iO-4r-jLh"/>
                             <constraint firstItem="piD-c0-KcP" firstAttribute="top" secondItem="4Zs-w9-rKQ" secondAttribute="top" id="5XV-4Q-jJo"/>
                             <constraint firstItem="TWQ-sK-HwN" firstAttribute="leading" secondItem="piD-c0-KcP" secondAttribute="trailing" constant="8" id="8C0-N3-6hE"/>
                             <constraint firstItem="TWQ-sK-HwN" firstAttribute="top" secondItem="4Zs-w9-rKQ" secondAttribute="top" id="8R1-2X-lem"/>
-                            <constraint firstItem="acx-1b-lk3" firstAttribute="top" secondItem="C5M-xN-svK" secondAttribute="top" id="A6t-6k-4rW"/>
                             <constraint firstItem="E8m-ng-3JK" firstAttribute="trailing" secondItem="piD-c0-KcP" secondAttribute="trailing" id="F5D-Li-18P"/>
                             <constraint firstItem="piD-c0-KcP" firstAttribute="leading" secondItem="4Zs-w9-rKQ" secondAttribute="trailing" constant="8" id="H9O-Lz-VlP"/>
-                            <constraint firstItem="MXK-0j-Cxs" firstAttribute="trailing" secondItem="piD-c0-KcP" secondAttribute="trailing" id="Iiy-YO-4iG"/>
                             <constraint firstItem="TWQ-sK-HwN" firstAttribute="width" secondItem="4Zs-w9-rKQ" secondAttribute="width" id="IoR-DC-5Th"/>
-                            <constraint firstItem="acx-1b-lk3" firstAttribute="trailing" secondItem="C5M-xN-svK" secondAttribute="trailing" id="MTM-ey-HNd"/>
-                            <constraint firstItem="IBf-rO-yaG" firstAttribute="top" secondItem="MXK-0j-Cxs" secondAttribute="top" id="Miv-cV-rnO"/>
-                            <constraint firstItem="IBf-rO-yaG" firstAttribute="bottom" secondItem="MXK-0j-Cxs" secondAttribute="bottom" id="RDZ-X0-8zC"/>
-                            <constraint firstItem="MXK-0j-Cxs" firstAttribute="top" secondItem="E8m-ng-3JK" secondAttribute="bottom" constant="8" id="S0d-2D-wZr"/>
-                            <constraint firstItem="IBf-rO-yaG" firstAttribute="trailing" secondItem="MXK-0j-Cxs" secondAttribute="trailing" id="Sao-We-DEK"/>
-                            <constraint firstItem="C5M-xN-svK" firstAttribute="top" secondItem="MXK-0j-Cxs" secondAttribute="bottom" constant="8" id="Tud-GC-dCd"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="C5M-xN-svK" secondAttribute="bottom" constant="20" id="UFg-tq-mlX"/>
+                            <constraint firstItem="IBf-rO-yaG" firstAttribute="height" secondItem="piD-c0-KcP" secondAttribute="height" multiplier="1/3" id="KjW-AT-E8d"/>
+                            <constraint firstItem="acx-1b-lk3" firstAttribute="height" secondItem="IBf-rO-yaG" secondAttribute="height" id="NFi-ZX-jIY"/>
+                            <constraint firstItem="acx-1b-lk3" firstAttribute="width" secondItem="IBf-rO-yaG" secondAttribute="width" id="Om5-eP-AC4"/>
+                            <constraint firstItem="IBf-rO-yaG" firstAttribute="width" secondItem="piD-c0-KcP" secondAttribute="width" multiplier="1/2" id="P0s-sY-b7a"/>
                             <constraint firstItem="4Zs-w9-rKQ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="VlU-Wz-DDr"/>
                             <constraint firstItem="E8m-ng-3JK" firstAttribute="top" secondItem="piD-c0-KcP" secondAttribute="bottom" constant="8" id="WaU-O2-ZdV"/>
-                            <constraint firstItem="acx-1b-lk3" firstAttribute="bottom" secondItem="C5M-xN-svK" secondAttribute="bottom" id="aqy-nf-hGL"/>
+                            <constraint firstItem="acx-1b-lk3" firstAttribute="top" secondItem="IBf-rO-yaG" secondAttribute="bottom" constant="8" id="Zvu-DA-P7K"/>
+                            <constraint firstItem="IBf-rO-yaG" firstAttribute="top" secondItem="E8m-ng-3JK" secondAttribute="bottom" constant="8" id="aKo-v5-gaI"/>
                             <constraint firstAttribute="bottom" secondItem="9yx-VZ-2le" secondAttribute="bottom" id="axS-6J-KSR"/>
-                            <constraint firstItem="acx-1b-lk3" firstAttribute="leading" secondItem="C5M-xN-svK" secondAttribute="leading" id="dxM-Ij-oRU"/>
                             <constraint firstItem="E8m-ng-3JK" firstAttribute="leading" secondItem="piD-c0-KcP" secondAttribute="leading" id="hva-2R-EPp"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="acx-1b-lk3" secondAttribute="bottom" constant="20" id="i1V-pt-dBU"/>
                             <constraint firstItem="4Zs-w9-rKQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="lXU-Mu-LbG"/>
                             <constraint firstItem="9yx-VZ-2le" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="m24-ci-Gyi"/>
-                            <constraint firstItem="C5M-xN-svK" firstAttribute="trailing" secondItem="piD-c0-KcP" secondAttribute="trailing" id="oRz-iw-Yqd"/>
                             <constraint firstItem="E8m-ng-3JK" firstAttribute="height" secondItem="piD-c0-KcP" secondAttribute="height" multiplier="2/3" id="oTE-xg-fs9"/>
-                            <constraint firstItem="MXK-0j-Cxs" firstAttribute="height" secondItem="piD-c0-KcP" secondAttribute="height" multiplier="1/3" id="scX-KC-LPk"/>
-                            <constraint firstItem="C5M-xN-svK" firstAttribute="leading" secondItem="piD-c0-KcP" secondAttribute="leading" id="uzV-pZ-BLi"/>
+                            <constraint firstItem="acx-1b-lk3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pj8-6D-dqY"/>
+                            <constraint firstItem="IBf-rO-yaG" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tvd-s1-ec8"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="TWQ-sK-HwN" secondAttribute="trailing" constant="20" id="vJH-xu-JLN"/>
-                            <constraint firstItem="C5M-xN-svK" firstAttribute="height" secondItem="piD-c0-KcP" secondAttribute="height" multiplier="1/3" id="vOU-v0-lpQ"/>
                             <constraint firstItem="9yx-VZ-2le" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="vPp-ke-mBn"/>
                             <constraint firstItem="piD-c0-KcP" firstAttribute="width" secondItem="4Zs-w9-rKQ" secondAttribute="width" multiplier="16" id="ywV-RE-pc5"/>
                         </constraints>
