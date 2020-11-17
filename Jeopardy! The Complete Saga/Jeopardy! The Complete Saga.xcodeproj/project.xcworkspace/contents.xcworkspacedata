@@ -2,6 +2,15 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:../../Assets/Font/Swiss/Swiss 911 Compressed.ttf">
+   </FileRef>
+   <FileRef
+      location = "group:../../Assets/Font/Swiss/Swiss 911 Extra Compressed.ttf">
+   </FileRef>
+   <FileRef
+      location = "group:../../Assets/Font/Swiss/Swiss 911 Ultra Compressed.ttf">
+   </FileRef>
+   <FileRef
       location = "self:">
    </FileRef>
 </Workspace>
