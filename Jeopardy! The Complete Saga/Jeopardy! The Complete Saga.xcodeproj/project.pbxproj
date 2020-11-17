@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F04531B72563DD0700BB9F17 /* gyparody hv.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F04531B52563DD0700BB9F17 /* gyparody hv.ttf */; };
+		F04531B82563DD0700BB9F17 /* gyparody rg.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F04531B62563DD0700BB9F17 /* gyparody rg.ttf */; };
 		F0CDE04C2563C28B00D4170A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CDE04B2563C28B00D4170A /* AppDelegate.swift */; };
 		F0CDE04E2563C28B00D4170A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CDE04D2563C28B00D4170A /* SceneDelegate.swift */; };
 		F0CDE0502563C28B00D4170A /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CDE04F2563C28B00D4170A /* HomePageViewController.swift */; };
@@ -35,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F04531B52563DD0700BB9F17 /* gyparody hv.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "gyparody hv.ttf"; sourceTree = "<group>"; };
+		F04531B62563DD0700BB9F17 /* gyparody rg.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "gyparody rg.ttf"; sourceTree = "<group>"; };
 		F0CDE0482563C28B00D4170A /* Jeopardy! The Complete Saga.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Jeopardy! The Complete Saga.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0CDE04B2563C28B00D4170A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F0CDE04D2563C28B00D4170A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -76,6 +80,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F04531BC2563DD2D00BB9F17 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				F04531B52563DD0700BB9F17 /* gyparody hv.ttf */,
+				F04531B62563DD0700BB9F17 /* gyparody rg.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		F0CDE03F2563C28B00D4170A = {
 			isa = PBXGroup;
 			children = (
@@ -132,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				F0CDE0542563C28E00D4170A /* Assets.xcassets */,
+				F04531BC2563DD2D00BB9F17 /* Fonts */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -255,6 +269,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F04531B82563DD0700BB9F17 /* gyparody rg.ttf in Resources */,
+				F04531B72563DD0700BB9F17 /* gyparody hv.ttf in Resources */,
 				F0CDE0582563C28E00D4170A /* LaunchScreen.storyboard in Resources */,
 				F0CDE0552563C28E00D4170A /* Assets.xcassets in Resources */,
 				F0CDE0532563C28B00D4170A /* Main.storyboard in Resources */,
