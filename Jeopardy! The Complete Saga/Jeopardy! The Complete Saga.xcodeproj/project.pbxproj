@@ -99,6 +99,9 @@
 		F0CDE04A2563C28B00D4170A /* Jeopardy! The Complete Saga */ = {
 			isa = PBXGroup;
 			children = (
+				F0CDE0812563C46400D4170A /* Model */,
+				F0CDE0822563C46B00D4170A /* View */,
+				F0CDE0832563C47200D4170A /* Controller */,
 				F0CDE04B2563C28B00D4170A /* AppDelegate.swift */,
 				F0CDE04D2563C28B00D4170A /* SceneDelegate.swift */,
 				F0CDE04F2563C28B00D4170A /* ViewController.swift */,
@@ -126,6 +129,27 @@
 				F0CDE06F2563C28E00D4170A /* Info.plist */,
 			);
 			path = "Jeopardy! The Complete SagaUITests";
+			sourceTree = "<group>";
+		};
+		F0CDE0812563C46400D4170A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F0CDE0822563C46B00D4170A /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F0CDE0832563C47200D4170A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
