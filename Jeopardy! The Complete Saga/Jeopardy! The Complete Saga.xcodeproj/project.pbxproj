@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		F0CDE04C2563C28B00D4170A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CDE04B2563C28B00D4170A /* AppDelegate.swift */; };
 		F0CDE04E2563C28B00D4170A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CDE04D2563C28B00D4170A /* SceneDelegate.swift */; };
-		F0CDE0502563C28B00D4170A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CDE04F2563C28B00D4170A /* ViewController.swift */; };
+		F0CDE0502563C28B00D4170A /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CDE04F2563C28B00D4170A /* HomePageViewController.swift */; };
 		F0CDE0532563C28B00D4170A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0CDE0512563C28B00D4170A /* Main.storyboard */; };
 		F0CDE0552563C28E00D4170A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0CDE0542563C28E00D4170A /* Assets.xcassets */; };
 		F0CDE0582563C28E00D4170A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0CDE0562563C28E00D4170A /* LaunchScreen.storyboard */; };
@@ -38,7 +38,7 @@
 		F0CDE0482563C28B00D4170A /* Jeopardy! The Complete Saga.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Jeopardy! The Complete Saga.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0CDE04B2563C28B00D4170A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F0CDE04D2563C28B00D4170A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F0CDE04F2563C28B00D4170A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F0CDE04F2563C28B00D4170A /* HomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
 		F0CDE0522563C28B00D4170A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F0CDE0542563C28E00D4170A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F0CDE0572563C28E00D4170A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -99,11 +99,11 @@
 		F0CDE04A2563C28B00D4170A /* Jeopardy! The Complete Saga */ = {
 			isa = PBXGroup;
 			children = (
+				F0CDE0812563C46400D4170A /* Model */,
+				F0CDE0822563C46B00D4170A /* View */,
+				F0CDE0832563C47200D4170A /* Controller */,
 				F0CDE04B2563C28B00D4170A /* AppDelegate.swift */,
 				F0CDE04D2563C28B00D4170A /* SceneDelegate.swift */,
-				F0CDE04F2563C28B00D4170A /* ViewController.swift */,
-				F0CDE0512563C28B00D4170A /* Main.storyboard */,
-				F0CDE0542563C28E00D4170A /* Assets.xcassets */,
 				F0CDE0562563C28E00D4170A /* LaunchScreen.storyboard */,
 				F0CDE0592563C28E00D4170A /* Info.plist */,
 			);
@@ -126,6 +126,30 @@
 				F0CDE06F2563C28E00D4170A /* Info.plist */,
 			);
 			path = "Jeopardy! The Complete SagaUITests";
+			sourceTree = "<group>";
+		};
+		F0CDE0812563C46400D4170A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F0CDE0542563C28E00D4170A /* Assets.xcassets */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F0CDE0822563C46B00D4170A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F0CDE0512563C28B00D4170A /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F0CDE0832563C47200D4170A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F0CDE04F2563C28B00D4170A /* HomePageViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,7 +282,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F0CDE0502563C28B00D4170A /* ViewController.swift in Sources */,
+				F0CDE0502563C28B00D4170A /* HomePageViewController.swift in Sources */,
 				F0CDE04C2563C28B00D4170A /* AppDelegate.swift in Sources */,
 				F0CDE04E2563C28B00D4170A /* SceneDelegate.swift in Sources */,
 			);
@@ -438,6 +462,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "Jeopardy! The Complete Saga/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -456,6 +481,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "Jeopardy! The Complete Saga/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
