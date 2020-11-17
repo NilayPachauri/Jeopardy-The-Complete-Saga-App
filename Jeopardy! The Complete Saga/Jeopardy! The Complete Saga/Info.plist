@@ -6,6 +6,11 @@
 	<array>
 		<string>gyparody hv</string>
 		<string>gyparody rg</string>
+		<string>Korinna-Regular</string>
+		<string>Korinna-Bold</string>
+		<string>Swiss 911 Compressed</string>
+		<string>Swiss 911 Extra Compressed</string>
+		<string>Swiss 911 Ultra Compressed</string>
 	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
