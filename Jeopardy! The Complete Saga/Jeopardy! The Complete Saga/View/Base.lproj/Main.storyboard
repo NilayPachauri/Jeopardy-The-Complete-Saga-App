@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_5" orientation="landscape" appearance="light"/>
+    <device id="retina4_7" orientation="landscape" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -24,30 +24,36 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="HomePageViewController" customModule="Jeopardy__The_Complete_Saga" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="9yx-VZ-2le" userLabel="Background Image View">
-                                <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                                <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TWQ-sK-HwN" userLabel="Info Button">
-                                <rect key="frame" x="790.33333333333337" y="19.999999999999996" width="41.666666666666629" height="41.666666666666657"/>
+                                <rect key="frame" x="613" y="20" width="34" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="TWQ-sK-HwN" secondAttribute="height" multiplier="1:1" id="mwA-kQ-VMY"/>
                                 </constraints>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" image="info.circle.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="infoButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rpU-25-wPW"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Zs-w9-rKQ" userLabel="Settings Button">
-                                <rect key="frame" x="64" y="19.999999999999996" width="41.666666666666657" height="41.666666666666657"/>
+                                <rect key="frame" x="20" y="20" width="34" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="4Zs-w9-rKQ" secondAttribute="height" multiplier="1:1" id="Swz-JF-6mZ"/>
                                 </constraints>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" image="gearshape.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="settingsButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="At1-UC-KVn"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jeopardy!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="piD-c0-KcP" userLabel="Title Label">
-                                <rect key="frame" x="113.66666666666669" y="20" width="668.66666666666652" height="141"/>
+                                <rect key="frame" x="62" y="20" width="543" height="133.5"/>
                                 <fontDescription key="fontDescription" name="GyparodyHv-Regular" family="Gyparody" pointSize="128"/>
                                 <color key="textColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -55,7 +61,7 @@
                                 <size key="shadowOffset" width="6" height="6"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Complete Saga" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="E8m-ng-3JK" userLabel="Subtitle Label">
-                                <rect key="frame" x="113.66666666666669" y="169" width="668.66666666666652" height="94"/>
+                                <rect key="frame" x="62" y="161.5" width="543" height="88.5"/>
                                 <fontDescription key="fontDescription" name="GyparodyRg-Regular" family="Gyparody" pointSize="128"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -63,10 +69,10 @@
                                 <size key="shadowOffset" width="6" height="6"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MXK-0j-Cxs" userLabel="Trivia Guantlet Button">
-                                <rect key="frame" x="113.66666666666669" y="271" width="668.66666666666652" height="47"/>
+                                <rect key="frame" x="62" y="258" width="543" height="44.5"/>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trivia Gauntlet" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="IBf-rO-yaG" userLabel="Trivia Guantlet Label">
-                                <rect key="frame" x="113.66666666666669" y="271" width="668.66666666666652" height="47"/>
+                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trivia Gauntlet" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="IBf-rO-yaG" userLabel="Trivia Guantlet Label">
+                                <rect key="frame" x="62" y="258" width="543" height="44.5"/>
                                 <gestureRecognizers/>
                                 <fontDescription key="fontDescription" name="Korinna-Regular" family="ITC Korinna" pointSize="128"/>
                                 <color key="textColor" systemColor="linkColor"/>
@@ -75,10 +81,10 @@
                                 <size key="shadowOffset" width="3" height="3"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C5M-xN-svK" userLabel="Custom Game Button">
-                                <rect key="frame" x="113.66666666666669" y="326" width="668.66666666666652" height="47"/>
+                                <rect key="frame" x="62" y="310.5" width="543" height="44.5"/>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Custom Game" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="acx-1b-lk3" userLabel="Custom Game Label">
-                                <rect key="frame" x="113.66666666666669" y="326" width="668.66666666666652" height="47"/>
+                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Custom Game" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="acx-1b-lk3" userLabel="Custom Game Label">
+                                <rect key="frame" x="62" y="310.5" width="543" height="44.5"/>
                                 <fontDescription key="fontDescription" name="Korinna-Regular" family="ITC Korinna" pointSize="128"/>
                                 <color key="textColor" systemColor="linkColor"/>
                                 <nil key="highlightedColor"/>
@@ -125,6 +131,10 @@
                             <constraint firstItem="piD-c0-KcP" firstAttribute="width" secondItem="4Zs-w9-rKQ" secondAttribute="width" multiplier="16" id="ywV-RE-pc5"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="customGameLabel" destination="acx-1b-lk3" id="qca-Eb-Opy"/>
+                        <outlet property="triviaGauntletLabel" destination="IBf-rO-yaG" id="fUo-ut-Hj0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
