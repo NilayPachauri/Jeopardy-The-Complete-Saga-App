@@ -71,6 +71,8 @@
                                 <fontDescription key="fontDescription" name="Korinna-Regular" family="ITC Korinna" pointSize="128"/>
                                 <color key="textColor" systemColor="linkColor"/>
                                 <nil key="highlightedColor"/>
+                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <size key="shadowOffset" width="3" height="3"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C5M-xN-svK" userLabel="Custom Game Button">
                                 <rect key="frame" x="113.66666666666669" y="326" width="668.66666666666652" height="47"/>
@@ -80,6 +82,8 @@
                                 <fontDescription key="fontDescription" name="Korinna-Regular" family="ITC Korinna" pointSize="128"/>
                                 <color key="textColor" systemColor="linkColor"/>
                                 <nil key="highlightedColor"/>
+                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <size key="shadowOffset" width="3" height="3"/>
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
