@@ -8,8 +8,6 @@
 import UIKit
 
 class TriviaGauntletStartPageViewController: UIViewController, UITextFieldDelegate {
-
-    @IBOutlet weak var startButton: UIButton!
     
     @IBOutlet weak var numberOfQuestionsTextField: UITextField!
     @IBOutlet weak var numberOfQuestionsSlider: UISlider!
@@ -29,31 +27,18 @@ class TriviaGauntletStartPageViewController: UIViewController, UITextFieldDelega
         // Do any additional setup after loading the view.
         self.numberOfQuestionsTextField.delegate = self
         
-        //  Add Border and Change Font Size of Button
-        self.setupButton()
-        
         // Set Up Number of Questions Field
         self.setupNumberOfQuestions()
         
         // Set Up Tap Gesture Recognizer
         self.setupToHideKeyboardOnTapOnView()
+        
+        // Set Navigation Bar to not Hide Content
+        self.edgesForExtendedLayout = []
+        self.extendedLayoutIncludesOpaqueBars = true
     }
     
     // MARK: - Functions to Set Up View
-    func setupButton() {
-        
-        // Inset the Title
-        let titleEdgeInsets: UIEdgeInsets = UIEdgeInsets(top: 2, left: 4, bottom: 4, right: 4)
-        self.startButton.titleEdgeInsets = titleEdgeInsets
-        
-        // Change Font Size
-        self.startButton.titleLabel?.font = self.startButton.titleLabel?.font.withSize(Utility.getApproximateMaximumFontSizeThatFitsButton(button: self.startButton, border: true))
-        
-        // Add Border
-        self.startButton.layer.borderWidth = 3
-        self.startButton.layer.borderColor = UIColor.link.cgColor
-        self.startButton.layer.cornerRadius = 15
-    }
     
     func setupNumberOfQuestions() {
         self.numberOfQuestionsSlider.value = 5
@@ -118,14 +103,24 @@ class TriviaGauntletStartPageViewController: UIViewController, UITextFieldDelega
         view.endEditing(true)
     }
     
-    /*
+    // MARK: - Functions to Handle Navigation Bar Actions
+    @IBAction func cancelButtonPressed(_ sender: UIBarButtonItem) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        if segue.identifier == "TriviaGuauntletSegue" {
+            if let questionVC = segue.destination as? QuestionPageViewController {
+                questionVC.gameMode = .TRIVIA_GAUNTLET
+            }
+        }
     }
-    */
 
 }

@@ -50,3 +50,8 @@ class Utility {
         return 0
     }
 }
+
+enum GameMode {
+    case TRIVIA_GAUNTLET
+    case TRADITIONAL_GAME
+}
