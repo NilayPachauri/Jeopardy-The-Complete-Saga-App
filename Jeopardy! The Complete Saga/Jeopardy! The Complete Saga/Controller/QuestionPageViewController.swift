@@ -10,8 +10,10 @@ import UIKit
 class QuestionPageViewController: UIViewController {
 
     @IBOutlet weak var scoreLabel: UILabel!
+    @IBOutlet weak var categoryLabel: UILabel!
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var questionLabel: UILabel!
+    @IBOutlet weak var answerLabel: UILabel!
     @IBOutlet weak var answerTextField: UITextField!
     
     let timerInterval: TimeInterval = 0.1
@@ -33,8 +35,8 @@ class QuestionPageViewController: UIViewController {
     // MARK: Functions to Set Up View
     func setAnswerTextFieldFont() {
         
-        // Get the Font from the Score Label
-        let font = UIFont(name: self.answerTextField.font?.fontName ?? "Swiss  911", size: Utility.getApproximateAdjustedFontSizeWithLabel(label: self.scoreLabel))
+        // Get the Font from the Answer Label
+        let font = UIFont(name: self.answerTextField.font?.fontName ?? "Swiss  911", size: Utility.getApproximateAdjustedFontSizeWithLabel(label: self.answerLabel))
         
         // Set the Answer Text Field Font
         self.answerTextField.font = font
