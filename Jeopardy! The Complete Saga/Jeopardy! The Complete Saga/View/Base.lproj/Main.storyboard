@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="KTM-CL-7JX">
     <device id="retina4_7" orientation="landscape" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
@@ -213,6 +213,12 @@
                             <constraint firstItem="GlT-r3-xZo" firstAttribute="height" secondItem="Czc-1w-7GX" secondAttribute="height" multiplier="8" id="vpC-sv-0qu"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="answerTextField" destination="ySF-mb-HiD" id="xUz-xa-tm6"/>
+                        <outlet property="questionLabel" destination="GlT-r3-xZo" id="kw6-Cd-omr"/>
+                        <outlet property="scoreLabel" destination="Czc-1w-7GX" id="4JO-sS-d7U"/>
+                        <outlet property="timerLabel" destination="zNN-ZW-1Ll" id="7pp-oS-hsb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EYU-HA-AYV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
