@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TriviaGauntletStartPageViewController: UIViewController {
+class TriviaGauntletStartPageViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var startLabel: UILabel!
     
@@ -27,7 +27,16 @@ class TriviaGauntletStartPageViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        setupBorders()
+        self.numberOfQuestionsTextField.delegate = self
+        
+        //  Add Border to Start Label
+        self.setupBorders()
+        
+        // Set Up Number of Questions Field
+        self.setupNumberOfQuestions()
+        
+        // Set Up Tap Gesture Recognizer
+        self.setupToHideKeyboardOnTapOnView()
     }
     
     // MARK: - Functions to Set Up View
@@ -35,6 +44,11 @@ class TriviaGauntletStartPageViewController: UIViewController {
         self.startLabel.layer.borderWidth = 3
         self.startLabel.layer.borderColor = UIColor.link.cgColor
         self.startLabel.layer.cornerRadius = 15
+    }
+    
+    func setupNumberOfQuestions() {
+        self.numberOfQuestionsSlider.value = 5
+        self.numberOfQuestionsTextField.text =  "5"
     }
     
     // MARK: - Functions to Control View
@@ -45,7 +59,6 @@ class TriviaGauntletStartPageViewController: UIViewController {
         return Int(value)
     }
     
-    
     @IBAction func numberOfQuestionsSliderValueChanged(_ sender: UISlider) {
         
         // Get the new value from the Slider
@@ -55,7 +68,47 @@ class TriviaGauntletStartPageViewController: UIViewController {
         self.numberOfQuestionsTextField.text = String(format: "%d", value)
     }
     
+    @IBAction func numberOfQuestionsTextFieldEditingDidEnd(_ sender: UITextField) {
+        if let value = self.numberOfQuestionsTextField.text {
+        if let intValue = Int(value)  {
+            if intValue > 0 && intValue <= 100 {
+                self.numberOfQuestionsSlider.value = Float(intValue)
+            }
+        }
+        
+        // In the event it was a non-parseable String or  not within the bounds, reset text
+        self.numberOfQuestionsTextField.text = String(format: "%d", self.getIntegerValueFromSlider(slider: self.numberOfQuestionsSlider))
+        }
+    }
+    
+    // MARK: - Functions to Dismiss Keyboard
+    
+    // Done on Number of Questions Text Field should dismiss Keyboard
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        if textField == self.numberOfQuestionsTextField {
+            self.numberOfQuestionsTextField.resignFirstResponder()
+        }
+        
+        return true
+    }
+    
+    // Tap outside should dismiss keyboard
+    func setupToHideKeyboardOnTapOnView()
+        {
+            let tap: UITapGestureRecognizer = UITapGestureRecognizer(
+                target: self,
+                action: #selector(self.dismissKeyboard))
 
+            tap.cancelsTouchesInView = false
+            view.addGestureRecognizer(tap)
+        }
+
+    @objc func dismissKeyboard()
+    {
+        view.endEditing(true)
+    }
+    
     /*
     // MARK: - Navigation
 
