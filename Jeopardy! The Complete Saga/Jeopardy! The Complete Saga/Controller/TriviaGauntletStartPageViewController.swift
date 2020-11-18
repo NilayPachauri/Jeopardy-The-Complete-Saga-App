@@ -119,6 +119,8 @@ class TriviaGauntletStartPageViewController: UIViewController, UITextFieldDelega
         if segue.identifier == "TriviaGuauntletSegue" {
             if let questionVC = segue.destination as? QuestionPageViewController {
                 questionVC.gameMode = .TRIVIA_GAUNTLET
+                print("Here")
+                FirestoreWrapper.getCluesForTriviaGauntlet(numOfClues: 0)
             }
         }
     }

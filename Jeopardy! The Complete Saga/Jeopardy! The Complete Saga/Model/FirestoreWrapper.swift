@@ -14,6 +14,7 @@ class FirestoreWrapper {
     static private let counterRef = FirestoreWrapper.db.collection("count").document("counters")
     
     static func getCluesForTriviaGauntlet(numOfClues: Int) -> [Clue] {
+        FirestoreWrapper.getCounterData()
         return []
     }
     
