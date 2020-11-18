@@ -82,13 +82,21 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aK4-yW-v4d" userLabel="Trivia Gauntlet Button">
                                 <rect key="frame" x="243" y="230.5" width="181" height="58"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                 <fontDescription key="fontDescription" name="Korinna-Bold" family="ITC Korinna" pointSize="64"/>
-                                <state key="normal" title="Trivia Gauntlet"/>
+                                <size key="titleShadowOffset" width="1" height="1"/>
+                                <state key="normal" title="Trivia Gauntlet">
+                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pqd-Pq-KO8" userLabel="Custom Game Button">
                                 <rect key="frame" x="243" y="296.5" width="181" height="58.5"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                 <fontDescription key="fontDescription" name="Korinna-Bold" family="ITC Korinna" pointSize="64"/>
-                                <state key="normal" title="Custom Game"/>
+                                <size key="titleShadowOffset" width="1" height="1"/>
+                                <state key="normal" title="Custom Game">
+                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>

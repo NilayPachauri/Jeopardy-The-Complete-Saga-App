@@ -25,11 +25,14 @@ class HomePageViewController: UIViewController {
     // MARK: Functions to Initialize View
     
     func setupButtonSizes() {
+        // Inset the Buttons
+        let titleEdgeInsets: UIEdgeInsets = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
+        self.triviaGauntletButton.titleEdgeInsets = titleEdgeInsets
+        self.customGameButton.titleEdgeInsets = titleEdgeInsets
         
         // Get the Current Font Size for the Trivia Gauntlet Label
-//        let fontSize = Utility.getApproximateAdjustedFontSizeWithLabel(label: self.triviaGauntletLabel) * 2
-        let triviaGauntletFontSize = Utility.getApproximateMaximumFontSizeThatFitsButton(button: self.triviaGauntletButton)
-        let customGameFontSize = Utility.getApproximateMaximumFontSizeThatFitsButton(button: self.customGameButton)
+        let triviaGauntletFontSize = Utility.getApproximateMaximumFontSizeThatFitsButton(button: self.triviaGauntletButton, border: true)
+        let customGameFontSize = Utility.getApproximateMaximumFontSizeThatFitsButton(button: self.customGameButton, border: true)
        
         // Update the Font Size for the Buttons
         self.triviaGauntletButton.titleLabel?.font = self.triviaGauntletButton.titleLabel?.font.withSize(triviaGauntletFontSize)
@@ -48,22 +51,19 @@ class HomePageViewController: UIViewController {
 
     func setupLabelBorders() {
         
-        let borderWidth: CGFloat = 2
+        let borderWidth: CGFloat = 3
         let borderColor: CGColor = UIColor.link.cgColor
-        let cornerRadius: CGFloat = 5
+        let cornerRadius: CGFloat = 25
         
         //  Add Border around Trivia Gauntlet Button Label
-        if let label = self.triviaGauntletButton.titleLabel {
-            label.layer.borderWidth = borderWidth
-            label.layer.borderColor = borderColor
-            label.layer.cornerRadius = cornerRadius
-        }
+        self.triviaGauntletButton.layer.borderWidth = borderWidth
+        self.triviaGauntletButton.layer.borderColor = borderColor
+        self.triviaGauntletButton.layer.cornerRadius = cornerRadius
+        
         //  Add Border around Custom Game Button Label
-        if let label = self.customGameButton.titleLabel {
-            label.layer.borderWidth = borderWidth
-            label.layer.borderColor = borderColor
-            label.layer.cornerRadius = cornerRadius
-        }
+        self.customGameButton.layer.borderWidth = borderWidth
+        self.customGameButton.layer.borderColor = borderColor
+        self.customGameButton.layer.cornerRadius = cornerRadius
     }
     
     // MARK: Functions to Segue to Other Views

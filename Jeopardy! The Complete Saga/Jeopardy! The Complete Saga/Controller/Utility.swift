@@ -31,7 +31,7 @@ class Utility {
         }
     }
     
-    static func getApproximateMaximumFontSizeThatFitsButton(button: UIButton)  -> CGFloat {
+    static func getApproximateMaximumFontSizeThatFitsButton(button: UIButton, border: Bool = false)  -> CGFloat {
         
         if let label = button.titleLabel {
         
@@ -44,7 +44,7 @@ class Utility {
                 currentSize = (label.text! as NSString).size(withAttributes: [NSAttributedString.Key.font: currentFont])
             }
 
-            return currentFont.pointSize
+            return currentFont.pointSize - CGFloat((border) ? 4 : 0)
         }
         
         return 0
