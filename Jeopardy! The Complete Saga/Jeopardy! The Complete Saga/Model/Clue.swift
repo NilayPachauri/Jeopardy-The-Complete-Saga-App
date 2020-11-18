@@ -7,6 +7,14 @@
 
 import Foundation
 
+// MARK: - Enumerations
+
+enum QuestionType {
+    case JEOPARDY
+    case DOUBLE_JEOPARDY
+    case FINAL_JEOPARDY
+}
+
 class Clue {
     
     // MARK: - Private Class Attributes

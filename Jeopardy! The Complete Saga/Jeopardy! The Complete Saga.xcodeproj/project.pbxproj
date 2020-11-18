@@ -10,6 +10,7 @@
 		1D9DB9FA7999D74EFF1010E9 /* Pods_Jeopardy__The_Complete_SagaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBDBBF0261A3F3BFD862C525 /* Pods_Jeopardy__The_Complete_SagaTests.framework */; };
 		29BC23411770FAFFB8D6D828 /* Pods_Jeopardy__The_Complete_Saga.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D93B309E5AFD910362C5B867 /* Pods_Jeopardy__The_Complete_Saga.framework */; };
 		9474040CF9E660278B9DC7FB /* Pods_Jeopardy__The_Complete_Saga_Jeopardy__The_Complete_SagaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17BCB05F6C692BE56ED33973 /* Pods_Jeopardy__The_Complete_Saga_Jeopardy__The_Complete_SagaUITests.framework */; };
+		F010ED7C2565C0A900A74DAC /* ModelUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = F010ED7B2565C0A900A74DAC /* ModelUtility.swift */; };
 		F04531B72563DD0700BB9F17 /* gyparody hv.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F04531B52563DD0700BB9F17 /* gyparody hv.ttf */; };
 		F04531B82563DD0700BB9F17 /* gyparody rg.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F04531B62563DD0700BB9F17 /* gyparody rg.ttf */; };
 		F04531C42563EE8E00BB9F17 /* Korinna-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = F04531C22563EE8E00BB9F17 /* Korinna-Bold.otf */; };
@@ -60,6 +61,7 @@
 		D93B309E5AFD910362C5B867 /* Pods_Jeopardy__The_Complete_Saga.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Jeopardy__The_Complete_Saga.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1CA1FCE8B286E083FE29EAB /* Pods-Jeopardy! The Complete Saga.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jeopardy! The Complete Saga.debug.xcconfig"; path = "Target Support Files/Pods-Jeopardy! The Complete Saga/Pods-Jeopardy! The Complete Saga.debug.xcconfig"; sourceTree = "<group>"; };
 		EBDBBF0261A3F3BFD862C525 /* Pods_Jeopardy__The_Complete_SagaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Jeopardy__The_Complete_SagaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F010ED7B2565C0A900A74DAC /* ModelUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelUtility.swift; sourceTree = "<group>"; };
 		F04531B52563DD0700BB9F17 /* gyparody hv.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "gyparody hv.ttf"; sourceTree = "<group>"; };
 		F04531B62563DD0700BB9F17 /* gyparody rg.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "gyparody rg.ttf"; sourceTree = "<group>"; };
 		F04531C22563EE8E00BB9F17 /* Korinna-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Korinna-Bold.otf"; sourceTree = "<group>"; };
@@ -238,6 +240,7 @@
 			children = (
 				F0CDE0542563C28E00D4170A /* Assets.xcassets */,
 				F0898FEF2565363E00593C45 /* Clue.swift */,
+				F010ED7B2565C0A900A74DAC /* ModelUtility.swift */,
 				F04531BC2563DD2D00BB9F17 /* Fonts */,
 			);
 			path = Model;
@@ -512,6 +515,7 @@
 			files = (
 				F0A038352564A3C000B9EC05 /* ViewControllerUtility.swift in Sources */,
 				F0898FF02565363E00593C45 /* Clue.swift in Sources */,
+				F010ED7C2565C0A900A74DAC /* ModelUtility.swift in Sources */,
 				F04F186E2564D01500F9C6CE /* TriviaGauntletStartPageViewController.swift in Sources */,
 				F0CDE0502563C28B00D4170A /* HomePageViewController.swift in Sources */,
 				F0CDE04C2563C28B00D4170A /* AppDelegate.swift in Sources */,
