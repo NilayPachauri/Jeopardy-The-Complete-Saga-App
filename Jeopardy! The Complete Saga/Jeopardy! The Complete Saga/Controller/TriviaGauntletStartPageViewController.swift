@@ -42,6 +42,10 @@ class TriviaGauntletStartPageViewController: UIViewController, UITextFieldDelega
     // MARK: - Functions to Set Up View
     func setupButton() {
         
+        // Inset the Title
+        let titleEdgeInsets: UIEdgeInsets = UIEdgeInsets(top: 2, left: 4, bottom: 4, right: 4)
+        self.startButton.titleEdgeInsets = titleEdgeInsets
+        
         // Change Font Size
         self.startButton.titleLabel?.font = self.startButton.titleLabel?.font.withSize(Utility.getApproximateMaximumFontSizeThatFitsButton(button: self.startButton, border: true))
         
