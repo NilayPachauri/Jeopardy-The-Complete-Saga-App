@@ -55,3 +55,9 @@ enum GameMode {
     case TRIVIA_GAUNTLET
     case TRADITIONAL_GAME
 }
+
+enum QuestionType {
+    case JEOPARDY
+    case DOUBLE_JEOPARDY
+    case FINAL_JEOPARDY
+}
