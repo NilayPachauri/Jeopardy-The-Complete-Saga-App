@@ -89,7 +89,7 @@
                                     <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="GRH-LZ-8ft" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="flipHorizontal" id="oOr-q0-eXK"/>
+                                    <segue destination="GRH-LZ-8ft" kind="presentation" modalPresentationStyle="fullScreen" id="oOr-q0-eXK"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pqd-Pq-KO8" userLabel="Custom Game Button">
@@ -147,29 +147,20 @@
         <!--Trivia Gauntlet Start Page View Controller-->
         <scene sceneID="EMQ-Tf-uTp">
             <objects>
-                <viewController title="Trivia Gauntlet Start Page View Controller" id="GRH-LZ-8ft" customClass="TriviaGauntletStartPageViewController" customModule="Jeopardy__The_Complete_Saga" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Trivia Gauntlet Start Page View Controller" automaticallyAdjustsScrollViewInsets="NO" id="GRH-LZ-8ft" customClass="TriviaGauntletStartPageViewController" customModule="Jeopardy__The_Complete_Saga" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Wdt-69-Pze">
                         <rect key="frame" x="0.0" y="0.0" width="667" height="700"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yFc-xd-9in" userLabel="Trivia Gauntlet Navigation Bar">
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1LB-kb-cUM" userLabel="Trivia Gauntlet Navigation Bar">
                                 <rect key="frame" x="0.0" y="0.0" width="667" height="32"/>
-                                <textAttributes key="titleTextAttributes">
-                                    <fontDescription key="fontDescription" name="Korinna-Bold" family="ITC Korinna" pointSize="20"/>
-                                </textAttributes>
+                                <color key="barTintColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <items>
-                                    <navigationItem title="Choose Settings" id="dPa-5L-fRl" userLabel="Trivia Gauntlet Start Page Title">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="6DN-W0-9yj">
-                                            <color key="tintColor" systemColor="systemIndigoColor"/>
-                                        </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="Start" id="RzB-ab-zPa">
-                                            <color key="tintColor" systemColor="systemIndigoColor"/>
-                                        </barButtonItem>
-                                    </navigationItem>
+                                    <navigationItem title="Choose Settings" id="u7W-VF-t6U"/>
                                 </items>
                             </navigationBar>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Trivia Gauntlet Background" translatesAutoresizingMaskIntoConstraints="NO" id="rLP-eC-5dp">
-                                <rect key="frame" x="0.0" y="32" width="667" height="668"/>
+                                <rect key="frame" x="0.0" y="0.0" width="667" height="700"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trivia Gauntlet" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="Nln-6G-Kka" userLabel="Trivia Gauntlet Label">
                                 <rect key="frame" x="20" y="40" width="627" height="126.5"/>
@@ -373,23 +364,24 @@
                         <constraints>
                             <constraint firstItem="Nln-6G-Kka" firstAttribute="leading" secondItem="Znd-1n-RLD" secondAttribute="leading" constant="20" id="2GI-FL-uI1"/>
                             <constraint firstItem="Znd-1n-RLD" firstAttribute="trailing" secondItem="Nln-6G-Kka" secondAttribute="trailing" constant="20" id="4Ki-y1-qGC"/>
-                            <constraint firstItem="yFc-xd-9in" firstAttribute="trailing" secondItem="Znd-1n-RLD" secondAttribute="trailing" id="6gN-XF-5or"/>
+                            <constraint firstItem="1LB-kb-cUM" firstAttribute="trailing" secondItem="Znd-1n-RLD" secondAttribute="trailing" id="6kq-wi-6bn"/>
                             <constraint firstItem="ix4-3O-1zA" firstAttribute="leading" secondItem="Wdt-69-Pze" secondAttribute="leading" constant="20" symbolic="YES" id="Dfe-x4-HC7"/>
+                            <constraint firstItem="1LB-kb-cUM" firstAttribute="leading" secondItem="Znd-1n-RLD" secondAttribute="leading" id="Juh-Ee-vxy"/>
+                            <constraint firstItem="1LB-kb-cUM" firstAttribute="top" secondItem="Znd-1n-RLD" secondAttribute="top" id="MSn-a6-T6M"/>
+                            <constraint firstItem="Nln-6G-Kka" firstAttribute="top" secondItem="1LB-kb-cUM" secondAttribute="bottom" constant="8" id="Oeu-2e-BOq"/>
                             <constraint firstItem="ix4-3O-1zA" firstAttribute="height" secondItem="Nln-6G-Kka" secondAttribute="height" multiplier="4" id="P2k-gp-4M0"/>
                             <constraint firstItem="ix4-3O-1zA" firstAttribute="top" secondItem="Nln-6G-Kka" secondAttribute="bottom" constant="8" id="PAg-sp-0fc"/>
                             <constraint firstAttribute="bottom" secondItem="ix4-3O-1zA" secondAttribute="bottom" constant="20" id="Tgs-DC-tnI"/>
                             <constraint firstAttribute="bottom" secondItem="rLP-eC-5dp" secondAttribute="bottom" id="Yii-SL-De8"/>
-                            <constraint firstItem="yFc-xd-9in" firstAttribute="top" secondItem="Znd-1n-RLD" secondAttribute="top" id="abt-NM-xOj"/>
-                            <constraint firstItem="yFc-xd-9in" firstAttribute="leading" secondItem="Znd-1n-RLD" secondAttribute="leading" id="ckZ-7w-088"/>
-                            <constraint firstItem="rLP-eC-5dp" firstAttribute="top" secondItem="yFc-xd-9in" secondAttribute="bottom" id="fdl-QS-bMf"/>
                             <constraint firstAttribute="trailing" secondItem="rLP-eC-5dp" secondAttribute="trailing" id="h46-49-z3B"/>
                             <constraint firstItem="8fB-gG-Yqe" firstAttribute="leading" secondItem="Nln-6G-Kka" secondAttribute="leading" id="jV2-wf-ucL"/>
-                            <constraint firstItem="Nln-6G-Kka" firstAttribute="top" secondItem="yFc-xd-9in" secondAttribute="bottom" constant="8" id="mxo-CZ-JXa"/>
                             <constraint firstAttribute="trailing" secondItem="ix4-3O-1zA" secondAttribute="trailing" constant="20" symbolic="YES" id="sQ5-B7-f6b"/>
                             <constraint firstItem="rLP-eC-5dp" firstAttribute="leading" secondItem="Wdt-69-Pze" secondAttribute="leading" id="sxj-RJ-SQE"/>
+                            <constraint firstItem="rLP-eC-5dp" firstAttribute="top" secondItem="Wdt-69-Pze" secondAttribute="top" id="uhk-35-wZW"/>
                             <constraint firstItem="8fB-gG-Yqe" firstAttribute="trailing" secondItem="Nln-6G-Kka" secondAttribute="trailing" id="w2F-aT-eJA"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="iIA-5a-Fzb"/>
                     <size key="freeformSize" width="667" height="700"/>
                     <connections>
                         <outlet property="difficulty1QuestionsSwitch" destination="eN1-Wf-KIv" id="D5p-i9-vaQ"/>
@@ -406,7 +398,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b51-ul-u5w" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="845" y="-493"/>
+            <point key="canvasLocation" x="844.22788605697156" y="-494.39999999999998"/>
         </scene>
         <!--Question Page View Controller-->
         <scene sceneID="JZs-9Q-VBD">
