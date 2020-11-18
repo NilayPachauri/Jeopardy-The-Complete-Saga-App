@@ -67,4 +67,42 @@ class Clue {
             self.type = nil
         }
     }
+    
+    // MARK: - Getters
+    
+    func getAnswer() -> String {
+        return self.answer
+    }
+    
+    func getAirDate() -> Date? {
+        return self.airDate
+    }
+    
+    func getCategory() -> String {
+        return self.category
+    }
+    
+    func getCategoryID() -> Int {
+        return self.categoryID
+    }
+    
+    func getDollarValue() -> Int? {
+        return self.dollarValue
+    }
+    
+    func getEpisode() -> Int {
+        return self.episode
+    }
+    
+    func getQuestion() -> String {
+        return self.question
+    }
+    
+    func getSeason() -> String {
+        return self.season
+    }
+    
+    func getType() -> QuestionType? {
+        return self.type
+    }
 }
