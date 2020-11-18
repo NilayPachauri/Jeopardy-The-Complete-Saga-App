@@ -152,16 +152,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="667" height="700"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Trivia Gauntlet Background" translatesAutoresizingMaskIntoConstraints="NO" id="rLP-eC-5dp">
+                                <rect key="frame" x="0.0" y="0.0" width="667" height="700"/>
+                            </imageView>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1LB-kb-cUM" userLabel="Trivia Gauntlet Navigation Bar">
                                 <rect key="frame" x="0.0" y="0.0" width="667" height="32"/>
                                 <color key="barTintColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <items>
-                                    <navigationItem title="Choose Settings" id="u7W-VF-t6U"/>
+                                    <navigationItem title="Choose Settings" id="u7W-VF-t6U">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="YAj-Rq-OAN">
+                                            <color key="tintColor" systemColor="systemIndigoColor"/>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Start" id="XPF-yx-S74">
+                                            <color key="tintColor" systemColor="systemIndigoColor"/>
+                                        </barButtonItem>
+                                    </navigationItem>
                                 </items>
                             </navigationBar>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Trivia Gauntlet Background" translatesAutoresizingMaskIntoConstraints="NO" id="rLP-eC-5dp">
-                                <rect key="frame" x="0.0" y="0.0" width="667" height="700"/>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trivia Gauntlet" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="Nln-6G-Kka" userLabel="Trivia Gauntlet Label">
                                 <rect key="frame" x="20" y="40" width="627" height="126.5"/>
                                 <fontDescription key="fontDescription" name="GyparodyHv-Regular" family="Gyparody" pointSize="256"/>
@@ -381,7 +388,6 @@
                             <constraint firstItem="8fB-gG-Yqe" firstAttribute="trailing" secondItem="Nln-6G-Kka" secondAttribute="trailing" id="w2F-aT-eJA"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="iIA-5a-Fzb"/>
                     <size key="freeformSize" width="667" height="700"/>
                     <connections>
                         <outlet property="difficulty1QuestionsSwitch" destination="eN1-Wf-KIv" id="D5p-i9-vaQ"/>
