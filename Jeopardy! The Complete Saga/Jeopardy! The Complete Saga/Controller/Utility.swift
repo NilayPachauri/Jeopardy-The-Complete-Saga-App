@@ -29,6 +29,5 @@ class Utility {
             return label.font.pointSize
 
         }
-
     }
 }
