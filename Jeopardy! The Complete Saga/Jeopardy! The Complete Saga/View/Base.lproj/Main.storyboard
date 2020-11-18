@@ -133,6 +133,7 @@
                             <constraint firstItem="piD-c0-KcP" firstAttribute="width" secondItem="4Zs-w9-rKQ" secondAttribute="width" multiplier="16" id="ywV-RE-pc5"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="dTa-5U-Siw"/>
                     <connections>
                         <outlet property="customGameButton" destination="Pqd-Pq-KO8" id="qGB-BH-2a4"/>
                         <outlet property="infoButton" destination="TWQ-sK-HwN" id="lun-B1-uMx"/>
@@ -162,9 +163,15 @@
                                     <navigationItem title="Choose Settings" id="u7W-VF-t6U">
                                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="YAj-Rq-OAN">
                                             <color key="tintColor" systemColor="systemIndigoColor"/>
+                                            <connections>
+                                                <action selector="cancelButtonPressed:" destination="GRH-LZ-8ft" id="aR8-6t-kE6"/>
+                                            </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="Start" id="XPF-yx-S74">
                                             <color key="tintColor" systemColor="systemIndigoColor"/>
+                                            <connections>
+                                                <segue destination="KTM-CL-7JX" kind="presentation" modalPresentationStyle="fullScreen" id="KVQ-fd-gE0"/>
+                                            </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
@@ -404,7 +411,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b51-ul-u5w" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="844.22788605697156" y="-494.39999999999998"/>
+            <point key="canvasLocation" x="848" y="-494"/>
         </scene>
         <!--Question Page View Controller-->
         <scene sceneID="JZs-9Q-VBD">
