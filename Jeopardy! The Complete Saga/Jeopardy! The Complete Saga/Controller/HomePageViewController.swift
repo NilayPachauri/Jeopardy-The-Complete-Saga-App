@@ -9,6 +9,8 @@ import UIKit
 
 class HomePageViewController: UIViewController {
 
+    @IBOutlet weak var settingsButton: UIButton!
+    @IBOutlet weak var infoButton: UIButton!
     @IBOutlet weak var triviaGauntletLabel: UILabel!
     @IBOutlet weak var customGameLabel: UILabel!
     
@@ -16,11 +18,26 @@ class HomePageViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
+        setupButtonSizes()
         setupTapGestureRecognizers()
         setupLabelBorders()
     }
     
     // MARK: Functions to Initialize View
+    
+    func setupButtonSizes() {
+        
+        // Get the Current Font Size for the Trivia Gauntlet Label
+        let fontSize = Utility.getApproximateAdjustedFontSizeWithLabel(label: self.triviaGauntletLabel) * 2
+
+        // Create the Symbol Configuration
+        let symbolConfiguration = UIImage.SymbolConfiguration(pointSize: fontSize)
+        
+        // Resize the Buttons
+        self.settingsButton.setPreferredSymbolConfiguration(symbolConfiguration, forImageIn: .normal)
+        self.infoButton.setPreferredSymbolConfiguration(symbolConfiguration, forImageIn: .normal)
+    }
+    
     func setupTapGestureRecognizers() {
         
         // Add Tap Gesture Recognizer to Trivia Gauntlet
