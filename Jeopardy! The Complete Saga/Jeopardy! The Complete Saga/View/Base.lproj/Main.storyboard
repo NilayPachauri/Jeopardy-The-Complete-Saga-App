@@ -88,6 +88,9 @@
                                 <state key="normal" title="Trivia Gauntlet">
                                     <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <segue destination="GRH-LZ-8ft" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="flipHorizontal" id="oOr-q0-eXK"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pqd-Pq-KO8" userLabel="Custom Game Button">
                                 <rect key="frame" x="243" y="296.5" width="181" height="58.5"/>
@@ -149,11 +152,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="667" height="700"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yFc-xd-9in" userLabel="Trivia Gauntlet Navigation Bar">
+                                <rect key="frame" x="0.0" y="0.0" width="667" height="32"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <fontDescription key="fontDescription" name="Korinna-Bold" family="ITC Korinna" pointSize="20"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="Choose Settings" id="dPa-5L-fRl" userLabel="Trivia Gauntlet Start Page Title">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="6DN-W0-9yj">
+                                            <color key="tintColor" systemColor="systemIndigoColor"/>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Start" id="RzB-ab-zPa">
+                                            <color key="tintColor" systemColor="systemIndigoColor"/>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Trivia Gauntlet Background" translatesAutoresizingMaskIntoConstraints="NO" id="rLP-eC-5dp">
-                                <rect key="frame" x="0.0" y="0.0" width="667" height="700"/>
+                                <rect key="frame" x="0.0" y="32" width="667" height="668"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trivia Gauntlet" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="Nln-6G-Kka" userLabel="Trivia Gauntlet Label">
-                                <rect key="frame" x="20" y="20" width="627" height="117"/>
+                                <rect key="frame" x="20" y="40" width="627" height="126.5"/>
                                 <fontDescription key="fontDescription" name="GyparodyHv-Regular" family="Gyparody" pointSize="256"/>
                                 <color key="textColor" systemColor="systemIndigoColor"/>
                                 <nil key="highlightedColor"/>
@@ -161,7 +180,7 @@
                                 <size key="shadowOffset" width="5" height="5"/>
                             </label>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ix4-3O-1zA">
-                                <rect key="frame" x="20" y="145" width="627" height="468.5"/>
+                                <rect key="frame" x="20" y="174.5" width="627" height="505.5"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8fB-gG-Yqe" userLabel="Options View">
                                         <rect key="frame" x="0.0" y="0.0" width="627" height="476"/>
@@ -348,34 +367,24 @@
                                     <constraint firstAttribute="bottom" secondItem="8fB-gG-Yqe" secondAttribute="bottom" id="n6x-rs-mWx"/>
                                 </constraints>
                             </scrollView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4TR-9q-siz" userLabel="Start Button">
-                                <rect key="frame" x="294.5" y="621.5" width="78" height="58.5"/>
-                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
-                                <fontDescription key="fontDescription" name="Korinna-Bold" family="ITC Korinna" pointSize="128"/>
-                                <size key="titleShadowOffset" width="1" height="1"/>
-                                <state key="normal" title="Start">
-                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Znd-1n-RLD"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Nln-6G-Kka" firstAttribute="leading" secondItem="Znd-1n-RLD" secondAttribute="leading" constant="20" id="2GI-FL-uI1"/>
-                            <constraint firstItem="4TR-9q-siz" firstAttribute="height" secondItem="Nln-6G-Kka" secondAttribute="height" multiplier="1/2" id="2hQ-C7-YMJ"/>
                             <constraint firstItem="Znd-1n-RLD" firstAttribute="trailing" secondItem="Nln-6G-Kka" secondAttribute="trailing" constant="20" id="4Ki-y1-qGC"/>
-                            <constraint firstItem="Nln-6G-Kka" firstAttribute="top" secondItem="Znd-1n-RLD" secondAttribute="top" constant="20" id="DdQ-1I-jW1"/>
+                            <constraint firstItem="yFc-xd-9in" firstAttribute="trailing" secondItem="Znd-1n-RLD" secondAttribute="trailing" id="6gN-XF-5or"/>
                             <constraint firstItem="ix4-3O-1zA" firstAttribute="leading" secondItem="Wdt-69-Pze" secondAttribute="leading" constant="20" symbolic="YES" id="Dfe-x4-HC7"/>
-                            <constraint firstItem="4TR-9q-siz" firstAttribute="width" secondItem="Nln-6G-Kka" secondAttribute="width" multiplier="1/8" id="F2W-7j-Pod"/>
-                            <constraint firstItem="4TR-9q-siz" firstAttribute="centerX" secondItem="Wdt-69-Pze" secondAttribute="centerX" id="I2N-Gf-IM2"/>
                             <constraint firstItem="ix4-3O-1zA" firstAttribute="height" secondItem="Nln-6G-Kka" secondAttribute="height" multiplier="4" id="P2k-gp-4M0"/>
                             <constraint firstItem="ix4-3O-1zA" firstAttribute="top" secondItem="Nln-6G-Kka" secondAttribute="bottom" constant="8" id="PAg-sp-0fc"/>
-                            <constraint firstItem="rLP-eC-5dp" firstAttribute="top" secondItem="Wdt-69-Pze" secondAttribute="top" id="WXo-wz-Tbv"/>
+                            <constraint firstAttribute="bottom" secondItem="ix4-3O-1zA" secondAttribute="bottom" constant="20" id="Tgs-DC-tnI"/>
                             <constraint firstAttribute="bottom" secondItem="rLP-eC-5dp" secondAttribute="bottom" id="Yii-SL-De8"/>
-                            <constraint firstItem="4TR-9q-siz" firstAttribute="top" secondItem="ix4-3O-1zA" secondAttribute="bottom" constant="8" id="aub-Gc-xn1"/>
-                            <constraint firstItem="Znd-1n-RLD" firstAttribute="bottom" secondItem="4TR-9q-siz" secondAttribute="bottom" constant="20" id="bxS-k2-1eW"/>
+                            <constraint firstItem="yFc-xd-9in" firstAttribute="top" secondItem="Znd-1n-RLD" secondAttribute="top" id="abt-NM-xOj"/>
+                            <constraint firstItem="yFc-xd-9in" firstAttribute="leading" secondItem="Znd-1n-RLD" secondAttribute="leading" id="ckZ-7w-088"/>
+                            <constraint firstItem="rLP-eC-5dp" firstAttribute="top" secondItem="yFc-xd-9in" secondAttribute="bottom" id="fdl-QS-bMf"/>
                             <constraint firstAttribute="trailing" secondItem="rLP-eC-5dp" secondAttribute="trailing" id="h46-49-z3B"/>
                             <constraint firstItem="8fB-gG-Yqe" firstAttribute="leading" secondItem="Nln-6G-Kka" secondAttribute="leading" id="jV2-wf-ucL"/>
+                            <constraint firstItem="Nln-6G-Kka" firstAttribute="top" secondItem="yFc-xd-9in" secondAttribute="bottom" constant="8" id="mxo-CZ-JXa"/>
                             <constraint firstAttribute="trailing" secondItem="ix4-3O-1zA" secondAttribute="trailing" constant="20" symbolic="YES" id="sQ5-B7-f6b"/>
                             <constraint firstItem="rLP-eC-5dp" firstAttribute="leading" secondItem="Wdt-69-Pze" secondAttribute="leading" id="sxj-RJ-SQE"/>
                             <constraint firstItem="8fB-gG-Yqe" firstAttribute="trailing" secondItem="Nln-6G-Kka" secondAttribute="trailing" id="w2F-aT-eJA"/>
@@ -393,12 +402,11 @@
                         <outlet property="jeopardyQuestionsSwitch" destination="oYh-ed-Fqm" id="eJs-cI-8PN"/>
                         <outlet property="numberOfQuestionsSlider" destination="mbx-NT-6It" id="dFx-SY-qCQ"/>
                         <outlet property="numberOfQuestionsTextField" destination="3Tc-k7-3hs" id="Eqf-ae-xi0"/>
-                        <outlet property="startButton" destination="4TR-9q-siz" id="r1Q-BE-g4u"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b51-ul-u5w" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="831" y="-454"/>
+            <point key="canvasLocation" x="845" y="-493"/>
         </scene>
         <!--Question Page View Controller-->
         <scene sceneID="JZs-9Q-VBD">
@@ -511,7 +519,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EYU-HA-AYV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1531" y="-714"/>
+            <point key="canvasLocation" x="1507" y="-754"/>
         </scene>
     </scenes>
     <resources>
