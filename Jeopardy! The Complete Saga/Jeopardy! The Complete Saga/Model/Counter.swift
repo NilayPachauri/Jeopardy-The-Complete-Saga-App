@@ -33,4 +33,11 @@ class Counter: Codable {
     func getFinalJeopardyCategoriesCount() -> Int {
         return self.finalJeopardyCategoriesCount
     }
+    
+    // MARK: - Coding Key
+    enum CodingKeys: String, CodingKey {
+        case jeopardyCategoriesCount = "jcount"
+        case doubleJeopardyCategoriesCount = "djcount"
+        case finalJeopardyCategoriesCount = "fjcount"
+    }
 }
