@@ -116,7 +116,8 @@ class TriviaGauntletStartPageViewController: UIViewController, UITextFieldDelega
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
-        if segue.identifier == "TriviaGuauntletSegue" {
+        print(segue.identifier)
+        if segue.identifier == "TriviaGauntletSegue" {
             if let questionVC = segue.destination as? QuestionPageViewController {
                 questionVC.gameMode = .TRIVIA_GAUNTLET
                 print("Here")
