@@ -31,8 +31,8 @@ class HomePageViewController: UIViewController {
         self.customGameButton.titleEdgeInsets = titleEdgeInsets
         
         // Get the Current Font Size for the Trivia Gauntlet Label
-        let triviaGauntletFontSize = Utility.getApproximateMaximumFontSizeThatFitsButton(button: self.triviaGauntletButton, border: true)
-        let customGameFontSize = Utility.getApproximateMaximumFontSizeThatFitsButton(button: self.customGameButton, border: true)
+        let triviaGauntletFontSize = ViewControllerUtility.getApproximateMaximumFontSizeThatFitsButton(button: self.triviaGauntletButton, border: true)
+        let customGameFontSize = ViewControllerUtility.getApproximateMaximumFontSizeThatFitsButton(button: self.customGameButton, border: true)
        
         // Update the Font Size for the Buttons
         self.triviaGauntletButton.titleLabel?.font = self.triviaGauntletButton.titleLabel?.font.withSize(triviaGauntletFontSize)

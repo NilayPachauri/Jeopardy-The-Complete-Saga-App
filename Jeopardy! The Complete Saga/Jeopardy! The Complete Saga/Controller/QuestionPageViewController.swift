@@ -44,7 +44,7 @@ class QuestionPageViewController: UIViewController {
     func setAnswerTextFieldFont() {
         
         // Get the Font from the Answer Label
-        let font = UIFont(name: self.answerTextField.font?.fontName ?? "Swiss  911", size: Utility.getApproximateAdjustedFontSizeWithLabel(label: self.answerLabel))
+        let font = UIFont(name: self.answerTextField.font?.fontName ?? "Swiss  911", size: ViewControllerUtility.getApproximateAdjustedFontSizeWithLabel(label: self.answerLabel))
         
         // Set the Answer Text Field Font
         self.answerTextField.font = font
@@ -53,7 +53,7 @@ class QuestionPageViewController: UIViewController {
     func setMicrophoneButtonSize() {
          
         // Get the Font Size from the Answer Label
-        let fontSize = Utility.getApproximateAdjustedFontSizeWithLabel(label: self.answerLabel) * 2
+        let fontSize = ViewControllerUtility.getApproximateAdjustedFontSizeWithLabel(label: self.answerLabel) * 2
         
         print(fontSize)
         

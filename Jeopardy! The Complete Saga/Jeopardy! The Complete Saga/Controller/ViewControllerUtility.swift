@@ -1,5 +1,5 @@
 //
-//  Utility.swift
+//  ViewControllerUtility.swift
 //  Jeopardy! The Complete Saga
 //
 //  Created by Nilay Pachauri on 11/17/20.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class Utility {
+class ViewControllerUtility {
     static func getApproximateAdjustedFontSizeWithLabel(label: UILabel) -> CGFloat {
 
         if label.adjustsFontSizeToFitWidth == true {
