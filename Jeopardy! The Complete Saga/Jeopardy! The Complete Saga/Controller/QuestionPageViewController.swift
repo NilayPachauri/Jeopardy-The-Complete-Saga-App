@@ -55,8 +55,6 @@ class QuestionPageViewController: UIViewController {
         // Get the Font Size from the Answer Label
         let fontSize = ViewControllerUtility.getApproximateAdjustedFontSizeWithLabel(label: self.answerLabel) * 2
         
-        print(fontSize)
-        
         // Define Symbol Configuration
         let symbolConfiguration = UIImage.SymbolConfiguration(pointSize: fontSize)
         
