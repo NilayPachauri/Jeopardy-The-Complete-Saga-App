@@ -28,7 +28,7 @@ class HomePageViewController: UIViewController {
     func setupButtonSizes() {
         
         // Get the Current Font Size for the Trivia Gauntlet Label
-        let fontSize = Utility.getApproximateAdjustedFontSizeWithLabel(label: self.triviaGauntletLabel)
+        let fontSize = Utility.getApproximateAdjustedFontSizeWithLabel(label: self.triviaGauntletLabel) * 2
 
         // Create the Symbol Configuration
         let symbolConfiguration = UIImage.SymbolConfiguration(pointSize: fontSize)
