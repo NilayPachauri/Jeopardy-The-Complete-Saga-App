@@ -8,8 +8,6 @@
 import UIKit
 
 class TriviaGauntletStartPageViewController: UIViewController, UITextFieldDelegate {
-
-    @IBOutlet weak var startButton: UIButton!
     
     @IBOutlet weak var numberOfQuestionsTextField: UITextField!
     @IBOutlet weak var numberOfQuestionsSlider: UISlider!
@@ -29,9 +27,6 @@ class TriviaGauntletStartPageViewController: UIViewController, UITextFieldDelega
         // Do any additional setup after loading the view.
         self.numberOfQuestionsTextField.delegate = self
         
-        //  Add Border and Change Font Size of Button
-        self.setupButton()
-        
         // Set Up Number of Questions Field
         self.setupNumberOfQuestions()
         
@@ -40,20 +35,6 @@ class TriviaGauntletStartPageViewController: UIViewController, UITextFieldDelega
     }
     
     // MARK: - Functions to Set Up View
-    func setupButton() {
-        
-        // Inset the Title
-        let titleEdgeInsets: UIEdgeInsets = UIEdgeInsets(top: 2, left: 4, bottom: 4, right: 4)
-        self.startButton.titleEdgeInsets = titleEdgeInsets
-        
-        // Change Font Size
-        self.startButton.titleLabel?.font = self.startButton.titleLabel?.font.withSize(Utility.getApproximateMaximumFontSizeThatFitsButton(button: self.startButton, border: true))
-        
-        // Add Border
-        self.startButton.layer.borderWidth = 3
-        self.startButton.layer.borderColor = UIColor.link.cgColor
-        self.startButton.layer.cornerRadius = 15
-    }
     
     func setupNumberOfQuestions() {
         self.numberOfQuestionsSlider.value = 5
