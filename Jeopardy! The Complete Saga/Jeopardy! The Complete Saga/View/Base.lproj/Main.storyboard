@@ -170,7 +170,7 @@
                                         <barButtonItem key="rightBarButtonItem" title="Start" id="XPF-yx-S74">
                                             <color key="tintColor" systemColor="systemIndigoColor"/>
                                             <connections>
-                                                <segue destination="KTM-CL-7JX" kind="presentation" modalPresentationStyle="fullScreen" id="KVQ-fd-gE0"/>
+                                                <segue destination="KTM-CL-7JX" kind="presentation" identifier="TriviaGuantletSegue" modalPresentationStyle="fullScreen" id="KVQ-fd-gE0"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -524,7 +524,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EYU-HA-AYV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1507" y="-754"/>
+            <point key="canvasLocation" x="1551" y="-754"/>
         </scene>
     </scenes>
     <resources>

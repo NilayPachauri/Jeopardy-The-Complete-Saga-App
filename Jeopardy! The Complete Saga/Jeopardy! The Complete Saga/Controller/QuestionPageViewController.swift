@@ -9,6 +9,7 @@ import UIKit
 
 class QuestionPageViewController: UIViewController {
 
+    // MARK: - IBOutlet Class Attributes
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var categoryLabel: UILabel!
     @IBOutlet weak var timerLabel: UILabel!
@@ -17,11 +18,16 @@ class QuestionPageViewController: UIViewController {
     @IBOutlet weak var answerTextField: UITextField!
     @IBOutlet weak var microphoneButton: UIButton!
     
+    // MARK: - Public Class Attributes
+    public var gameMode: GameMode = .TRIVIA_GAUNTLET
+    
+    // MARK: - Private Class Attributes
     let timerInterval: TimeInterval = 0.1
     var timerLeft: Double = 0
     var timer: Timer? = nil
     var score: Int = 0
     
+    // MARK: - View Did Load
     override func viewDidLoad() {
         super.viewDidLoad()
 
