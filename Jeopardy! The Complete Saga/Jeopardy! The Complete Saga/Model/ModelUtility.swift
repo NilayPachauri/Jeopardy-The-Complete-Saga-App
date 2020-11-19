@@ -25,10 +25,10 @@ func randomNumber(probabilities: [Double]) -> Int {
     return (probabilities.count - 1)
 }
 
-func convertBoolToInt(boolean: Bool) -> Int {
+func convertBoolToInt(_ boolean: Bool) -> Int {
     return boolean ? 1 : 0
 }
 
-func convertBoolToDouble(boolean: Bool) -> Double {
+func convertBoolToDouble(_ boolean: Bool) -> Double {
     return boolean ? 1.0 : 0.0
 }
