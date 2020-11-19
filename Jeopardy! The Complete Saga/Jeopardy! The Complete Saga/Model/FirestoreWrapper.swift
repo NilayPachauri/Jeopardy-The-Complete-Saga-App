@@ -23,7 +23,7 @@ class FirestoreWrapper {
     
     
     // MARK: - Public Static Methods
-    static func getCluesForTriviaGauntlet(triviaGauntletSettings: TriviaGauntletSettings, _ listAppendCompletion: @escaping (_ data: Clue) -> Void = {_ in }, _ performSegueCompletion: @escaping () -> Void = { }  ) -> [Clue] {
+    static func getCluesForTriviaGauntlet(triviaGauntletSettings: TriviaGauntletSettings, _ listAppendCompletion: @escaping (_ data: Clue) -> Void = {_ in }, _ performSegueCompletion: @escaping () -> Void = { }  ) -> Void {
         FirestoreWrapper.getCounterData() { (counter) in
             if let counter = counter {
                 // Collect a List of length numOfClues where each index corresponds to a randomly selected QuestionType of that clue
@@ -41,7 +41,6 @@ class FirestoreWrapper {
                 print("Counter is nil")
             }
         }
-        return []
     }
     
     // MARK: - Trivia Gauntlet Helper Functions

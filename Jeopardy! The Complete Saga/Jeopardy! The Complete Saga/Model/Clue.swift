@@ -22,8 +22,6 @@ enum QuestionType: Int {
             return "Double Jeopardy"
         case .FINAL_JEOPARDY:
             return "Final Jeopardy"
-        default:
-            return ""
         }
     }
 }
