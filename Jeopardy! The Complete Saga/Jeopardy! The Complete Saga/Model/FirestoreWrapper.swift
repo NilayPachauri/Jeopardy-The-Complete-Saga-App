@@ -20,15 +20,15 @@ class FirestoreWrapper {
     static private let group = DispatchGroup()
     
     static func getCluesForTriviaGauntlet(numOfClues: Int) -> [Clue] {
-        FirestoreWrapper.getCounterData()
+        FirestoreWrapper.getCounterData() { (counter) in
+            
+        }
         return []
     }
     
-    static private func getCounterData() -> Void {
+    static private func getCounterData(_ completion: @escaping (_ data: Counter?) -> Void = {_ in } ) -> Void {
         FirestoreWrapper.getDocumentAsClass(docRef: FirestoreWrapper.counterRef, Counter.self) { (counter) in
-            print("Jeopardy Count: \(counter?.getJeopardyCategoriesCount())")
-            print("Double Jeopardy Count: \(counter?.getDoubleJeopardyCategoriesCount())")
-            print("Final Jeopardy Count: \(counter?.getFinalJeopardyCategoriesCount())")
+            completion(counter)
         }
     }
     
