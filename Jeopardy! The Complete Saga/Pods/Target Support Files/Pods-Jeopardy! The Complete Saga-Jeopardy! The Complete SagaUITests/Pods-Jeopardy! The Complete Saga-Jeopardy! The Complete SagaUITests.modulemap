@@ -1,0 +1,6 @@
+framework module Pods_Jeopardy__The_Complete_Saga_Jeopardy__The_Complete_SagaUITests {
+  umbrella header "Pods-Jeopardy! The Complete Saga-Jeopardy! The Complete SagaUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

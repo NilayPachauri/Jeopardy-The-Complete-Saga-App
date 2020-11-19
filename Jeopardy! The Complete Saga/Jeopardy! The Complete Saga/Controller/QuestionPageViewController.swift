@@ -20,6 +20,7 @@ class QuestionPageViewController: UIViewController {
     
     // MARK: - Public Class Attributes
     public var gameMode: GameMode = .TRIVIA_GAUNTLET
+    public var clueList: [Clue] = []
     
     // MARK: - Private Class Attributes
     let timerInterval: TimeInterval = 0.1
@@ -33,18 +34,21 @@ class QuestionPageViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         self.setAnswerTextFieldFont()
-        setMicrophoneButtonSize()
+        self.setMicrophoneButtonSize()
         
         // Initialize Values
         self.timerLeft = 10.0
         self.timer = Timer.scheduledTimer(timeInterval: self.timerInterval, target: self, selector: #selector(self.timerAction), userInfo: nil, repeats: true)
+        
+        // Print the Clue List
+        print(self.clueList)
     }
     
     // MARK: Functions to Set Up View
     func setAnswerTextFieldFont() {
         
         // Get the Font from the Answer Label
-        let font = UIFont(name: self.answerTextField.font?.fontName ?? "Swiss  911", size: Utility.getApproximateAdjustedFontSizeWithLabel(label: self.answerLabel))
+        let font = UIFont(name: self.answerTextField.font?.fontName ?? "Swiss  911", size: ViewControllerUtility.getApproximateAdjustedFontSizeWithLabel(label: self.answerLabel))
         
         // Set the Answer Text Field Font
         self.answerTextField.font = font
@@ -53,9 +57,7 @@ class QuestionPageViewController: UIViewController {
     func setMicrophoneButtonSize() {
          
         // Get the Font Size from the Answer Label
-        let fontSize = Utility.getApproximateAdjustedFontSizeWithLabel(label: self.answerLabel) * 2
-        
-        print(fontSize)
+        let fontSize = ViewControllerUtility.getApproximateAdjustedFontSizeWithLabel(label: self.answerLabel) * 2
         
         // Define Symbol Configuration
         let symbolConfiguration = UIImage.SymbolConfiguration(pointSize: fontSize)

@@ -1,0 +1,5 @@
+#import <Foundation/Foundation.h>
+@interface PodsDummy_Pods_Jeopardy__The_Complete_Saga_Jeopardy__The_Complete_SagaUITests : NSObject
+@end
+@implementation PodsDummy_Pods_Jeopardy__The_Complete_Saga_Jeopardy__The_Complete_SagaUITests
+@end
