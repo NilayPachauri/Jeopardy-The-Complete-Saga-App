@@ -20,6 +20,7 @@ class QuestionPageViewController: UIViewController {
     
     // MARK: - Public Class Attributes
     public var gameMode: GameMode = .TRIVIA_GAUNTLET
+    public var clueList: [Clue] = []
     
     // MARK: - Private Class Attributes
     let timerInterval: TimeInterval = 0.1
@@ -33,11 +34,14 @@ class QuestionPageViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         self.setAnswerTextFieldFont()
-        setMicrophoneButtonSize()
+        self.setMicrophoneButtonSize()
         
         // Initialize Values
         self.timerLeft = 10.0
         self.timer = Timer.scheduledTimer(timeInterval: self.timerInterval, target: self, selector: #selector(self.timerAction), userInfo: nil, repeats: true)
+        
+        // Print the Clue List
+        print(self.clueList)
     }
     
     // MARK: Functions to Set Up View

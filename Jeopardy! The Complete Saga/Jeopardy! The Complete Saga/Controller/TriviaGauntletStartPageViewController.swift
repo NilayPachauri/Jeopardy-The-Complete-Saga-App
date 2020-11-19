@@ -9,6 +9,7 @@ import UIKit
 
 class TriviaGauntletStartPageViewController: UIViewController, UITextFieldDelegate {
     
+    // MARK: - IBOutlet Declarations
     @IBOutlet weak var numberOfQuestionsTextField: UITextField!
     @IBOutlet weak var numberOfQuestionsSlider: UISlider!
     @IBOutlet weak var jeopardyQuestionsSwitch: UISwitch!
@@ -20,7 +21,10 @@ class TriviaGauntletStartPageViewController: UIViewController, UITextFieldDelega
     @IBOutlet weak var difficulty4QuestionsSwitch: UISwitch!
     @IBOutlet weak var difficulty5QuestionsSwitch: UISwitch!
     
+    // MARK: - Private Class Attributes
+    private var clueList: [Clue] = []
     
+    // MARK: - View Did Load
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -112,29 +116,28 @@ class TriviaGauntletStartPageViewController: UIViewController, UITextFieldDelega
         
         let settings = TriviaGauntletSettings(numOfClues: self.getIntegerValueFromSlider(slider: self.numberOfQuestionsSlider), useJeopardyQuestions: self.jeopardyQuestionsSwitch.isOn, useDoubleJeopardyQuestions: self.doubleJeopardyQuestionsSwitch.isOn, useFinalJeopardyQuestions: self.finalJeopardySwitch.isOn, useDifficulty1Questions: self.difficulty1QuestionsSwitch.isOn, useDifficulty2Questions: self.difficulty2QuestionsSwitch.isOn, useDifficulty3Questions: self.difficulty3QuestionsSwitch.isOn, useDifficulty4Questions: self.difficulty4QuestionsSwitch.isOn, useDifficulty5Questions: self.difficulty5QuestionsSwitch.isOn)
         
-        var clueList: [Clue] = []
-        
         FirestoreWrapper.getCluesForTriviaGauntlet(triviaGauntletSettings: settings, { (clue) in
-            clueList.append(clue)
+            self.clueList.append(clue)
         }, {
-            if clueList.count == settings.numOfClues  {
-                print(clueList)
-                
-                let questionVC = QuestionPageViewController()
-                questionVC.gameMode = .TRIVIA_GAUNTLET
-                self.present(questionVC, animated: true, completion: nil)
+            if self.clueList.count == settings.numOfClues  {
+                self.performSegue(withIdentifier: "TriviaGauntletSegue", sender: nil)
             }
         })
-        
     }
     
     
     // MARK: - Navigation
-    /*
+
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        if segue.identifier == "TriviaGauntletSegue" {
+            if let questionVC = segue.destination as? QuestionPageViewController {
+                questionVC.gameMode = .TRIVIA_GAUNTLET
+                questionVC.clueList = self.clueList
+            }
+        }
     }
-    */
+
 }
