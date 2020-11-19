@@ -170,7 +170,7 @@
                                         <barButtonItem key="rightBarButtonItem" title="Start" id="XPF-yx-S74">
                                             <color key="tintColor" systemColor="systemIndigoColor"/>
                                             <connections>
-                                                <segue destination="KTM-CL-7JX" kind="presentation" identifier="TriviaGauntletSegue" modalPresentationStyle="fullScreen" id="KVQ-fd-gE0"/>
+                                                <action selector="startButtonPressed:" destination="GRH-LZ-8ft" id="kyb-ew-GsF"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
