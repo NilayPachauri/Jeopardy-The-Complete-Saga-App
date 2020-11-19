@@ -12,18 +12,24 @@ import Foundation
 
 class FirestoreWrapper {
     
+    // MARK: - Public Static Class Attributes
     static let db = Firestore.firestore()
+    
+    // MARK: - Private Static Class Attributes
     static private let counterRef = FirestoreWrapper.db.collection("count").document("counters")
+    static private let jeopardyRef = FirestoreWrapper.db.collection("jeopardy")
+    static private let doubleJeopardyRef = FirestoreWrapper.db.collection("double_jeopardy")
+    static private let finalJeopardyRef = FirestoreWrapper.db.collection("final_jeopardy")
     
     
     // MARK: - Public Static Methods
     static func getCluesForTriviaGauntlet(triviaGauntletSettings: TriviaGauntletSettings, _ listAppendCompletion: @escaping (_ data: [Clue]) -> Void = {_ in }, _ performSegueCompletion: @escaping () -> Void = { }  ) -> [Clue] {
         FirestoreWrapper.getCounterData() { (counter) in
             if let counter = counter {
-                let questionDistribution: [QuestionType: Int] = FirestoreWrapper.getQuestionsDistribution(triviaGauntletSettings, counter)
-                FirestoreWrapper.getNumOfCluesByQuestionType(triviaGauntletSettings, numOfClues: questionDistribution[.JEOPARDY] ?? 0, questionType: .JEOPARDY, listAppendCompletion)
-                FirestoreWrapper.getNumOfCluesByQuestionType(triviaGauntletSettings, numOfClues: questionDistribution[.DOUBLE_JEOPARDY] ?? 0, questionType: .DOUBLE_JEOPARDY, listAppendCompletion)
-                FirestoreWrapper.getNumOfCluesByQuestionType(triviaGauntletSettings, numOfClues: questionDistribution[.FINAL_JEOPARDY] ?? 0, questionType: .FINAL_JEOPARDY, listAppendCompletion)
+                let categoriesOfClues: [QuestionType] = FirestoreWrapper.getCategoriesOfClues(triviaGauntletSettings, counter)
+                for categoryOfClue in categoriesOfClues {
+                    FirestoreWrapper.getClueFromCategory(triviaGauntletSettings, questionType: categoryOfClue, listAppendCompletion)
+                }
                 performSegueCompletion()
             } else {
                 print("Counter is nil")
@@ -33,7 +39,7 @@ class FirestoreWrapper {
     }
     
     // MARK: - Trivia Gauntlet Helper Functions
-    static private func getQuestionsDistribution(_ triviaGauntletSettings: TriviaGauntletSettings, _ counter: Counter) -> [QuestionType: Int] {
+    static private func getCategoriesOfClues(_ triviaGauntletSettings: TriviaGauntletSettings, _ counter: Counter) -> [QuestionType] {
         
         // Create List of which category each clue will come from
         var categoriesOfClues: [QuestionType] = []
@@ -75,14 +81,11 @@ class FirestoreWrapper {
             }
         }
         
-        // Create a Dictionary for Counting Frequencies in categoriesOfClues
-        let counts = Dictionary(categoriesOfClues.map { ($0, 1) }, uniquingKeysWith: +)
-        
         // Return Value
-        return counts
+        return categoriesOfClues
     }
     
-    static private func getNumOfCluesByQuestionType(_ triviaGauntletSettings: TriviaGauntletSettings, numOfClues: Int, questionType: QuestionType, _ completion: @escaping (_ data: [Clue]) -> Void = { _ in }) -> Void {
+    static private func getClueFromCategory(_ triviaGauntletSettings: TriviaGauntletSettings, questionType: QuestionType, _ completion: @escaping (_ data: [Clue]) -> Void = { _ in }) -> Void {
         
     }
     
