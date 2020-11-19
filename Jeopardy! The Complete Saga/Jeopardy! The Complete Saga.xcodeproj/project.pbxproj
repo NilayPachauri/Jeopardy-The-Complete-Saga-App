@@ -27,6 +27,7 @@
 		F0A038352564A3C000B9EC05 /* ViewControllerUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A038342564A3C000B9EC05 /* ViewControllerUtility.swift */; };
 		F0B9BC1F2565C90600581170 /* Counter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B9BC1E2565C90600581170 /* Counter.swift */; };
 		F0CD94AB256675D900394412 /* ModelUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CD94AA256675D900394412 /* ModelUtility.swift */; };
+		F0CD94B025667E8600394412 /* TriviaGauntletSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CD94AF25667E8600394412 /* TriviaGauntletSettings.swift */; };
 		F0CDE04C2563C28B00D4170A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CDE04B2563C28B00D4170A /* AppDelegate.swift */; };
 		F0CDE04E2563C28B00D4170A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CDE04D2563C28B00D4170A /* SceneDelegate.swift */; };
 		F0CDE0502563C28B00D4170A /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CDE04F2563C28B00D4170A /* HomePageViewController.swift */; };
@@ -78,6 +79,7 @@
 		F0A038342564A3C000B9EC05 /* ViewControllerUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerUtility.swift; sourceTree = "<group>"; };
 		F0B9BC1E2565C90600581170 /* Counter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Counter.swift; sourceTree = "<group>"; };
 		F0CD94AA256675D900394412 /* ModelUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelUtility.swift; sourceTree = "<group>"; };
+		F0CD94AF25667E8600394412 /* TriviaGauntletSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriviaGauntletSettings.swift; sourceTree = "<group>"; };
 		F0CDE0482563C28B00D4170A /* Jeopardy! The Complete Saga.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Jeopardy! The Complete Saga.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0CDE04B2563C28B00D4170A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F0CDE04D2563C28B00D4170A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -245,6 +247,7 @@
 				F0CDE0542563C28E00D4170A /* Assets.xcassets */,
 				F0898FEF2565363E00593C45 /* Clue.swift */,
 				F010ED7B2565C0A900A74DAC /* FirestoreWrapper.swift */,
+				F0CD94AF25667E8600394412 /* TriviaGauntletSettings.swift */,
 				F0CD94AA256675D900394412 /* ModelUtility.swift */,
 				F0B9BC1E2565C90600581170 /* Counter.swift */,
 				F04531BC2563DD2D00BB9F17 /* Fonts */,
@@ -524,6 +527,7 @@
 				F010ED7C2565C0A900A74DAC /* FirestoreWrapper.swift in Sources */,
 				F04F186E2564D01500F9C6CE /* TriviaGauntletStartPageViewController.swift in Sources */,
 				F0CD94AB256675D900394412 /* ModelUtility.swift in Sources */,
+				F0CD94B025667E8600394412 /* TriviaGauntletSettings.swift in Sources */,
 				F0CDE0502563C28B00D4170A /* HomePageViewController.swift in Sources */,
 				F0B9BC1F2565C90600581170 /* Counter.swift in Sources */,
 				F0CDE04C2563C28B00D4170A /* AppDelegate.swift in Sources */,
