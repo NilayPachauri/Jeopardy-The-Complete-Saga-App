@@ -17,11 +17,14 @@ class FirestoreWrapper {
     
     
     // MARK: - Public Static Methods
-    static func getCluesForTriviaGauntlet(triviaGauntletSettings: TriviaGauntletSettings) -> [Clue] {
+    static func getCluesForTriviaGauntlet(triviaGauntletSettings: TriviaGauntletSettings, _ listAppendCompletion: @escaping (_ data: [Clue]) -> Void = {_ in }, _ performSegueCompletion: @escaping () -> Void = { }  ) -> [Clue] {
         FirestoreWrapper.getCounterData() { (counter) in
             if let counter = counter {
                 let questionDistribution: [QuestionType: Int] = FirestoreWrapper.getQuestionsDistribution(triviaGauntletSettings, counter)
-                
+                FirestoreWrapper.getNumOfCluesByQuestionType(triviaGauntletSettings, numOfClues: questionDistribution[.JEOPARDY] ?? 0, questionType: .JEOPARDY, listAppendCompletion)
+                FirestoreWrapper.getNumOfCluesByQuestionType(triviaGauntletSettings, numOfClues: questionDistribution[.DOUBLE_JEOPARDY] ?? 0, questionType: .DOUBLE_JEOPARDY, listAppendCompletion)
+                FirestoreWrapper.getNumOfCluesByQuestionType(triviaGauntletSettings, numOfClues: questionDistribution[.FINAL_JEOPARDY] ?? 0, questionType: .FINAL_JEOPARDY, listAppendCompletion)
+                performSegueCompletion()
             } else {
                 print("Counter is nil")
             }
@@ -79,7 +82,7 @@ class FirestoreWrapper {
         return counts
     }
     
-    static private func getNumOfCluesByQuestionType(triviaGauntletSettings: TriviaGauntletSettings, numOfClues: Int, questionType: QuestionType, _ completion: @escaping (_ data: [Clue]) -> Void = { _ in }) -> Void {
+    static private func getNumOfCluesByQuestionType(_ triviaGauntletSettings: TriviaGauntletSettings, numOfClues: Int, questionType: QuestionType, _ completion: @escaping (_ data: [Clue]) -> Void = { _ in }) -> Void {
         
     }
     
