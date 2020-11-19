@@ -15,19 +15,25 @@ class FirestoreWrapper {
     static let db = Firestore.firestore()
     static private let counterRef = FirestoreWrapper.db.collection("count").document("counters")
     
+    
     // MARK: - Public Static Methods
-    static func getCluesForTriviaGauntlet(numOfClues: Int) -> [Clue] {
+    static func getCluesForTriviaGauntlet(triviaGauntletSettings: TriviaGauntletSettings) -> [Clue] {
         FirestoreWrapper.getCounterData() { (counter) in
-            
+            if let counter = counter {
+                let questionDistribution: [QuestionType: Int] = FirestoreWrapper.getQuestionsDistribution(triviaGauntletSettings, counter)
+                
+            } else {
+                print("Counter is nil")
+            }
         }
         return []
     }
     
     // MARK: - Trivia Gauntlet Helper Functions
-    static private func getQuestionsDistribution(numOfClues: Int, counter: Counter, useJeopardy: Bool = true, useDoubleJeopardy: Bool = true, useFinalJeopardy: Bool = true) -> [Int] {
+    static private func getQuestionsDistribution(_ triviaGauntletSettings: TriviaGauntletSettings, _ counter: Counter) -> [QuestionType: Int] {
         
         // Create List of which category each clue will come from
-        var categoriesOfClues: [Int] = []
+        var categoriesOfClues: [QuestionType] = []
         
         // Create Probabilities List
         var probabilities: [Double] = []
@@ -35,21 +41,21 @@ class FirestoreWrapper {
         // Get Sum of All Participating Categories and Append to probabilities
         var sum: Int = 0
         
-        if useJeopardy {
+        if triviaGauntletSettings.useJeopardyQuestions {
             sum += counter.getJeopardyCategoriesCount()
             probabilities.append(Double(counter.getJeopardyCategoriesCount()))
         } else {
             probabilities.append(0.0)
         }
         
-        if useDoubleJeopardy {
+        if triviaGauntletSettings.useDoubleJeopardyQuestions {
             sum += counter.getDoubleJeopardyCategoriesCount()
             probabilities.append(Double(counter.getDoubleJeopardyCategoriesCount()))
         } else {
             probabilities.append(0.0)
         }
         
-        if useFinalJeopardy {
+        if triviaGauntletSettings.useFinalJeopardyQuestions {
             sum += counter.getFinalJeopardyCategoriesCount()
             probabilities.append(Double(counter.getFinalJeopardyCategoriesCount()))
         } else {
@@ -60,12 +66,21 @@ class FirestoreWrapper {
         probabilities = probabilities.map { $0 / Double(sum) }
         
         // Populate List of Categories by Clue
-        for _ in 1...numOfClues {
-            categoriesOfClues.append(randomNumber(probabilities: probabilities))
+        for _ in 1...triviaGauntletSettings.numOfClues {
+            if let questionType: QuestionType = QuestionType(rawValue: randomNumber(probabilities: probabilities)) {
+                categoriesOfClues.append(questionType)
+            }
         }
         
+        // Create a Dictionary for Counting Frequencies in categoriesOfClues
+        let counts = Dictionary(categoriesOfClues.map { ($0, 1) }, uniquingKeysWith: +)
+        
         // Return Value
-        return categoriesOfClues
+        return counts
+    }
+    
+    static private func getNumOfCluesByQuestionType(triviaGauntletSettings: TriviaGauntletSettings, numOfClues: Int, questionType: QuestionType, _ completion: @escaping (_ data: [Clue]) -> Void = { _ in }) -> Void {
+        
     }
     
     
