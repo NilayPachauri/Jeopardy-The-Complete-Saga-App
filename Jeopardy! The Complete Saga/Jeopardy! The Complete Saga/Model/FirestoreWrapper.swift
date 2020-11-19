@@ -26,9 +26,16 @@ class FirestoreWrapper {
     static func getCluesForTriviaGauntlet(triviaGauntletSettings: TriviaGauntletSettings, _ listAppendCompletion: @escaping (_ data: [Clue]) -> Void = {_ in }, _ performSegueCompletion: @escaping () -> Void = { }  ) -> [Clue] {
         FirestoreWrapper.getCounterData() { (counter) in
             if let counter = counter {
-                let categoriesOfClues: [QuestionType] = FirestoreWrapper.getCategoriesOfClues(triviaGauntletSettings, counter)
-                for categoryOfClue in categoriesOfClues {
-                    FirestoreWrapper.getClueFromCategory(triviaGauntletSettings, questionType: categoryOfClue, listAppendCompletion)
+                // Collect a List of length numOfClues where each index corresponds to a randomly selected QuestionType of that clue
+                let clueTypes: [QuestionType] = FirestoreWrapper.getClueTypes(triviaGauntletSettings, counter)
+                
+                // Calculate the Probabilities List to randomly select a clue from a category
+                var probabilities: [Double] = [convertBoolToDouble(triviaGauntletSettings.useDifficulty1Questions), convertBoolToDouble(triviaGauntletSettings.useDifficulty2Questions), convertBoolToDouble(triviaGauntletSettings.useDifficulty3Questions), convertBoolToDouble(triviaGauntletSettings.useDifficulty4Questions), convertBoolToDouble(triviaGauntletSettings.useDifficulty5Questions)]
+                let probabilitiesSum = probabilities.reduce(0, +)
+                probabilities = probabilities.map( { $0 / probabilitiesSum } )
+                
+                for clueType in clueTypes {
+                    FirestoreWrapper.getClueFromCategory(counter, questionType: clueType, orderProbabilities: probabilities, listAppendCompletion)
                 }
                 performSegueCompletion()
             } else {
@@ -39,7 +46,7 @@ class FirestoreWrapper {
     }
     
     // MARK: - Trivia Gauntlet Helper Functions
-    static private func getCategoriesOfClues(_ triviaGauntletSettings: TriviaGauntletSettings, _ counter: Counter) -> [QuestionType] {
+    static private func getClueTypes(_ triviaGauntletSettings: TriviaGauntletSettings, _ counter: Counter) -> [QuestionType] {
         
         // Create List of which category each clue will come from
         var categoriesOfClues: [QuestionType] = []
@@ -85,7 +92,65 @@ class FirestoreWrapper {
         return categoriesOfClues
     }
     
-    static private func getClueFromCategory(_ triviaGauntletSettings: TriviaGauntletSettings, questionType: QuestionType, _ completion: @escaping (_ data: [Clue]) -> Void = { _ in }) -> Void {
+    static private func getClueFromCategory(_ counter: Counter, questionType: QuestionType, orderProbabilities: [Double], _ completion: @escaping (_ data: [Clue]) -> Void = { _ in }) -> Void {
+        // Determine the Collection Reference being used and Max Count of that collection
+        var collectionRef: CollectionReference? = nil
+        var collectionCount: Int? = nil
+        
+        switch questionType {
+        case .JEOPARDY:
+            collectionRef = FirestoreWrapper.jeopardyRef
+            collectionCount = counter.getJeopardyCategoriesCount()
+        case .DOUBLE_JEOPARDY:
+            collectionRef = FirestoreWrapper.doubleJeopardyRef
+            collectionCount = counter.getDoubleJeopardyCategoriesCount()
+        case .FINAL_JEOPARDY:
+            collectionRef = FirestoreWrapper.finalJeopardyRef
+            collectionCount = counter.getFinalJeopardyCategoriesCount()
+        }
+        
+        if let collectionRef = collectionRef, let collectionCount = collectionCount {
+            
+            // Get Random Integer from 0 to (not including) collectionCount as the query index
+            let categoryID = Int.random(in: 0..<collectionCount)
+            
+            // Determine whether we check greater than or equals (true) or less than or equals (false)
+            let useGreaterThanOrEquals = Bool.random()
+            
+            // Query to Find Document
+            var query: Query
+            if useGreaterThanOrEquals {
+                query = collectionRef.whereField("categoryID", isGreaterThanOrEqualTo: categoryID).order(by: "categoryID", descending: false).limit(to: 1)
+            } else {
+                query = collectionRef.whereField("categoryID", isLessThanOrEqualTo: categoryID).order(by: "categoryID", descending: true).limit(to: 1)
+            }
+            
+            // Get Documents from Query
+            query.getDocuments { (query, error) in
+                
+                let result = Result {
+                    query?.documents
+                }
+                switch result {
+                case .success(let documents):
+                    if let documents = documents {
+                        for document in documents {
+                            let category = try? FirebaseDecoder().decode(Category.self, from: document.data())
+                            // TODO: Randomly pick a clue from the category and create clue object
+                            completion(clue)
+                        }
+                    } else {
+                        // A nil value was successfully initialized from the QuerySnapshot,
+                        // or the QuerySnapshot was nil.
+                        print("Query does not exist")
+                    }
+                case .failure(let error):
+                    // Fetching the Documents from the Query resulted in an error
+                    print("Error Fetching Documents: \(error)")
+                }
+            }
+        }
+        
         
     }
     
@@ -117,7 +182,7 @@ class FirestoreWrapper {
                 }
             case .failure(let error):
                 // A `T` value could not be initialized from the DocumentSnapshot.
-                print("Error decoding counter: \(error)")
+                print("Error decoding object: \(error)")
             }
         }
     }
