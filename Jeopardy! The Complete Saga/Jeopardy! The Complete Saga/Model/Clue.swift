@@ -38,25 +38,27 @@ class Clue {
     var categoryID: Int
     var dollarValue: Int?
     var episode: Int
+    var order: Int?
     var question: String
     var season: String
     var type: QuestionType?
     
     // MARK: - Init Functions
     
-    init(answer: String, airDate: Date, category: String, categoryID: Int, dollarValue: Int, episode: Int, question: String, season: String, type: QuestionType) {
+    init(answer: String, airDate: Date, category: String, categoryID: Int, dollarValue: Int, episode: Int, order:Int, question: String, season: String, type: QuestionType) {
         self.answer = answer
         self.airDate = airDate
         self.category = category
         self.categoryID = categoryID
         self.dollarValue = dollarValue
         self.episode = episode
+        self.order = order
         self.question = question
         self.season = season
         self.type = type
     }
     
-    init(answer: String, airDate: String, category: String, categoryID: Int, dollarValue: String, episode: Int, question: String, season: String, type: String) {
+    init(answer: String, airDate: String, category: String, categoryID: Int, dollarValue: String, episode: Int, order: String, question: String, season: String, type: String) {
         self.answer = answer
         
         // Extract Date From String
@@ -73,6 +75,10 @@ class Clue {
         self.dollarValue = Int(amount)
         
         self.episode = episode
+        
+        // Extract Order from String
+        self.order = Int(order)
+        
         self.question = question
         self.season = season
         
