@@ -9,10 +9,23 @@ import Foundation
 
 // MARK: - Enumerations
 
-enum QuestionType {
-    case JEOPARDY
-    case DOUBLE_JEOPARDY
-    case FINAL_JEOPARDY
+enum QuestionType: Int {
+    case JEOPARDY        = 0
+    case DOUBLE_JEOPARDY = 1
+    case FINAL_JEOPARDY  = 2
+    
+    var description: String {
+        switch self {
+        case .JEOPARDY:
+            return "Jeopardy"
+        case .DOUBLE_JEOPARDY:
+            return "Double Jeopardy"
+        case .FINAL_JEOPARDY:
+            return "Final Jeopardy"
+        default:
+            return ""
+        }
+    }
 }
 
 class Clue {
