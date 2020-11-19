@@ -24,3 +24,11 @@ func randomNumber(probabilities: [Double]) -> Int {
     // This point might be reached due to floating point inaccuracies:
     return (probabilities.count - 1)
 }
+
+func convertBoolToInt(boolean: Bool) -> Int {
+    return boolean ? 1 : 0
+}
+
+func convertBoolToDouble(boolean: Bool) -> Double {
+    return boolean ? 1.0 : 0.0
+}
