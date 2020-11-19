@@ -38,7 +38,7 @@ class Clue {
     var categoryID: Int
     var dollarValue: Int?
     var episode: Int
-    var order: Int?
+    var order: Int
     var question: String
     var season: String
     var type: QuestionType?
@@ -58,7 +58,7 @@ class Clue {
         self.type = type
     }
     
-    init(answer: String, airDate: String, category: String, categoryID: Int, dollarValue: String, episode: Int, order: String, question: String, season: String, type: String) {
+    init(answer: String, airDate: String, category: String, categoryID: Int, dollarValue: String, episode: Int, order: Int, question: String, season: String, type: String) {
         self.answer = answer
         
         // Extract Date From String
@@ -75,10 +75,7 @@ class Clue {
         self.dollarValue = Int(amount)
         
         self.episode = episode
-        
-        // Extract Order from String
-        self.order = Int(order)
-        
+        self.order = order
         self.question = question
         self.season = season
         
