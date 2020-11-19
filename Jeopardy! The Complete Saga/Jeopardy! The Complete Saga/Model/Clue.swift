@@ -58,7 +58,7 @@ class Clue {
         self.type = type
     }
     
-    init(answer: String, airDate: String, category: String, categoryID: Int, dollarValue: String, episode: Int, order: Int, question: String, season: String, type: String) {
+    init(answer: String, airDate: String, category: String, categoryID: Int, dollarValue: String, episode: Int, order: Int, question: String, season: String, type: QuestionType) {
         self.answer = answer
         
         // Extract Date From String
@@ -78,18 +78,7 @@ class Clue {
         self.order = order
         self.question = question
         self.season = season
-        
-        // Extract Type from String
-        switch type {
-        case "Jeopardy":
-            self.type = .JEOPARDY
-        case "Double Jeopardy":
-            self.type = .DOUBLE_JEOPARDY
-        case "Final Jeopardy":
-            self.type = .FINAL_JEOPARDY
-        default:
-            self.type = nil
-        }
+        self.type = type
     }
     
     // MARK: - Getters
