@@ -191,7 +191,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="627" height="476"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of Questions: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wy1-jE-FdU" userLabel="Number of Questions Label">
-                                                <rect key="frame" x="8" y="8" width="304" height="44"/>
+                                                <rect key="frame" x="8" y="8" width="283" height="44"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="44" id="Lgo-uN-hrp"/>
                                                 </constraints>
@@ -200,7 +200,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="5" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Tc-k7-3hs" userLabel="Number of Questions Text Field">
-                                                <rect key="frame" x="320" y="8" width="88" height="44"/>
+                                                <rect key="frame" x="299" y="8" width="88" height="44"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="88" id="px7-WA-W2y"/>
@@ -213,7 +213,7 @@
                                                 </connections>
                                             </textField>
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="5" minValue="1" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="mbx-NT-6It" userLabel="Number of Questions Slider">
-                                                <rect key="frame" x="414" y="15" width="207" height="31"/>
+                                                <rect key="frame" x="393" y="15" width="228" height="31"/>
                                                 <color key="tintColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <color key="thumbTintColor" systemColor="systemIndigoColor"/>
                                                 <connections>
@@ -525,7 +525,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EYU-HA-AYV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1551" y="-754"/>
+            <point key="canvasLocation" x="2221" y="-494"/>
         </scene>
     </scenes>
     <resources>
