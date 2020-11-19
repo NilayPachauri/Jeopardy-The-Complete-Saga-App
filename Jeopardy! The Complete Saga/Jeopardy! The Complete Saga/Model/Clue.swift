@@ -32,15 +32,15 @@ class Clue {
     
     // MARK: - Private Class Attributes
     
-    var answer: String
+    var answer: String?
     var airDate: Date?
-    var category: String
-    var categoryID: Int
+    var category: String?
+    var categoryID: Int?
     var dollarValue: Int?
-    var episode: Int
-    var order: Int
-    var question: String
-    var season: String
+    var episode: Int?
+    var order: Int?
+    var question: String?
+    var season: String?
     var type: QuestionType?
     
     // MARK: - Init Functions
@@ -58,7 +58,7 @@ class Clue {
         self.type = type
     }
     
-    init(answer: String, airDate: String, category: String, categoryID: Int, dollarValue: String, episode: Int, order: Int, question: String, season: String, type: QuestionType) {
+    init(answer: String?, airDate: String, category: String?, categoryID: Int?, dollarValue: String, episode: Int?, order: Int?, question: String?, season: String?, type: QuestionType?) {
         self.answer = answer
         
         // Extract Date From String
@@ -83,7 +83,7 @@ class Clue {
     
     // MARK: - Getters
     
-    func getAnswer() -> String {
+    func getAnswer() -> String? {
         return self.answer
     }
     
@@ -91,11 +91,11 @@ class Clue {
         return self.airDate
     }
     
-    func getCategory() -> String {
+    func getCategory() -> String? {
         return self.category
     }
     
-    func getCategoryID() -> Int {
+    func getCategoryID() -> Int? {
         return self.categoryID
     }
     
@@ -103,15 +103,19 @@ class Clue {
         return self.dollarValue
     }
     
-    func getEpisode() -> Int {
+    func getEpisode() -> Int? {
         return self.episode
     }
     
-    func getQuestion() -> String {
+    func getOrder() -> Int? {
+        return self.order
+    }
+    
+    func getQuestion() -> String? {
         return self.question
     }
     
-    func getSeason() -> String {
+    func getSeason() -> String? {
         return self.season
     }
     
