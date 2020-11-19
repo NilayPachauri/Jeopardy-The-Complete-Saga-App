@@ -5,6 +5,7 @@
 //  Created by Nilay Pachauri on 11/18/20.
 //
 
+import CodableFirebase
 import Firebase
 import FirebaseFirestore
 import Foundation
@@ -14,30 +15,24 @@ class FirestoreWrapper {
     static let db = Firestore.firestore()
     static private let counterRef = FirestoreWrapper.db.collection("count").document("counters")
     static private let jsonDecoder = JSONDecoder()
+//    static private let semaphore = DispatchSemaphore(value: 1)
+//    static private let queue = DispatchQueue(label: "test")
+    static private let group = DispatchGroup()
     
     static func getCluesForTriviaGauntlet(numOfClues: Int) -> [Clue] {
-        let counter = FirestoreWrapper.getCounterData()
-        print("Jeopardy Count: \(counter?.getJeopardyCategoriesCount())")
-        print("Double Jeopardy Count: \(counter?.getDoubleJeopardyCategoriesCount())")
-        print("Final Jeopardy Count: \(counter?.getFinalJeopardyCategoriesCount())")
+        FirestoreWrapper.getCounterData()
         return []
     }
     
-    static private func getCounterData() -> Counter? {
-        let counter = FirestoreWrapper.getDocumentAsClass(docRef: FirestoreWrapper.counterRef, Counter.self) {
-            _ in
+    static private func getCounterData() -> Void {
+        FirestoreWrapper.getDocumentAsClass(docRef: FirestoreWrapper.counterRef, Counter.self) { (counter) in
+            print("Jeopardy Count: \(counter?.getJeopardyCategoriesCount())")
+            print("Double Jeopardy Count: \(counter?.getDoubleJeopardyCategoriesCount())")
+            print("Final Jeopardy Count: \(counter?.getFinalJeopardyCategoriesCount())")
         }
-        
-        print("Jeopardy Count: \(counter?.getJeopardyCategoriesCount())")
-        print("Double Jeopardy Count: \(counter?.getDoubleJeopardyCategoriesCount())")
-        print("Final Jeopardy Count: \(counter?.getFinalJeopardyCategoriesCount())")
-        return counter
     }
     
-    static func getDocumentAsClass<T: Codable>(docRef: DocumentReference, _ type: T.Type, _ completion: @escaping (_ data: T?) -> Void) -> T? {
-        
-        // Create object of Class T
-        var object: T? = nil
+    static func getDocumentAsClass<T: Codable>(docRef: DocumentReference, _ type: T.Type, _ completion: @escaping (_ data: T?) -> Void = { _ in }) -> Void {
         
         // Get the Document and store it into object
         FirestoreWrapper.counterRef.getDocument { (document, error) in
@@ -45,28 +40,20 @@ class FirestoreWrapper {
                 document?.data()
             }
             switch result {
-            case .success(let objectData):
-                if let objectData = objectData {
-                    // Serialize the Dictionary into a JSON Data representation, then decode it using the Decoder()
-                    if let data = try? JSONSerialization.data(withJSONObject: objectData, options: []) {
-                        // A `Counter` value was successfully initialized from the DocumentSnapshot.
-                        object = try? FirestoreWrapper.jsonDecoder.decode(type, from: data)
-                        completion(object)
-                    }
+            case .success(let data):
+                if let data = data {
+                    // A `T` value was successfully initialized from the DocumentSnapshot.
+                    let object = try? FirebaseDecoder().decode(type, from: data)
+                    completion(object)
                 } else {
                     // A nil value was successfully initialized from the DocumentSnapshot,
                     // or the DocumentSnapshot was nil.
                     print("Document does not exist")
                 }
             case .failure(let error):
-                // A `Counter` value could not be initialized from the DocumentSnapshot.
+                // A `T` value could not be initialized from the DocumentSnapshot.
                 print("Error decoding counter: \(error)")
             }
         }
-        
-        // Return object
-        return object
     }
-    
-    
 }
