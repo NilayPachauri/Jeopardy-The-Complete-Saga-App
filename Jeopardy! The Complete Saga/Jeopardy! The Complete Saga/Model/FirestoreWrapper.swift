@@ -35,9 +35,8 @@ class FirestoreWrapper {
                 probabilities = probabilities.map( { $0 / probabilitiesSum } )
                 
                 for clueType in clueTypes {
-                    FirestoreWrapper.getClueFromCategory(counter, questionType: clueType, orderProbabilities: probabilities, listAppendCompletion)
+                    FirestoreWrapper.getClueFromCategory(counter, questionType: clueType, orderProbabilities: probabilities, listAppendCompletion, performSegueCompletion)
                 }
-                performSegueCompletion()
             } else {
                 print("Counter is nil")
             }
@@ -92,7 +91,7 @@ class FirestoreWrapper {
         return categoriesOfClues
     }
     
-    static private func getClueFromCategory(_ counter: Counter, questionType: QuestionType, orderProbabilities: [Double], _ completion: @escaping (_ data: Clue) -> Void = { _ in }) -> Void {
+    static private func getClueFromCategory(_ counter: Counter, questionType: QuestionType, orderProbabilities: [Double], _ listAppendCompletion: @escaping (_ data: Clue) -> Void = { _ in }, _ performSegueCompletion: @escaping () -> Void = { }  ) -> Void {
         // Determine the Collection Reference being used and Max Count of that collection
         var collectionRef: CollectionReference? = nil
         var collectionCount: Int? = nil
@@ -157,7 +156,10 @@ class FirestoreWrapper {
                                 let clue = Clue(answer: answer, airDate: airDate, category: cat, categoryID: catID, dollarValue: dollarValue, episode: episode, order: order, question: question, season: season, type: type)
                                 
                                 // Call Completion Handler of Clue
-                                completion(clue)
+                                listAppendCompletion(clue)
+                                
+                                // Perform Segue (if condition in closure is met)
+                                performSegueCompletion()
                             } else {
                                 print("Failed to Decode Category")
                             }

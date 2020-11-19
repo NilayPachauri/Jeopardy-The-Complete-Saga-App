@@ -126,7 +126,11 @@ class TriviaGauntletStartPageViewController: UIViewController, UITextFieldDelega
                 
                 FirestoreWrapper.getCluesForTriviaGauntlet(triviaGauntletSettings: settings, { (clue) in
                     clueList.append(clue)
-                }, { print(clueList) })
+                }, {
+                    if clueList.count == settings.numOfClues  {
+                        print(clueList)
+                    }
+                })
             }
         }
     }
