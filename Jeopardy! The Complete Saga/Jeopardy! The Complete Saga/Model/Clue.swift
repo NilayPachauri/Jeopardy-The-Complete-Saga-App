@@ -26,7 +26,7 @@ enum QuestionType: Int {
     }
 }
 
-class Clue {
+class Clue: CustomStringConvertible {
     
     // MARK: - Private Class Attributes
     
@@ -77,6 +77,15 @@ class Clue {
         self.question = question
         self.season = season
         self.type = type
+    }
+    
+    // MARK: - Protocol Functions
+    var description: String {
+        var description = ""
+        description += "question: \(self.question ?? "No Question")\n"
+        description += "answer: \(self.answer ?? "No Answer")\n"
+        description += "value: \(self.dollarValue ?? 0)\n"
+        return description
     }
     
     // MARK: - Getters
