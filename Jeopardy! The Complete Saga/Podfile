@@ -7,6 +7,7 @@ target 'Jeopardy! The Complete Saga' do
 
   # Pods for Jeopardy! The Complete Saga
   pod 'Firebase/Firestore'
+  pod 'CodableFirebase'
 
   target 'Jeopardy! The Complete SagaTests' do
     inherit! :search_paths
