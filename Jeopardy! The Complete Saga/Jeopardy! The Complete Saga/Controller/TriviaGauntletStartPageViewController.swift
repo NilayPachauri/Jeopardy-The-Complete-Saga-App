@@ -116,12 +116,17 @@ class TriviaGauntletStartPageViewController: UIViewController, UITextFieldDelega
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
-        print(segue.identifier)
         if segue.identifier == "TriviaGauntletSegue" {
             if let questionVC = segue.destination as? QuestionPageViewController {
                 questionVC.gameMode = .TRIVIA_GAUNTLET
-                print("Here")
-                FirestoreWrapper.getCluesForTriviaGauntlet(numOfClues: 0)
+                
+                let settings = TriviaGauntletSettings(numOfClues: self.getIntegerValueFromSlider(slider: self.numberOfQuestionsSlider), useJeopardyQuestions: self.jeopardyQuestionsSwitch.isOn, useDoubleJeopardyQuestions: self.doubleJeopardyQuestionsSwitch.isOn, useFinalJeopardyQuestions: self.finalJeopardySwitch.isOn, useDifficulty1Questions: self.difficulty1QuestionsSwitch.isOn, useDifficulty2Questions: self.difficulty2QuestionsSwitch.isOn, useDifficulty3Questions: self.difficulty3QuestionsSwitch.isOn, useDifficulty4Questions: self.difficulty4QuestionsSwitch.isOn, useDifficulty5Questions: self.difficulty5QuestionsSwitch.isOn)
+                
+                var clueList: [Clue] = []
+                
+                FirestoreWrapper.getCluesForTriviaGauntlet(triviaGauntletSettings: settings, { (clue) in
+                    clueList.append(clue)
+                }, { print(clueList) })
             }
         }
     }
