@@ -23,7 +23,7 @@ class FirestoreWrapper {
     
     
     // MARK: - Public Static Methods
-    static func getCluesForTriviaGauntlet(triviaGauntletSettings: TriviaGauntletSettings, _ listAppendCompletion: @escaping (_ data: [Clue]) -> Void = {_ in }, _ performSegueCompletion: @escaping () -> Void = { }  ) -> [Clue] {
+    static func getCluesForTriviaGauntlet(triviaGauntletSettings: TriviaGauntletSettings, _ listAppendCompletion: @escaping (_ data: Clue) -> Void = {_ in }, _ performSegueCompletion: @escaping () -> Void = { }  ) -> [Clue] {
         FirestoreWrapper.getCounterData() { (counter) in
             if let counter = counter {
                 // Collect a List of length numOfClues where each index corresponds to a randomly selected QuestionType of that clue
@@ -92,7 +92,7 @@ class FirestoreWrapper {
         return categoriesOfClues
     }
     
-    static private func getClueFromCategory(_ counter: Counter, questionType: QuestionType, orderProbabilities: [Double], _ completion: @escaping (_ data: [Clue]) -> Void = { _ in }) -> Void {
+    static private func getClueFromCategory(_ counter: Counter, questionType: QuestionType, orderProbabilities: [Double], _ completion: @escaping (_ data: Clue) -> Void = { _ in }) -> Void {
         // Determine the Collection Reference being used and Max Count of that collection
         var collectionRef: CollectionReference? = nil
         var collectionCount: Int? = nil
@@ -135,9 +135,32 @@ class FirestoreWrapper {
                 case .success(let documents):
                     if let documents = documents {
                         for document in documents {
+                            // Decode Document into Category
                             let category = try? FirebaseDecoder().decode(Category.self, from: document.data())
-                            // TODO: Randomly pick a clue from the category and create clue object
-                            completion(clue)
+                            
+                            // Select Random Number to Choose what order of the Clue
+                            let order = randomNumber(probabilities: orderProbabilities) + 1
+                            
+                            if let category = category, let clues = category.clues, let clueAtIndex = clues["\(order)"] {
+                                // Get all the Parameters for a Clue
+                                let answer = clueAtIndex["answer"]
+                                let airDate = category.airDate ?? "1970/01/01"
+                                let cat = category.category
+                                let catID = category.categoryID
+                                let dollarValue = clueAtIndex["dollar_value"] ?? "$0"
+                                let episode = category.episode
+                                let question = clueAtIndex["question"]
+                                let season = category.season
+                                let type = questionType
+                                
+                                // Create the Clue
+                                let clue = Clue(answer: answer, airDate: airDate, category: cat, categoryID: catID, dollarValue: dollarValue, episode: episode, order: order, question: question, season: season, type: type)
+                                
+                                // Call Completion Handler of Clue
+                                completion(clue)
+                            } else {
+                                print("Failed to Decode Category")
+                            }
                         }
                     } else {
                         // A nil value was successfully initialized from the QuerySnapshot,
@@ -150,8 +173,6 @@ class FirestoreWrapper {
                 }
             }
         }
-        
-        
     }
     
     
