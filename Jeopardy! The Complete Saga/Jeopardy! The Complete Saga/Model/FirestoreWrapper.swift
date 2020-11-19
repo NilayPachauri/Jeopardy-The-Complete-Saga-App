@@ -14,11 +14,8 @@ class FirestoreWrapper {
     
     static let db = Firestore.firestore()
     static private let counterRef = FirestoreWrapper.db.collection("count").document("counters")
-    static private let jsonDecoder = JSONDecoder()
-//    static private let semaphore = DispatchSemaphore(value: 1)
-//    static private let queue = DispatchQueue(label: "test")
-    static private let group = DispatchGroup()
     
+    // MARK: - Public Static Methods
     static func getCluesForTriviaGauntlet(numOfClues: Int) -> [Clue] {
         FirestoreWrapper.getCounterData() { (counter) in
             
@@ -26,6 +23,53 @@ class FirestoreWrapper {
         return []
     }
     
+    // MARK: - Trivia Gauntlet Helper Functions
+    static private func getQuestionsDistribution(numOfClues: Int, counter: Counter, useJeopardy: Bool = true, useDoubleJeopardy: Bool = true, useFinalJeopardy: Bool = true) -> [Int] {
+        
+        // Create List of which category each clue will come from
+        var categoriesOfClues: [Int] = []
+        
+        // Create Probabilities List
+        var probabilities: [Double] = []
+        
+        // Get Sum of All Participating Categories and Append to probabilities
+        var sum: Int = 0
+        
+        if useJeopardy {
+            sum += counter.getJeopardyCategoriesCount()
+            probabilities.append(Double(counter.getJeopardyCategoriesCount()))
+        } else {
+            probabilities.append(0.0)
+        }
+        
+        if useDoubleJeopardy {
+            sum += counter.getDoubleJeopardyCategoriesCount()
+            probabilities.append(Double(counter.getDoubleJeopardyCategoriesCount()))
+        } else {
+            probabilities.append(0.0)
+        }
+        
+        if useFinalJeopardy {
+            sum += counter.getFinalJeopardyCategoriesCount()
+            probabilities.append(Double(counter.getFinalJeopardyCategoriesCount()))
+        } else {
+            probabilities.append(0.0)
+        }
+        
+        // Change probabilties to be percentage rather than raw number
+        probabilities = probabilities.map { $0 / Double(sum) }
+        
+        // Populate List of Categories by Clue
+        for _ in 1...numOfClues {
+            categoriesOfClues.append(randomNumber(probabilities: probabilities))
+        }
+        
+        // Return Value
+        return categoriesOfClues
+    }
+    
+    
+    // MARK: - Private Static Helper Functions
     static private func getCounterData(_ completion: @escaping (_ data: Counter?) -> Void = {_ in } ) -> Void {
         FirestoreWrapper.getDocumentAsClass(docRef: FirestoreWrapper.counterRef, Counter.self) { (counter) in
             completion(counter)
