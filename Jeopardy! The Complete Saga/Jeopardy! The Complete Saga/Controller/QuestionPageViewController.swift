@@ -27,6 +27,11 @@ class QuestionPageViewController: UIViewController, UITextFieldDelegate {
     private var timerLeft: Double = 0
     private var timer: Timer? = nil
     private var userAnswer: String = ""
+    
+    // MARK: - Private Class Speech Attributes
+    private let speechRecognizer = SFSpeechRecognizer(locale: Locale(identifier: "en-US"))!
+    private var recognitionRequest: SFSpeechAudioBufferRecognitionRequest?
+    private var recognitionTask: SFSpeechRecognitionTask?
     private let audioEngine = AVAudioEngine()
     
     // MARK: - ViewController Lifecycle Functions
