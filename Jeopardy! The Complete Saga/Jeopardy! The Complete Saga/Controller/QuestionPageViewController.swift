@@ -41,6 +41,7 @@ class QuestionPageViewController: UIViewController, UITextFieldDelegate {
         // Set Up Content
         self.setAnswerTextFieldFont()
         self.setMicrophoneButtonSize()
+        self.setupClue()
     }
     
     // MARK: Functions to Set Up View
