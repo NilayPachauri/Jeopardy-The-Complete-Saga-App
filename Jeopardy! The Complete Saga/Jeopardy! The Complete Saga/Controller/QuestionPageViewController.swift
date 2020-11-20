@@ -27,6 +27,7 @@ class QuestionPageViewController: UIViewController, UITextFieldDelegate {
     private var timerLeft: Double = 0
     private var timer: Timer? = nil
     private var userAnswer: String = ""
+    private let audioEngine = AVAudioEngine()
     
     // MARK: - ViewController Lifecycle Functions
     override func viewDidLoad() {
@@ -118,43 +119,8 @@ class QuestionPageViewController: UIViewController, UITextFieldDelegate {
     }
     
     // MARK: - Functions to Handle User Speech
-    @IBAction func microphoneButtonPressed(_ sender: UIButton) {
-    }
-    
-    func requestTranscribePremissions() {
-        SFSpeechRecognizer.requestAuthorization { [unowned self] authStatus in
-            DispatchQueue.main.async {
-                switch authStatus {
-                case .authorized:
-                    print("Good to go")
-                default:
-                    print("Do not have permission")
-                }
-            }
-        }
-    }
-    
-    func transcribeAudio(url: URL) {
-        // Create a New Recognizer and Point it at our Audio
-        let recognizer = SFSpeechRecognizer()
-        let request = SFSpeechURLRecognitionRequest(url: url)
+    @IBAction func microphoneButtonPressed(_ sender: UIButton) throws {
         
-        // Start Recognition
-        if let recognizer = recognizer {
-            recognizer.recognitionTask(with: request) { [unowned self] (result, error) in
-                //Abort if no Transcription was Received
-                guard let result = result else {
-                    print("There was an error: \(error)")
-                    return
-                }
-                
-                // Transcription Received
-                if result.isFinal {
-                    // Print the Transcription
-                    print(result.bestTranscription.formattedString)
-                }
-            }
-        }
     }
     
     
