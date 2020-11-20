@@ -49,6 +49,9 @@ class QuestionPageViewController: UIViewController, UITextFieldDelegate {
         self.setAnswerTextFieldFont()
         self.setMicrophoneButtonSize()
         self.setupClue()
+        
+        // Disable Microphone Button until Authorized
+        self.microphoneButton.isEnabled = false
     }
     
     // MARK: Functions to Set Up View
