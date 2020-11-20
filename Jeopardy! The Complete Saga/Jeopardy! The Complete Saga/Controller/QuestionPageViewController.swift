@@ -121,6 +121,19 @@ class QuestionPageViewController: UIViewController, UITextFieldDelegate {
     @IBAction func microphoneButtonPressed(_ sender: UIButton) {
     }
     
+    func requestTranscribePremissions() {
+        SFSpeechRecognizer.requestAuthorization { [unowned self] authStatus in
+            DispatchQueue.main.async {
+                switch authStatus {
+                case .authorized:
+                    print("Good to go")
+                default:
+                    print("Do not have permission")
+                }
+            }
+        }
+    }
+    
     
     // MARK: - Keyboard Functions
     
