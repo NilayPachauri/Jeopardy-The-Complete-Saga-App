@@ -26,7 +26,7 @@ class AnswerPageViewController: UIViewController {
     public var timer: Double = 0.0
     public var userAnswer: String = ""
     public var correctAnswer: String = ""
-    public var response: String = ""
+    public var response: Bool = false
     
     // MARK: - View Did Load
     override func viewDidLoad() {
@@ -45,7 +45,8 @@ class AnswerPageViewController: UIViewController {
         self.timerLabel.text = String(format: "Timer: %3.1f", self.timer)
         self.userAnswerLabel.text = self.userAnswer
         self.correctAnswerLabel.text = self.correctAnswer
-        self.responseLabel.text = self.response
+        self.responseLabel.text = (self.response) ? "That is correct!" : "Not quite!"
+        self.responseLabel.textColor = (self.response) ? UIColor.systemGreen : UIColor.systemRed
     }
     
     func setupLabelFormats() {

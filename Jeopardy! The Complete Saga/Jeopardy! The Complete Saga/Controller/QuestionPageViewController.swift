@@ -168,15 +168,11 @@ class QuestionPageViewController: UIViewController, UITextFieldDelegate {
                 answerVC.userAnswer = self.userAnswer
                 answerVC.correctAnswer = clue.getAnswer() ?? ""
                 
-                // Determine if user is correct
-                if answerVC.userAnswer == answerVC.correctAnswer {
-                    answerVC.response = "That is correct!"
+                // Determine if the User is Correct
+                answerVC.response = answerVC.userAnswer == answerVC.correctAnswer
+                if answerVC.response {
                     self.score += 1
-                } else {
-                    answerVC.response = "Not Quite!"
                 }
-                
-                // Set Score
                 answerVC.score = self.score
             }
         }
