@@ -531,7 +531,7 @@
         <!--Answer Page View Controller-->
         <scene sceneID="J0F-8t-Djm">
             <objects>
-                <viewController title="Answer Page View Controller" modalTransitionStyle="flipHorizontal" id="VvA-Lr-XWU" sceneMemberID="viewController">
+                <viewController title="Answer Page View Controller" modalTransitionStyle="flipHorizontal" id="VvA-Lr-XWU" customClass="AnswerPageViewController" customModule="Jeopardy__The_Complete_Saga" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nKV-dF-Zrb">
                         <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -562,13 +562,13 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AoD-no-FWV" userLabel="Answer View">
                                 <rect key="frame" x="20" y="60" width="627" height="191.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You answered:" textAlignment="natural" lineBreakMode="tailTruncation" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="9iU-yE-73b" userLabel="User Answer Static Label">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You answered:" textAlignment="right" lineBreakMode="tailTruncation" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="9iU-yE-73b" userLabel="User Answer Static Label">
                                         <rect key="frame" x="8" y="8" width="201" height="83.5"/>
                                         <fontDescription key="fontDescription" name="Korinna-Bold" family="ITC Korinna" pointSize="256"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Correct answer:" textAlignment="natural" lineBreakMode="tailTruncation" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="hcm-Wt-mce" userLabel="Correct Answer Static Label">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Correct answer:" textAlignment="right" lineBreakMode="tailTruncation" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="hcm-Wt-mce" userLabel="Correct Answer Static Label">
                                         <rect key="frame" x="8" y="99.5" width="201" height="84"/>
                                         <fontDescription key="fontDescription" name="Korinna-Bold" family="ITC Korinna" pointSize="256"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -606,7 +606,7 @@
                                     <constraint firstItem="FZt-Sr-YHB" firstAttribute="width" secondItem="9iU-yE-73b" secondAttribute="width" multiplier="2" id="sQo-Qu-ERn"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Response" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="iiG-kd-G0y" userLabel="Answer Label">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Response" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="iiG-kd-G0y" userLabel="Response Label">
                                 <rect key="frame" x="20" y="259.5" width="412.5" height="95.5"/>
                                 <fontDescription key="fontDescription" name="Swiss911BT-Compressed" family="Swiss 911" pointSize="128"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -655,6 +655,17 @@
                             <constraint firstItem="dmP-5e-h3f" firstAttribute="leading" secondItem="iiG-kd-G0y" secondAttribute="trailing" constant="8" id="ysU-SP-4a5"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="categoryLabel" destination="fZR-yc-k00" id="8vC-4j-q4n"/>
+                        <outlet property="correctAnswerLabel" destination="EfB-5C-6Q1" id="iaE-nr-dwC"/>
+                        <outlet property="correctAnswerStaticLabel" destination="hcm-Wt-mce" id="1Ya-EX-4Jp"/>
+                        <outlet property="nextQuestionButton" destination="dmP-5e-h3f" id="6p5-wj-nws"/>
+                        <outlet property="responseLabel" destination="iiG-kd-G0y" id="gsB-0u-Egd"/>
+                        <outlet property="scoreLabel" destination="rGV-6v-apQ" id="wmn-Ip-Egw"/>
+                        <outlet property="timerLabel" destination="Q7S-Qo-BYc" id="GWO-AB-Kej"/>
+                        <outlet property="userAnswerLabel" destination="FZt-Sr-YHB" id="hiW-Qo-0Fm"/>
+                        <outlet property="userAnswerStaticLabel" destination="9iU-yE-73b" id="XH6-VG-KR5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3py-FQ-sze" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
