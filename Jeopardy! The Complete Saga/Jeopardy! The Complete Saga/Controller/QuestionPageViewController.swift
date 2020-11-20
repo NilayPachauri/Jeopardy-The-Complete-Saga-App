@@ -74,6 +74,7 @@ class QuestionPageViewController: UIViewController, UITextFieldDelegate {
     // MARK: - Functions to Set Up New Question
     func setupClue() {
         self.setupTimer()
+        self.setupScore()
         self.updateLabelsToCurrentClue()
     }
     
@@ -81,6 +82,11 @@ class QuestionPageViewController: UIViewController, UITextFieldDelegate {
         // Initialize Timer to 10 seconds
         self.timerLeft = 10.0
         self.timer = Timer.scheduledTimer(timeInterval: self.timerInterval, target: self, selector: #selector(self.timerAction), userInfo: nil, repeats: true)
+    }
+    
+    func setupScore() {
+        // Set Score Label
+        self.scoreLabel.text = String(format: "Score: %d", self.score)
     }
     
     func updateLabelsToCurrentClue() {
