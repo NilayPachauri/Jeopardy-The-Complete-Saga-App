@@ -31,7 +31,15 @@ class ResultsPageViewController: UIViewController {
         self.resultsLabel.text = String(format: "You got %d out of %d correct!", TriviaGauntletGame.shared.getScore(), TriviaGauntletGame.shared.getNumberOfClues())
     }
     
-
+    // MARK: - Storyboard Navigation
+    @IBAction func playAgainButtonPressed(_ sender: UIBarButtonItem) {
+        self.performSegue(withIdentifier: "UnwindToTriviaGauntletStartPage", sender: self)
+    }
+    
+    @IBAction func doneButtonPressed(_ sender: UIBarButtonItem) {
+        self.performSegue(withIdentifier: "UnwindToHomePage", sender: self)
+    }
+    
     /*
     // MARK: - Navigation
 

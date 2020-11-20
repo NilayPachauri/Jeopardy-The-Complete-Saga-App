@@ -65,5 +65,8 @@ class HomePageViewController: UIViewController {
         self.customGameButton.layer.borderColor = borderColor
         self.customGameButton.layer.cornerRadius = cornerRadius
     }
+    
+    // MARK: - Storyboard Navigation
+    @IBAction func unwindToHomePage(segue: UIStoryboardSegue) {}
 }
 

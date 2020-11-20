@@ -701,14 +701,20 @@
                                     <navigationItem title="Results" id="RJf-XD-PlJ">
                                         <barButtonItem key="leftBarButtonItem" systemItem="done" id="gte-qz-wBO">
                                             <color key="tintColor" systemColor="systemIndigoColor"/>
+                                            <connections>
+                                                <action selector="doneButtonPressed:" destination="zza-4l-ZlN" id="cJy-gU-qo7"/>
+                                            </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="Play Again" id="ZEz-BI-DNd">
                                             <color key="tintColor" systemColor="systemIndigoColor"/>
+                                            <connections>
+                                                <action selector="playAgainButtonPressed:" destination="zza-4l-ZlN" id="mS4-Zt-Cpb"/>
+                                            </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Results" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="128" translatesAutoresizingMaskIntoConstraints="NO" id="07Q-Es-WcK" userLabel="Results Label">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Results" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="07Q-Es-WcK" userLabel="Results Label">
                                 <rect key="frame" x="20" y="40" width="627" height="165"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="07Q-Es-WcK" secondAttribute="height" multiplier="19:5" id="qmC-bQ-I1t"/>
@@ -738,9 +744,12 @@
                     <connections>
                         <outlet property="navigationBar" destination="U4z-3x-Aiv" id="54V-CD-ZOw"/>
                         <outlet property="resultsLabel" destination="07Q-Es-WcK" id="X36-Ue-noI"/>
+                        <segue destination="PZ6-fn-GjX" kind="unwind" identifier="UnwindToTriviaGauntletStartPage" unwindAction="unwindToTriviaGauntletStartPageWithSegue:" id="TNY-xa-Peu"/>
+                        <segue destination="PZ6-fn-GjX" kind="unwind" identifier="UnwindToHomePage" unwindAction="unwindToHomePageWithSegue:" id="UQ4-L1-793"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TkL-ll-sRy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="PZ6-fn-GjX" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2952.7736131934034" y="402.39999999999998"/>
         </scene>

@@ -125,6 +125,7 @@ class TriviaGauntletStartPageViewController: UIViewController, UITextFieldDelega
         })
     }
     
+    @IBAction func unwindToTriviaGauntletStartPage(segue: UIStoryboardSegue) {}
     
     // MARK: - Navigation
 
