@@ -227,7 +227,7 @@
                                                 <rect key="frame" x="570" y="66.5" width="51" height="31"/>
                                                 <color key="onTintColor" systemColor="systemIndigoColor"/>
                                             </switch>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Double Jeopardy! Questions: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pu7-Gt-wf8">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Double Jeopardy! Questions: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pu7-Gt-wf8" userLabel="Double Jeopardy! Questions Label">
                                                 <rect key="frame" x="8" y="112" width="554" height="44"/>
                                                 <fontDescription key="fontDescription" name="Korinna-Bold" family="ITC Korinna" pointSize="28"/>
                                                 <nil key="textColor"/>
@@ -758,15 +758,286 @@
             </objects>
             <point key="canvasLocation" x="2952.7736131934034" y="402.39999999999998"/>
         </scene>
+        <!--Traditional Start Page View Controller-->
+        <scene sceneID="tul-3A-ezR">
+            <objects>
+                <viewController storyboardIdentifier="TriviaGauntletStartPageViewController" title="Trivia Gauntlet Start Page View Controller" automaticallyAdjustsScrollViewInsets="NO" id="LqZ-fr-dBc" userLabel="Traditional Start Page View Controller" customClass="TriviaGauntletStartPageViewController" customModule="Jeopardy__The_Complete_Saga" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hL8-H7-yMQ">
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="700"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Traditional Background" translatesAutoresizingMaskIntoConstraints="NO" id="qfm-Fq-8Rd" userLabel="Background Image View">
+                                <rect key="frame" x="0.0" y="0.0" width="667" height="700"/>
+                            </imageView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hwz-Pc-NOK">
+                                <rect key="frame" x="0.0" y="0.0" width="667" height="32"/>
+                                <color key="barTintColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <fontDescription key="fontDescription" name="Korinna-Bold" family="ITC Korinna" pointSize="17"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="Choose Settings" id="HAV-Ss-NId">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Lgd-9R-yei">
+                                            <color key="tintColor" systemColor="systemIndigoColor"/>
+                                            <connections>
+                                                <action selector="cancelButtonPressed:" destination="LqZ-fr-dBc" id="vET-il-R1x"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Start" id="Lv4-Bs-09S">
+                                            <color key="tintColor" systemColor="systemIndigoColor"/>
+                                            <connections>
+                                                <action selector="startButtonPressed:" destination="LqZ-fr-dBc" id="0jX-qs-Umq"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Traditional" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="cfY-FF-Nak" userLabel="Title Label">
+                                <rect key="frame" x="20" y="40" width="627" height="126.5"/>
+                                <fontDescription key="fontDescription" name="GyparodyHv-Regular" family="Gyparody" pointSize="256"/>
+                                <color key="textColor" systemColor="systemIndigoColor"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <size key="shadowOffset" width="5" height="5"/>
+                            </label>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Tl-uf-0Sy">
+                                <rect key="frame" x="20" y="174.5" width="627" height="505.5"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ddf-VM-0V8" userLabel="Options View">
+                                        <rect key="frame" x="0.0" y="0.0" width="627" height="476"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of Categories: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rLp-ew-3pY" userLabel="Number of Categories Label">
+                                                <rect key="frame" x="8" y="8" width="309" height="44"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="44" id="3he-LO-Zmp"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Korinna-Bold" family="ITC Korinna" pointSize="28"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="3" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CQp-xe-dh8" userLabel="Number of Categories Text Field">
+                                                <rect key="frame" x="325" y="8" width="88" height="44"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="88" id="8qp-Kl-HlN"/>
+                                                </constraints>
+                                                <color key="textColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="Korinna-Bold" family="ITC Korinna" pointSize="28"/>
+                                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                                <connections>
+                                                    <action selector="numberOfQuestionsTextFieldEditingDidEnd:" destination="LqZ-fr-dBc" eventType="editingDidEnd" id="awC-Ul-tUq"/>
+                                                </connections>
+                                            </textField>
+                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="3" minValue="1" maxValue="6" translatesAutoresizingMaskIntoConstraints="NO" id="zVW-CR-3Dn" userLabel="Number of Categories Slider">
+                                                <rect key="frame" x="419" y="15" width="202" height="31"/>
+                                                <color key="tintColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="thumbTintColor" systemColor="systemIndigoColor"/>
+                                                <connections>
+                                                    <action selector="numberOfQuestionsSliderValueChanged:" destination="LqZ-fr-dBc" eventType="valueChanged" id="4oR-KJ-4T2"/>
+                                                </connections>
+                                            </slider>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jeopardy! Questions: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0ed-N0-ET3" userLabel="Jeopardy! Round Label">
+                                                <rect key="frame" x="8" y="60" width="554" height="44"/>
+                                                <fontDescription key="fontDescription" name="Korinna-Bold" family="ITC Korinna" pointSize="28"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fmx-kc-EYm" userLabel="Jeopardy! Round Switch">
+                                                <rect key="frame" x="570" y="66.5" width="51" height="31"/>
+                                                <color key="onTintColor" systemColor="systemIndigoColor"/>
+                                            </switch>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Double Jeopardy! Questions: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zfu-ld-E4y" userLabel="Double Jeopardy! Round Label">
+                                                <rect key="frame" x="8" y="112" width="554" height="44"/>
+                                                <fontDescription key="fontDescription" name="Korinna-Bold" family="ITC Korinna" pointSize="28"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BTW-dr-gYo" userLabel="Double Jeopardy! Round Switch">
+                                                <rect key="frame" x="570" y="118.5" width="51" height="31"/>
+                                                <color key="onTintColor" systemColor="systemIndigoColor"/>
+                                            </switch>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Final Jeopardy! Questions: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6pL-A5-usw" userLabel="Final Jeopardy! Round Label">
+                                                <rect key="frame" x="8" y="164" width="554" height="44"/>
+                                                <fontDescription key="fontDescription" name="Korinna-Bold" family="ITC Korinna" pointSize="28"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NlW-Lu-6EI" userLabel="Final Jeopardy! Round Switch">
+                                                <rect key="frame" x="570" y="170.5" width="51" height="31"/>
+                                                <color key="onTintColor" systemColor="systemIndigoColor"/>
+                                            </switch>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Difficulty 1 Questions: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jQj-bo-IIU" userLabel="Difficulty 1 Questions Label">
+                                                <rect key="frame" x="8" y="216" width="554" height="44"/>
+                                                <fontDescription key="fontDescription" name="Korinna-Bold" family="ITC Korinna" pointSize="28"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tnq-ag-KnU" userLabel="Difficulty 1 Questions Switch">
+                                                <rect key="frame" x="570" y="222.5" width="51" height="31"/>
+                                                <color key="onTintColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            </switch>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Difficulty 2 Questions: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GEu-ND-O03" userLabel="Difficulty 2 Questions Label">
+                                                <rect key="frame" x="8" y="268" width="554" height="44"/>
+                                                <fontDescription key="fontDescription" name="Korinna-Bold" family="ITC Korinna" pointSize="28"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="A6n-iF-idx" userLabel="Difficulty 2 Questions Switch">
+                                                <rect key="frame" x="570" y="274.5" width="51" height="31"/>
+                                                <color key="onTintColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            </switch>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Difficulty 3 Questions: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0S2-h6-tMQ" userLabel="Difficulty 3 Questions Label">
+                                                <rect key="frame" x="8" y="320" width="554" height="44"/>
+                                                <fontDescription key="fontDescription" name="Korinna-Bold" family="ITC Korinna" pointSize="28"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cf6-X9-mPi" userLabel="Difficulty 3 Questions Switch">
+                                                <rect key="frame" x="570" y="326.5" width="51" height="31"/>
+                                                <color key="onTintColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            </switch>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Difficulty 4 Questions: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cJy-hK-ODu" userLabel="Difficulty 4 Questions Label">
+                                                <rect key="frame" x="8" y="372" width="554" height="44"/>
+                                                <fontDescription key="fontDescription" name="Korinna-Bold" family="ITC Korinna" pointSize="28"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RAG-eV-Zvg" userLabel="Difficulty 4 Questions Switch">
+                                                <rect key="frame" x="570" y="378.5" width="51" height="31"/>
+                                                <color key="onTintColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            </switch>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Difficulty 5 Questions: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="baS-NL-1fg" userLabel="Difficulty 5 Questions Label">
+                                                <rect key="frame" x="8" y="424" width="554" height="44"/>
+                                                <fontDescription key="fontDescription" name="Korinna-Bold" family="ITC Korinna" pointSize="28"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="llp-9v-rkF" userLabel="Difficulty 5 Questions Switch">
+                                                <rect key="frame" x="570" y="430.5" width="51" height="31"/>
+                                                <color key="onTintColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            </switch>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="tnq-ag-KnU" firstAttribute="leading" secondItem="jQj-bo-IIU" secondAttribute="trailing" constant="8" id="04g-pm-aSp"/>
+                                            <constraint firstItem="Zfu-ld-E4y" firstAttribute="height" secondItem="rLp-ew-3pY" secondAttribute="height" id="5Ov-Iu-mhg"/>
+                                            <constraint firstItem="BTW-dr-gYo" firstAttribute="centerY" secondItem="Zfu-ld-E4y" secondAttribute="centerY" id="7BX-8w-SNT"/>
+                                            <constraint firstItem="Cf6-X9-mPi" firstAttribute="leading" secondItem="0S2-h6-tMQ" secondAttribute="trailing" constant="8" id="89y-vn-2qf"/>
+                                            <constraint firstItem="0ed-N0-ET3" firstAttribute="leading" secondItem="rLp-ew-3pY" secondAttribute="leading" id="8IT-xh-jVR"/>
+                                            <constraint firstItem="RAG-eV-Zvg" firstAttribute="trailing" secondItem="zVW-CR-3Dn" secondAttribute="trailing" id="9UR-UX-Jbd"/>
+                                            <constraint firstAttribute="trailing" secondItem="zVW-CR-3Dn" secondAttribute="trailing" constant="8" id="ATh-Bd-sRt"/>
+                                            <constraint firstItem="fmx-kc-EYm" firstAttribute="trailing" secondItem="zVW-CR-3Dn" secondAttribute="trailing" id="AV1-m7-wke"/>
+                                            <constraint firstItem="jQj-bo-IIU" firstAttribute="top" secondItem="6pL-A5-usw" secondAttribute="bottom" constant="8" id="E61-R0-MBW"/>
+                                            <constraint firstItem="0S2-h6-tMQ" firstAttribute="height" secondItem="rLp-ew-3pY" secondAttribute="height" id="HJ7-8p-59s"/>
+                                            <constraint firstItem="rLp-ew-3pY" firstAttribute="leading" secondItem="Ddf-VM-0V8" secondAttribute="leading" constant="8" id="J0a-JY-p4C"/>
+                                            <constraint firstItem="6pL-A5-usw" firstAttribute="top" secondItem="Zfu-ld-E4y" secondAttribute="bottom" constant="8" id="Jff-Do-vek"/>
+                                            <constraint firstItem="cJy-hK-ODu" firstAttribute="leading" secondItem="rLp-ew-3pY" secondAttribute="leading" id="KDM-at-eVq"/>
+                                            <constraint firstItem="A6n-iF-idx" firstAttribute="centerY" secondItem="GEu-ND-O03" secondAttribute="centerY" id="KXX-qg-Jdp"/>
+                                            <constraint firstItem="GEu-ND-O03" firstAttribute="top" secondItem="jQj-bo-IIU" secondAttribute="bottom" constant="8" id="Kmi-0T-XXj"/>
+                                            <constraint firstItem="0ed-N0-ET3" firstAttribute="top" secondItem="rLp-ew-3pY" secondAttribute="bottom" constant="8" id="LgZ-6c-sb1"/>
+                                            <constraint firstItem="RAG-eV-Zvg" firstAttribute="leading" secondItem="cJy-hK-ODu" secondAttribute="trailing" constant="8" id="NCy-xU-IRA"/>
+                                            <constraint firstItem="zVW-CR-3Dn" firstAttribute="leading" secondItem="CQp-xe-dh8" secondAttribute="trailing" constant="8" id="Oim-z3-ouv"/>
+                                            <constraint firstItem="fmx-kc-EYm" firstAttribute="leading" secondItem="0ed-N0-ET3" secondAttribute="trailing" constant="8" id="PBS-na-TZM"/>
+                                            <constraint firstItem="llp-9v-rkF" firstAttribute="leading" secondItem="baS-NL-1fg" secondAttribute="trailing" constant="8" id="ShM-An-SoM"/>
+                                            <constraint firstItem="BTW-dr-gYo" firstAttribute="leading" secondItem="Zfu-ld-E4y" secondAttribute="trailing" constant="8" id="TF4-d4-xEC"/>
+                                            <constraint firstItem="cJy-hK-ODu" firstAttribute="height" secondItem="rLp-ew-3pY" secondAttribute="height" id="TZV-i7-0S6"/>
+                                            <constraint firstItem="BTW-dr-gYo" firstAttribute="trailing" secondItem="zVW-CR-3Dn" secondAttribute="trailing" id="Tb2-hv-Itk"/>
+                                            <constraint firstItem="NlW-Lu-6EI" firstAttribute="centerY" secondItem="6pL-A5-usw" secondAttribute="centerY" id="ULg-3t-25Y"/>
+                                            <constraint firstItem="Cf6-X9-mPi" firstAttribute="trailing" secondItem="zVW-CR-3Dn" secondAttribute="trailing" id="W6A-5B-4u5"/>
+                                            <constraint firstItem="NlW-Lu-6EI" firstAttribute="trailing" secondItem="zVW-CR-3Dn" secondAttribute="trailing" id="W8T-1Y-wRH"/>
+                                            <constraint firstItem="jQj-bo-IIU" firstAttribute="height" secondItem="rLp-ew-3pY" secondAttribute="height" id="X1s-He-PdE"/>
+                                            <constraint firstItem="baS-NL-1fg" firstAttribute="leading" secondItem="rLp-ew-3pY" secondAttribute="leading" id="Z0j-GA-n9Q"/>
+                                            <constraint firstItem="0S2-h6-tMQ" firstAttribute="top" secondItem="GEu-ND-O03" secondAttribute="bottom" constant="8" id="ZBQ-VM-wgH"/>
+                                            <constraint firstItem="Cf6-X9-mPi" firstAttribute="centerY" secondItem="0S2-h6-tMQ" secondAttribute="centerY" id="Zgh-3T-acf"/>
+                                            <constraint firstItem="zVW-CR-3Dn" firstAttribute="centerY" secondItem="rLp-ew-3pY" secondAttribute="centerY" id="Zj9-EP-UvM"/>
+                                            <constraint firstItem="GEu-ND-O03" firstAttribute="leading" secondItem="rLp-ew-3pY" secondAttribute="leading" id="aGx-KS-RMz"/>
+                                            <constraint firstItem="baS-NL-1fg" firstAttribute="height" secondItem="rLp-ew-3pY" secondAttribute="height" id="dQQ-BK-c9g"/>
+                                            <constraint firstItem="NlW-Lu-6EI" firstAttribute="leading" secondItem="6pL-A5-usw" secondAttribute="trailing" constant="8" id="ekv-ds-wxz"/>
+                                            <constraint firstItem="A6n-iF-idx" firstAttribute="leading" secondItem="GEu-ND-O03" secondAttribute="trailing" constant="8" id="f9B-1D-lQQ"/>
+                                            <constraint firstItem="GEu-ND-O03" firstAttribute="height" secondItem="rLp-ew-3pY" secondAttribute="height" id="iW8-Jh-xCZ"/>
+                                            <constraint firstItem="rLp-ew-3pY" firstAttribute="top" secondItem="Ddf-VM-0V8" secondAttribute="top" constant="8" id="jew-Wy-hBp"/>
+                                            <constraint firstItem="baS-NL-1fg" firstAttribute="top" secondItem="cJy-hK-ODu" secondAttribute="bottom" constant="8" id="ka2-Mw-Lfl"/>
+                                            <constraint firstItem="llp-9v-rkF" firstAttribute="trailing" secondItem="zVW-CR-3Dn" secondAttribute="trailing" id="lSj-Y2-9Kw"/>
+                                            <constraint firstItem="6pL-A5-usw" firstAttribute="leading" secondItem="rLp-ew-3pY" secondAttribute="leading" id="m8s-D1-cwJ"/>
+                                            <constraint firstItem="tnq-ag-KnU" firstAttribute="centerY" secondItem="jQj-bo-IIU" secondAttribute="centerY" id="mes-Qe-lhR"/>
+                                            <constraint firstItem="jQj-bo-IIU" firstAttribute="leading" secondItem="rLp-ew-3pY" secondAttribute="leading" id="mju-VJ-T6A"/>
+                                            <constraint firstItem="0S2-h6-tMQ" firstAttribute="leading" secondItem="rLp-ew-3pY" secondAttribute="leading" id="n3F-Fa-KR5"/>
+                                            <constraint firstItem="Zfu-ld-E4y" firstAttribute="leading" secondItem="rLp-ew-3pY" secondAttribute="leading" id="nCz-kU-f0r"/>
+                                            <constraint firstItem="CQp-xe-dh8" firstAttribute="leading" secondItem="rLp-ew-3pY" secondAttribute="trailing" constant="8" id="ntQ-9w-ccS"/>
+                                            <constraint firstItem="cJy-hK-ODu" firstAttribute="top" secondItem="0S2-h6-tMQ" secondAttribute="bottom" constant="8" id="ofI-5D-Zsb"/>
+                                            <constraint firstItem="0ed-N0-ET3" firstAttribute="height" secondItem="rLp-ew-3pY" secondAttribute="height" id="pVK-zA-Ep3"/>
+                                            <constraint firstItem="RAG-eV-Zvg" firstAttribute="centerY" secondItem="cJy-hK-ODu" secondAttribute="centerY" id="piJ-9G-Cvb"/>
+                                            <constraint firstItem="CQp-xe-dh8" firstAttribute="top" secondItem="rLp-ew-3pY" secondAttribute="top" id="qP5-Wn-mDA"/>
+                                            <constraint firstItem="fmx-kc-EYm" firstAttribute="centerY" secondItem="0ed-N0-ET3" secondAttribute="centerY" id="qxb-cc-7eE"/>
+                                            <constraint firstItem="A6n-iF-idx" firstAttribute="trailing" secondItem="zVW-CR-3Dn" secondAttribute="trailing" id="t8N-V3-4Eu"/>
+                                            <constraint firstItem="llp-9v-rkF" firstAttribute="centerY" secondItem="baS-NL-1fg" secondAttribute="centerY" id="u6m-bK-3CU"/>
+                                            <constraint firstItem="Zfu-ld-E4y" firstAttribute="top" secondItem="0ed-N0-ET3" secondAttribute="bottom" constant="8" id="ubp-nA-jgy"/>
+                                            <constraint firstItem="CQp-xe-dh8" firstAttribute="height" secondItem="rLp-ew-3pY" secondAttribute="height" id="xbh-fu-i40"/>
+                                            <constraint firstAttribute="bottom" secondItem="baS-NL-1fg" secondAttribute="bottom" constant="8" id="xhZ-vy-NVD"/>
+                                            <constraint firstItem="zVW-CR-3Dn" firstAttribute="trailing" secondItem="tnq-ag-KnU" secondAttribute="trailing" id="xw9-Ey-sgR"/>
+                                            <constraint firstItem="6pL-A5-usw" firstAttribute="height" secondItem="rLp-ew-3pY" secondAttribute="height" id="yjf-W7-y00"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Ddf-VM-0V8" secondAttribute="trailing" id="2kK-Mr-q0j"/>
+                                    <constraint firstItem="Ddf-VM-0V8" firstAttribute="leading" secondItem="2Tl-uf-0Sy" secondAttribute="leading" id="FgT-Hr-RSe"/>
+                                    <constraint firstAttribute="bottom" secondItem="Ddf-VM-0V8" secondAttribute="bottom" id="GI3-jt-Dhu"/>
+                                    <constraint firstAttribute="trailing" secondItem="Ddf-VM-0V8" secondAttribute="trailing" id="H8m-23-s5k"/>
+                                    <constraint firstItem="Ddf-VM-0V8" firstAttribute="top" secondItem="2Tl-uf-0Sy" secondAttribute="top" id="Ucf-IJ-6sO"/>
+                                    <constraint firstItem="Ddf-VM-0V8" firstAttribute="leading" secondItem="2Tl-uf-0Sy" secondAttribute="leading" id="etX-V5-HfR"/>
+                                    <constraint firstItem="Ddf-VM-0V8" firstAttribute="top" secondItem="2Tl-uf-0Sy" secondAttribute="top" id="w4s-0l-d7I"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Unx-xl-Lgq"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="cfY-FF-Nak" firstAttribute="leading" secondItem="Unx-xl-Lgq" secondAttribute="leading" constant="20" id="9eI-cv-Sxd"/>
+                            <constraint firstItem="qfm-Fq-8Rd" firstAttribute="leading" secondItem="hL8-H7-yMQ" secondAttribute="leading" id="M4r-x0-8jG"/>
+                            <constraint firstItem="2Tl-uf-0Sy" firstAttribute="height" secondItem="cfY-FF-Nak" secondAttribute="height" multiplier="4" id="NiG-UR-NSk"/>
+                            <constraint firstAttribute="trailing" secondItem="qfm-Fq-8Rd" secondAttribute="trailing" id="Qet-ww-IjV"/>
+                            <constraint firstItem="2Tl-uf-0Sy" firstAttribute="leading" secondItem="hL8-H7-yMQ" secondAttribute="leading" constant="20" symbolic="YES" id="Uw4-7P-bLz"/>
+                            <constraint firstItem="Ddf-VM-0V8" firstAttribute="trailing" secondItem="cfY-FF-Nak" secondAttribute="trailing" id="YGo-Kq-Yh8"/>
+                            <constraint firstAttribute="bottom" secondItem="qfm-Fq-8Rd" secondAttribute="bottom" id="ccJ-Xo-mbd"/>
+                            <constraint firstItem="Hwz-Pc-NOK" firstAttribute="leading" secondItem="Unx-xl-Lgq" secondAttribute="leading" id="f9b-NQ-s3j"/>
+                            <constraint firstItem="Unx-xl-Lgq" firstAttribute="trailing" secondItem="cfY-FF-Nak" secondAttribute="trailing" constant="20" id="h3M-wa-ynC"/>
+                            <constraint firstItem="Hwz-Pc-NOK" firstAttribute="top" secondItem="Unx-xl-Lgq" secondAttribute="top" id="kfc-Bi-Cgk"/>
+                            <constraint firstItem="qfm-Fq-8Rd" firstAttribute="top" secondItem="hL8-H7-yMQ" secondAttribute="top" id="lsR-DG-5Ie"/>
+                            <constraint firstItem="2Tl-uf-0Sy" firstAttribute="top" secondItem="cfY-FF-Nak" secondAttribute="bottom" constant="8" id="oj5-Jl-Qxr"/>
+                            <constraint firstAttribute="bottom" secondItem="2Tl-uf-0Sy" secondAttribute="bottom" constant="20" id="qmT-be-c6I"/>
+                            <constraint firstItem="Ddf-VM-0V8" firstAttribute="leading" secondItem="cfY-FF-Nak" secondAttribute="leading" id="seH-8y-A4A"/>
+                            <constraint firstItem="Hwz-Pc-NOK" firstAttribute="trailing" secondItem="Unx-xl-Lgq" secondAttribute="trailing" id="sva-sa-Syo"/>
+                            <constraint firstItem="cfY-FF-Nak" firstAttribute="top" secondItem="Hwz-Pc-NOK" secondAttribute="bottom" constant="8" id="xbe-Qw-Qqz"/>
+                            <constraint firstAttribute="trailing" secondItem="2Tl-uf-0Sy" secondAttribute="trailing" constant="20" symbolic="YES" id="xoy-2z-fSZ"/>
+                        </constraints>
+                    </view>
+                    <size key="freeformSize" width="667" height="700"/>
+                    <connections>
+                        <outlet property="difficulty1QuestionsSwitch" destination="tnq-ag-KnU" id="Ga4-GY-FW5"/>
+                        <outlet property="difficulty2QuestionsSwitch" destination="A6n-iF-idx" id="XZ6-Ni-IUe"/>
+                        <outlet property="difficulty3QuestionsSwitch" destination="Cf6-X9-mPi" id="Oql-jV-fwW"/>
+                        <outlet property="difficulty4QuestionsSwitch" destination="RAG-eV-Zvg" id="tRa-YF-GXT"/>
+                        <outlet property="difficulty5QuestionsSwitch" destination="llp-9v-rkF" id="Q9u-eH-61i"/>
+                        <outlet property="doubleJeopardyQuestionsSwitch" destination="BTW-dr-gYo" id="qKn-OE-kRn"/>
+                        <outlet property="finalJeopardySwitch" destination="NlW-Lu-6EI" id="S3Z-Gn-Mgb"/>
+                        <outlet property="jeopardyQuestionsSwitch" destination="fmx-kc-EYm" id="S6i-bR-r7l"/>
+                        <outlet property="numberOfQuestionsSlider" destination="zVW-CR-3Dn" id="5zU-bc-80x"/>
+                        <outlet property="numberOfQuestionsTextField" destination="CQp-xe-dh8" id="kFi-TJ-TpH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oV8-3J-VL0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="848" y="770"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="MAq-2T-r7p"/>
-        <segue reference="Of2-su-kVA"/>
+        <segue reference="cBr-Ok-qhF"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Home Background" width="640" height="360"/>
         <image name="Question Background" width="426.5" height="240"/>
         <image name="Results Background" width="640" height="360"/>
+        <image name="Traditional Background" width="640" height="360"/>
         <image name="Trivia Gauntlet Background" width="854" height="399"/>
         <image name="gearshape.fill" catalog="system" width="128" height="121"/>
         <image name="info.circle.fill" catalog="system" width="128" height="121"/>
