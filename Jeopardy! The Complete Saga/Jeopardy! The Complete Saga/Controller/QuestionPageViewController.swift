@@ -70,6 +70,18 @@ class QuestionPageViewController: UIViewController, UITextFieldDelegate, SFSpeec
                 case .authorized:
                     self.microphoneButton.isEnabled = true
                     
+                case .denied:
+                    self.microphoneButton.isEnabled = false
+                    print("User denied access to speech recognition")
+                    
+                case .restricted:
+                    self.microphoneButton.isEnabled = false
+                    print("Speech recognition restricted on this device")
+                    
+                case .notDetermined:
+                    self.microphoneButton.isEnabled = false
+                    print("Speech recognition not yet authorized")
+                    
                 default:
                     self.microphoneButton.isEnabled = false
                 }
@@ -192,6 +204,7 @@ class QuestionPageViewController: UIViewController, UITextFieldDelegate, SFSpeec
                 self.recognitionTask = nil
 
                 self.microphoneButton.isEnabled = true
+                print("Start Recording")
             }
         }
 
@@ -203,9 +216,20 @@ class QuestionPageViewController: UIViewController, UITextFieldDelegate, SFSpeec
         
         audioEngine.prepare()
         try audioEngine.start()
+        
+        // Let the user know to start talking.
+        print("(Go ahead, I'm listening)")
     }
     
     public func speechRecognizer(_ speechRecognizer: SFSpeechRecognizer, availabilityDidChange available: Bool) {
+        if available {
+            self.microphoneButton.isEnabled = true
+            print("Start Recording")
+        } else {
+            self.microphoneButton.isEnabled = false
+            print("Recognition Not Available")
+        }
+        
         self.microphoneButton.isEnabled = available
     }
     
@@ -214,6 +238,7 @@ class QuestionPageViewController: UIViewController, UITextFieldDelegate, SFSpeec
             audioEngine.stop()
             recognitionRequest?.endAudio()
             self.microphoneButton.isEnabled = false
+            print("Stopping")
         } else {
             do {
                 try startRecording()
