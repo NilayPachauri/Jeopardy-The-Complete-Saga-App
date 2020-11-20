@@ -35,7 +35,12 @@ class QuestionPageViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        // Set Up Dismiss Keyboard
         self.answerTextField.delegate = self
+        self.setupToHideKeyboardOnTapOnView()
+        
+        // Set Up Content
         self.setAnswerTextFieldFont()
         self.setMicrophoneButtonSize()
         self.setupClue()
@@ -109,6 +114,7 @@ class QuestionPageViewController: UIViewController, UITextFieldDelegate {
         
         if textField == self.answerTextField {
             self.answerTextField.resignFirstResponder()
+            self.initiateSegueToAnswerPage(userAnswer: self.answerTextField.text ?? "")
         }
         
         return true
@@ -134,6 +140,9 @@ class QuestionPageViewController: UIViewController, UITextFieldDelegate {
     
     func initiateSegueToAnswerPage(userAnswer: String) {
         self.userAnswer = userAnswer
+        if let timer = self.timer {
+            timer.invalidate()
+        }
         performSegue(withIdentifier: "AnswerGivenSegue", sender: self)
     }
 

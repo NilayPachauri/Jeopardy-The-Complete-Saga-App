@@ -40,9 +40,9 @@ class AnswerPageViewController: UIViewController {
     
     // MARK: - Functions to Set Up View
     func setupLabelContents() {
-        self.scoreLabel.text = "Score: \(self.score)"
+        self.scoreLabel.text = String(format: "Score: %d", self.score)
         self.categoryLabel.text = self.category
-        self.timerLabel.text = "Timer: \(self.timer)"
+        self.timerLabel.text = String(format: "Timer: %3.1f", self.timer)
         self.userAnswerLabel.text = self.userAnswer
         self.correctAnswerLabel.text = self.correctAnswer
         self.responseLabel.text = self.response
