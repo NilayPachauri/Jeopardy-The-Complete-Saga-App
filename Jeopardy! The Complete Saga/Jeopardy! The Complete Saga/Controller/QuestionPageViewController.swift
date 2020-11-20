@@ -233,7 +233,7 @@ class QuestionPageViewController: UIViewController, UITextFieldDelegate, SFSpeec
         self.microphoneButton.isEnabled = available
     }
     
-    @IBAction func microphoneButtonPressed(_ sender: UIButton) throws {
+    @IBAction func microphoneButtonPressed(_ sender: UIButton) {
         if audioEngine.isRunning {
             audioEngine.stop()
             recognitionRequest?.endAudio()
