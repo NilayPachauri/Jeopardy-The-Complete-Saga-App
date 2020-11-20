@@ -92,6 +92,7 @@ class AnswerPageViewController: UIViewController {
             performSegue(withIdentifier: "TriviaGauntletNextQuestionSegue", sender: self)
         } else {
             print("Finished Trivia Gauntlet")
+            performSegue(withIdentifier: "TriviaGauntletResultsSegue", sender: self)
         }
     }
     
