@@ -33,13 +33,32 @@ class AnswerPageViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.setupLabels()
+        self.setupLabelContents()
+        self.setupLabelFormats()
         self.setupButton()
     }
     
     // MARK: - Functions to Set Up View
-    func setupLabels() {
+    func setupLabelContents() {
+        self.scoreLabel.text = "Score: \(self.score)"
+        self.categoryLabel.text = self.category
+        self.timerLabel.text = "Timer: \(self.timer)"
+        self.userAnswerLabel.text = self.userAnswer
+        self.correctAnswerLabel.text = self.correctAnswer
+        self.responseLabel.text = self.response
+    }
+    
+    func setupLabelFormats() {
+        // Get the Adjusted Size of Each Label
+        let userAnswerFontSize = ViewControllerUtility.getApproximateAdjustedFontSizeWithLabel(label: self.userAnswerStaticLabel)
+        let correctAnswerFontSize = ViewControllerUtility.getApproximateAdjustedFontSizeWithLabel(label: self.correctAnswerStaticLabel)
         
+        // Create a Custom Font
+        let font = UIFont(name: "ITC Korinna-Bold", size: min(userAnswerFontSize, correctAnswerFontSize))
+        
+        // Adjust the font of Static Labels to whoever is smaller
+        self.userAnswerStaticLabel.font = font
+        self.correctAnswerStaticLabel.font = font
     }
     
     func setupButton() {
