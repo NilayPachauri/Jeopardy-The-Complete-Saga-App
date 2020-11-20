@@ -684,7 +684,7 @@
         <!--Results Page View Controller-->
         <scene sceneID="PUV-0T-hXK">
             <objects>
-                <viewController title="Results Page View Controller" id="zza-4l-ZlN" sceneMemberID="viewController">
+                <viewController title="Results Page View Controller" id="zza-4l-ZlN" customClass="ResultsPageViewController" customModule="Jeopardy__The_Complete_Saga" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Slc-mn-J3f">
                         <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -735,6 +735,10 @@
                             <constraint firstAttribute="trailing" secondItem="U4z-3x-Aiv" secondAttribute="trailing" id="jfc-Yb-GZx"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="navigationBar" destination="U4z-3x-Aiv" id="54V-CD-ZOw"/>
+                        <outlet property="resultsLabel" destination="07Q-Es-WcK" id="X36-Ue-noI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TkL-ll-sRy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
