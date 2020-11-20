@@ -47,9 +47,6 @@
                                 <state key="normal">
                                     <imageReference key="image" image="info.circle.fill" catalog="system" symbolScale="default"/>
                                 </state>
-                                <connections>
-                                    <action selector="infoButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rpU-25-wPW"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Zs-w9-rKQ" userLabel="Settings Button">
                                 <rect key="frame" x="20" y="20" width="34" height="34"/>
@@ -60,9 +57,6 @@
                                 <state key="normal">
                                     <imageReference key="image" image="gearshape.fill" catalog="system" symbolScale="default"/>
                                 </state>
-                                <connections>
-                                    <action selector="settingsButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="At1-UC-KVn"/>
-                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jeopardy!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="piD-c0-KcP" userLabel="Title Label">
                                 <rect key="frame" x="62" y="20" width="543" height="116.5"/>
@@ -153,10 +147,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="667" height="700"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Trivia Gauntlet Background" translatesAutoresizingMaskIntoConstraints="NO" id="rLP-eC-5dp">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Trivia Gauntlet Background" translatesAutoresizingMaskIntoConstraints="NO" id="rLP-eC-5dp" userLabel="Background Image View">
                                 <rect key="frame" x="0.0" y="0.0" width="667" height="700"/>
                             </imageView>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1LB-kb-cUM" userLabel="Trivia Gauntlet Navigation Bar">
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1LB-kb-cUM">
                                 <rect key="frame" x="0.0" y="0.0" width="667" height="32"/>
                                 <color key="barTintColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <items>
@@ -176,7 +170,7 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trivia Gauntlet" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="Nln-6G-Kka" userLabel="Trivia Gauntlet Label">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trivia Gauntlet" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="Nln-6G-Kka" userLabel="Title Label">
                                 <rect key="frame" x="20" y="40" width="627" height="126.5"/>
                                 <fontDescription key="fontDescription" name="GyparodyHv-Regular" family="Gyparody" pointSize="256"/>
                                 <color key="textColor" systemColor="systemIndigoColor"/>
@@ -422,7 +416,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Question Background" translatesAutoresizingMaskIntoConstraints="NO" id="qbs-j6-Qvg" userLabel="Question Background Image View">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Question Background" translatesAutoresizingMaskIntoConstraints="NO" id="qbs-j6-Qvg" userLabel="Background Image View">
                                 <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: " lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="Czc-1w-7GX" userLabel="Score Label">
@@ -431,18 +425,18 @@
                                 <color key="textColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="answer" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="ySF-mb-HiD" userLabel="Answer Text Field">
+                                <rect key="frame" x="110.5" y="323" width="496.5" height="32"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="Swiss911BT-Compressed" family="Swiss 911" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                            </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Timer: " textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="zNN-ZW-1Ll" userLabel="Timer Label">
                                 <rect key="frame" x="525" y="20" width="122" height="32"/>
                                 <fontDescription key="fontDescription" name="Swiss911BT-Compressed" family="Swiss 911" pointSize="256"/>
                                 <color key="textColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="answer" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="ySF-mb-HiD" userLabel="Answer Text Field">
-                                <rect key="frame" x="110.5" y="323" width="496.5" height="32"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" name="Swiss911BT-Compressed" family="Swiss 911" pointSize="17"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rvk-G0-tzJ" userLabel="Microphone Answer Button">
                                 <rect key="frame" x="615" y="323" width="32" height="32"/>
                                 <constraints>
@@ -521,13 +515,172 @@
                         <outlet property="questionLabel" destination="GlT-r3-xZo" id="kw6-Cd-omr"/>
                         <outlet property="scoreLabel" destination="Czc-1w-7GX" id="4JO-sS-d7U"/>
                         <outlet property="timerLabel" destination="zNN-ZW-1Ll" id="7pp-oS-hsb"/>
+                        <segue destination="VvA-Lr-XWU" kind="presentation" identifier="AnswerGivenSegue" modalPresentationStyle="fullScreen" id="MAq-2T-r7p"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EYU-HA-AYV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1551" y="-754"/>
+            <point key="canvasLocation" x="2221" y="-494"/>
+        </scene>
+        <!--Answer Page View Controller-->
+        <scene sceneID="J0F-8t-Djm">
+            <objects>
+                <viewController title="Answer Page View Controller" modalTransitionStyle="flipHorizontal" id="VvA-Lr-XWU" customClass="AnswerPageViewController" customModule="Jeopardy__The_Complete_Saga" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nKV-dF-Zrb">
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Question Background" translatesAutoresizingMaskIntoConstraints="NO" id="I2T-ZJ-GA0" userLabel="Background Image View">
+                                <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: " lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="rGV-6v-apQ" userLabel="Score Label">
+                                <rect key="frame" x="20" y="20" width="122" height="32"/>
+                                <fontDescription key="fontDescription" name="Swiss911BT-Compressed" family="Swiss 911" pointSize="256"/>
+                                <color key="textColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CATEGORY" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="fZR-yc-k00" userLabel="Category Label">
+                                <rect key="frame" x="150" y="20" width="367" height="32"/>
+                                <fontDescription key="fontDescription" name="Swiss911BT-Compressed" family="Swiss 911" pointSize="256"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <size key="shadowOffset" width="3" height="3"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Timer: " textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="Q7S-Qo-BYc" userLabel="Timer Label">
+                                <rect key="frame" x="525" y="20" width="122" height="32"/>
+                                <fontDescription key="fontDescription" name="Swiss911BT-Compressed" family="Swiss 911" pointSize="256"/>
+                                <color key="textColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AoD-no-FWV" userLabel="Answer View">
+                                <rect key="frame" x="20" y="60" width="627" height="191.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You answered:" textAlignment="right" lineBreakMode="tailTruncation" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="9iU-yE-73b" userLabel="User Answer Static Label">
+                                        <rect key="frame" x="8" y="8" width="201" height="83.5"/>
+                                        <fontDescription key="fontDescription" name="Korinna-Bold" family="ITC Korinna" pointSize="256"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Correct answer:" textAlignment="right" lineBreakMode="tailTruncation" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="hcm-Wt-mce" userLabel="Correct Answer Static Label">
+                                        <rect key="frame" x="8" y="99.5" width="201" height="84"/>
+                                        <fontDescription key="fontDescription" name="Korinna-Bold" family="ITC Korinna" pointSize="256"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Answer" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="FZt-Sr-YHB" userLabel="User Answer Label">
+                                        <rect key="frame" x="217" y="8" width="402" height="83.5"/>
+                                        <fontDescription key="fontDescription" name="Swiss911BT-Compressed" family="Swiss 911" pointSize="256"/>
+                                        <color key="textColor" systemColor="systemYellowColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <color key="shadowColor" systemColor="systemOrangeColor"/>
+                                        <size key="shadowOffset" width="2" height="2"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Correct Answer" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="EfB-5C-6Q1" userLabel="Correct Answer Label">
+                                        <rect key="frame" x="217" y="99.5" width="402" height="84"/>
+                                        <fontDescription key="fontDescription" name="Swiss911BT-Compressed" family="Swiss 911" pointSize="256"/>
+                                        <color key="textColor" systemColor="systemTealColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <color key="shadowColor" systemColor="systemBlueColor"/>
+                                        <size key="shadowOffset" width="2" height="2"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="EfB-5C-6Q1" firstAttribute="leading" secondItem="hcm-Wt-mce" secondAttribute="trailing" constant="8" symbolic="YES" id="1GM-dz-CEB"/>
+                                    <constraint firstItem="FZt-Sr-YHB" firstAttribute="top" secondItem="9iU-yE-73b" secondAttribute="top" id="Ady-Gg-8Tb"/>
+                                    <constraint firstItem="EfB-5C-6Q1" firstAttribute="width" secondItem="hcm-Wt-mce" secondAttribute="width" multiplier="2" id="B1f-jX-cVu"/>
+                                    <constraint firstItem="FZt-Sr-YHB" firstAttribute="height" secondItem="9iU-yE-73b" secondAttribute="height" id="EtD-gs-7fy"/>
+                                    <constraint firstItem="EfB-5C-6Q1" firstAttribute="trailing" secondItem="FZt-Sr-YHB" secondAttribute="trailing" id="FvP-D5-s8e"/>
+                                    <constraint firstItem="EfB-5C-6Q1" firstAttribute="bottom" secondItem="hcm-Wt-mce" secondAttribute="bottom" id="Ib8-FX-Tow"/>
+                                    <constraint firstAttribute="bottom" secondItem="hcm-Wt-mce" secondAttribute="bottom" constant="8" id="Jgt-67-zeB"/>
+                                    <constraint firstItem="hcm-Wt-mce" firstAttribute="height" secondItem="9iU-yE-73b" secondAttribute="height" id="RNX-aV-BPG"/>
+                                    <constraint firstItem="hcm-Wt-mce" firstAttribute="top" secondItem="9iU-yE-73b" secondAttribute="bottom" constant="8" id="Rwt-O7-D0t"/>
+                                    <constraint firstItem="hcm-Wt-mce" firstAttribute="leading" secondItem="9iU-yE-73b" secondAttribute="leading" id="VHB-FT-BPA"/>
+                                    <constraint firstAttribute="trailing" secondItem="FZt-Sr-YHB" secondAttribute="trailing" constant="8" id="VlY-bD-Zc3"/>
+                                    <constraint firstItem="9iU-yE-73b" firstAttribute="leading" secondItem="AoD-no-FWV" secondAttribute="leading" constant="8" id="XSj-dQ-3Ev"/>
+                                    <constraint firstItem="9iU-yE-73b" firstAttribute="top" secondItem="AoD-no-FWV" secondAttribute="top" constant="8" id="lGZ-hz-wza"/>
+                                    <constraint firstItem="FZt-Sr-YHB" firstAttribute="leading" secondItem="9iU-yE-73b" secondAttribute="trailing" constant="8" id="n2J-UJ-BdN"/>
+                                    <constraint firstItem="EfB-5C-6Q1" firstAttribute="height" secondItem="hcm-Wt-mce" secondAttribute="height" id="nCg-Pm-FX5"/>
+                                    <constraint firstItem="FZt-Sr-YHB" firstAttribute="width" secondItem="9iU-yE-73b" secondAttribute="width" multiplier="2" id="sQo-Qu-ERn"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Response" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="iiG-kd-G0y" userLabel="Response Label">
+                                <rect key="frame" x="20" y="259.5" width="412.5" height="95.5"/>
+                                <fontDescription key="fontDescription" name="Swiss911BT-Compressed" family="Swiss 911" pointSize="128"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <size key="shadowOffset" width="6" height="6"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dmP-5e-h3f" userLabel="Next Question Button">
+                                <rect key="frame" x="440.5" y="259.5" width="206.5" height="95.5"/>
+                                <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                                <fontDescription key="fontDescription" name="Korinna-Bold" family="ITC Korinna" pointSize="256"/>
+                                <color key="tintColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <size key="titleShadowOffset" width="2" height="2"/>
+                                <state key="normal" title="Next Question">
+                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="nextQuestionPressed:" destination="VvA-Lr-XWU" eventType="touchUpInside" id="2tE-Vx-zp0"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="goK-F6-Mfw"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="AoD-no-FWV" firstAttribute="height" secondItem="rGV-6v-apQ" secondAttribute="height" multiplier="6" id="0w6-lG-ANH"/>
+                            <constraint firstItem="fZR-yc-k00" firstAttribute="top" secondItem="rGV-6v-apQ" secondAttribute="top" id="2Pu-4g-bpS"/>
+                            <constraint firstAttribute="trailing" secondItem="I2T-ZJ-GA0" secondAttribute="trailing" id="4UZ-ng-tbv"/>
+                            <constraint firstItem="I2T-ZJ-GA0" firstAttribute="leading" secondItem="nKV-dF-Zrb" secondAttribute="leading" id="5QJ-mL-QC3"/>
+                            <constraint firstItem="Q7S-Qo-BYc" firstAttribute="height" secondItem="rGV-6v-apQ" secondAttribute="height" id="99u-yi-T8n"/>
+                            <constraint firstItem="Q7S-Qo-BYc" firstAttribute="leading" secondItem="fZR-yc-k00" secondAttribute="trailing" constant="8" id="BtS-Cl-jLi"/>
+                            <constraint firstItem="AoD-no-FWV" firstAttribute="top" secondItem="rGV-6v-apQ" secondAttribute="bottom" constant="8" id="E8P-ve-CI3"/>
+                            <constraint firstItem="Q7S-Qo-BYc" firstAttribute="width" secondItem="rGV-6v-apQ" secondAttribute="width" id="GUo-0P-ppJ"/>
+                            <constraint firstItem="fZR-yc-k00" firstAttribute="leading" secondItem="rGV-6v-apQ" secondAttribute="trailing" constant="8" id="HQL-ID-bR5"/>
+                            <constraint firstItem="dmP-5e-h3f" firstAttribute="bottom" secondItem="iiG-kd-G0y" secondAttribute="bottom" id="Hfh-fF-54h"/>
+                            <constraint firstItem="dmP-5e-h3f" firstAttribute="width" secondItem="iiG-kd-G0y" secondAttribute="width" multiplier="1/2" id="Iau-JZ-TJf"/>
+                            <constraint firstAttribute="trailing" secondItem="Q7S-Qo-BYc" secondAttribute="trailing" constant="20" id="M97-RW-hZo"/>
+                            <constraint firstItem="Q7S-Qo-BYc" firstAttribute="top" secondItem="rGV-6v-apQ" secondAttribute="top" id="OAE-rz-2Xd"/>
+                            <constraint firstItem="Q7S-Qo-BYc" firstAttribute="trailing" secondItem="AoD-no-FWV" secondAttribute="trailing" id="Qoy-Ij-aND"/>
+                            <constraint firstItem="iiG-kd-G0y" firstAttribute="leading" secondItem="rGV-6v-apQ" secondAttribute="leading" id="R2Z-Ho-uD8"/>
+                            <constraint firstItem="goK-F6-Mfw" firstAttribute="bottom" secondItem="dmP-5e-h3f" secondAttribute="bottom" constant="20" id="Rra-IT-N5W"/>
+                            <constraint firstItem="goK-F6-Mfw" firstAttribute="bottom" secondItem="iiG-kd-G0y" secondAttribute="bottom" constant="20" id="Vbn-XP-UhY"/>
+                            <constraint firstItem="fZR-yc-k00" firstAttribute="width" secondItem="rGV-6v-apQ" secondAttribute="width" multiplier="3" id="WGs-0v-RBn"/>
+                            <constraint firstAttribute="bottom" secondItem="I2T-ZJ-GA0" secondAttribute="bottom" id="XkV-6J-RPu"/>
+                            <constraint firstItem="dmP-5e-h3f" firstAttribute="trailing" secondItem="Q7S-Qo-BYc" secondAttribute="trailing" id="XmF-kX-V4p"/>
+                            <constraint firstItem="iiG-kd-G0y" firstAttribute="height" secondItem="rGV-6v-apQ" secondAttribute="height" multiplier="3" id="cJ2-u1-TnI"/>
+                            <constraint firstItem="fZR-yc-k00" firstAttribute="height" secondItem="rGV-6v-apQ" secondAttribute="height" id="cga-vH-tj3"/>
+                            <constraint firstItem="rGV-6v-apQ" firstAttribute="leading" secondItem="goK-F6-Mfw" secondAttribute="leading" constant="20" id="iV6-UX-PDb"/>
+                            <constraint firstItem="iiG-kd-G0y" firstAttribute="top" secondItem="AoD-no-FWV" secondAttribute="bottom" constant="8" symbolic="YES" id="lbQ-AF-941"/>
+                            <constraint firstItem="rGV-6v-apQ" firstAttribute="top" secondItem="goK-F6-Mfw" secondAttribute="top" constant="20" id="o2z-vf-wNZ"/>
+                            <constraint firstItem="dmP-5e-h3f" firstAttribute="top" secondItem="iiG-kd-G0y" secondAttribute="top" id="rmf-ee-PF3"/>
+                            <constraint firstItem="I2T-ZJ-GA0" firstAttribute="top" secondItem="nKV-dF-Zrb" secondAttribute="top" id="xu1-67-ong"/>
+                            <constraint firstItem="AoD-no-FWV" firstAttribute="leading" secondItem="rGV-6v-apQ" secondAttribute="leading" id="yPd-Rm-Uvl"/>
+                            <constraint firstItem="dmP-5e-h3f" firstAttribute="leading" secondItem="iiG-kd-G0y" secondAttribute="trailing" constant="8" id="ysU-SP-4a5"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="categoryLabel" destination="fZR-yc-k00" id="8vC-4j-q4n"/>
+                        <outlet property="correctAnswerLabel" destination="EfB-5C-6Q1" id="iaE-nr-dwC"/>
+                        <outlet property="correctAnswerStaticLabel" destination="hcm-Wt-mce" id="1Ya-EX-4Jp"/>
+                        <outlet property="nextQuestionButton" destination="dmP-5e-h3f" id="6p5-wj-nws"/>
+                        <outlet property="responseLabel" destination="iiG-kd-G0y" id="gsB-0u-Egd"/>
+                        <outlet property="scoreLabel" destination="rGV-6v-apQ" id="wmn-Ip-Egw"/>
+                        <outlet property="timerLabel" destination="Q7S-Qo-BYc" id="GWO-AB-Kej"/>
+                        <outlet property="userAnswerLabel" destination="FZt-Sr-YHB" id="hiW-Qo-0Fm"/>
+                        <outlet property="userAnswerStaticLabel" destination="9iU-yE-73b" id="XH6-VG-KR5"/>
+                        <segue destination="KTM-CL-7JX" kind="presentation" identifier="TriviaGauntletNextQuestionSegue" modalPresentationStyle="fullScreen" id="Of2-su-kVA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3py-FQ-sze" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2953.6731634182911" y="-495.19999999999999"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Of2-su-kVA"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="Home Background" width="640" height="360"/>
         <image name="Question Background" width="426.5" height="240"/>
@@ -538,11 +691,20 @@
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemIndigoColor">
             <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemOrangeColor">
             <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
