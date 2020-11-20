@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Speech
 
 class QuestionPageViewController: UIViewController, UITextFieldDelegate {
 
@@ -115,6 +116,11 @@ class QuestionPageViewController: UIViewController, UITextFieldDelegate {
             }
         }
     }
+    
+    // MARK: - Functions to Handle User Speech
+    @IBAction func microphoneButtonPressed(_ sender: UIButton) {
+    }
+    
     
     // MARK: - Keyboard Functions
     
