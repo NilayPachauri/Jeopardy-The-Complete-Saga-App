@@ -62,6 +62,9 @@ class AnswerPageViewController: UIViewController {
     }
     
     func setupButton() {
+        // Set the Text of the button
+        self.nextQuestionButton.setTitle((TriviaGauntletGame.shared.hasNextClue()) ? "Next Question" : "Finish Game", for: .normal)
+        
         // Inset the Button
         let contentEdgeInsets: UIEdgeInsets = UIEdgeInsets(top: 4, left: 4, bottom: 4, right: 4)
         self.nextQuestionButton.contentEdgeInsets = contentEdgeInsets
