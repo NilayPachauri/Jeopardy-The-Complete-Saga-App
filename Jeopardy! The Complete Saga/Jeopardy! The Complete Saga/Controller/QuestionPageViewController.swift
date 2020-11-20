@@ -38,8 +38,7 @@ class QuestionPageViewController: UIViewController, UITextFieldDelegate {
         self.answerTextField.delegate = self
         self.setAnswerTextFieldFont()
         self.setMicrophoneButtonSize()
-        self.setupTimer()
-        self.updateLabelsToCurrentClue()
+        self.setupClue()
         
         // Print the Clue List
         print(self.clueList)
@@ -68,7 +67,7 @@ class QuestionPageViewController: UIViewController, UITextFieldDelegate {
     }
     
     // MARK: - Functions to Set Up New Question
-    func setupNextQuestion() {
+    func setupClue() {
         self.setupTimer()
         self.updateLabelsToCurrentClue()
     }
