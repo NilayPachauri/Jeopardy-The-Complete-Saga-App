@@ -86,12 +86,12 @@
                                     <segue destination="GRH-LZ-8ft" kind="presentation" modalPresentationStyle="fullScreen" id="oOr-q0-eXK"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pqd-Pq-KO8" userLabel="Custom Game Button">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pqd-Pq-KO8" userLabel="Traditional Button">
                                 <rect key="frame" x="243" y="296.5" width="181" height="58.5"/>
                                 <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                 <fontDescription key="fontDescription" name="Korinna-Bold" family="ITC Korinna" pointSize="128"/>
                                 <size key="titleShadowOffset" width="1" height="1"/>
-                                <state key="normal" title="Custom Game">
+                                <state key="normal" title="Traditional">
                                     <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                             </button>
@@ -129,9 +129,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="dTa-5U-Siw"/>
                     <connections>
-                        <outlet property="customGameButton" destination="Pqd-Pq-KO8" id="qGB-BH-2a4"/>
                         <outlet property="infoButton" destination="TWQ-sK-HwN" id="lun-B1-uMx"/>
                         <outlet property="settingsButton" destination="4Zs-w9-rKQ" id="NF7-n8-GEl"/>
+                        <outlet property="traditionalButton" destination="Pqd-Pq-KO8" id="qGB-BH-2a4"/>
                         <outlet property="triviaGauntletButton" destination="aK4-yW-v4d" id="TcO-d2-ONz"/>
                     </connections>
                 </viewController>

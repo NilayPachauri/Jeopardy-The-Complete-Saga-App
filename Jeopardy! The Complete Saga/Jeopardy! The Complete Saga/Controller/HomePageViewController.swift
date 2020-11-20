@@ -12,7 +12,7 @@ class HomePageViewController: UIViewController {
     @IBOutlet weak var settingsButton: UIButton!
     @IBOutlet weak var infoButton: UIButton!
     @IBOutlet weak var triviaGauntletButton: UIButton!
-    @IBOutlet weak var customGameButton: UIButton!
+    @IBOutlet weak var traditionalButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,18 +28,18 @@ class HomePageViewController: UIViewController {
         // Inset the Buttons
         let titleEdgeInsets: UIEdgeInsets = UIEdgeInsets(top: 4, left: 4, bottom: 4, right: 4)
         self.triviaGauntletButton.titleEdgeInsets = titleEdgeInsets
-        self.customGameButton.titleEdgeInsets = titleEdgeInsets
+        self.traditionalButton.titleEdgeInsets = titleEdgeInsets
         
         // Get the Current Font Size for the Trivia Gauntlet Label
         let triviaGauntletFontSize = ViewControllerUtility.getApproximateMaximumFontSizeThatFitsButton(button: self.triviaGauntletButton, border: true)
-        let customGameFontSize = ViewControllerUtility.getApproximateMaximumFontSizeThatFitsButton(button: self.customGameButton, border: true)
+        let traditionalFontSize = ViewControllerUtility.getApproximateMaximumFontSizeThatFitsButton(button: self.traditionalButton, border: true)
        
         // Update the Font Size for the Buttons
         self.triviaGauntletButton.titleLabel?.font = self.triviaGauntletButton.titleLabel?.font.withSize(triviaGauntletFontSize)
-        self.customGameButton.titleLabel?.font = self.customGameButton.titleLabel?.font.withSize(customGameFontSize)
+        self.traditionalButton.titleLabel?.font = self.traditionalButton.titleLabel?.font.withSize(traditionalFontSize)
         
         // Let the Max be the FontSize for the Other Buttons
-        let fontSize = max(triviaGauntletFontSize, customGameFontSize)
+        let fontSize = max(triviaGauntletFontSize, traditionalFontSize)
         
         // Create the Symbol Configuration
         let symbolConfiguration = UIImage.SymbolConfiguration(pointSize: fontSize)
@@ -60,10 +60,10 @@ class HomePageViewController: UIViewController {
         self.triviaGauntletButton.layer.borderColor = borderColor
         self.triviaGauntletButton.layer.cornerRadius = cornerRadius
         
-        //  Add Border around Custom Game Button
-        self.customGameButton.layer.borderWidth = borderWidth
-        self.customGameButton.layer.borderColor = borderColor
-        self.customGameButton.layer.cornerRadius = cornerRadius
+        //  Add Border around Traditional Button
+        self.traditionalButton.layer.borderWidth = borderWidth
+        self.traditionalButton.layer.borderColor = borderColor
+        self.traditionalButton.layer.cornerRadius = cornerRadius
     }
     
     // MARK: - Storyboard Navigation
