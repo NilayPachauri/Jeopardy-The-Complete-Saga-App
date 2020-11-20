@@ -7,7 +7,7 @@
 
 import UIKit
 
-class QuestionPageViewController: UIViewController {
+class QuestionPageViewController: UIViewController, UITextFieldDelegate {
 
     // MARK: - IBOutlet Class Attributes
     @IBOutlet weak var scoreLabel: UILabel!
@@ -23,22 +23,23 @@ class QuestionPageViewController: UIViewController {
     public var clueList: [Clue] = []
     
     // MARK: - Private Class Attributes
-    let timerInterval: TimeInterval = 0.1
-    var timerLeft: Double = 0
-    var timer: Timer? = nil
-    var score: Int = 0
+    private let timerInterval: TimeInterval = 0.1
+    private var timerLeft: Double = 0
+    private var timer: Timer? = nil
+    private var score: Int = 0
+    private var userAnswer: String = ""
+    private var currentClueIndex: Int = 0
     
     // MARK: - View Did Load
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.answerTextField.delegate = self
         self.setAnswerTextFieldFont()
         self.setMicrophoneButtonSize()
-        
-        // Initialize Values
-        self.timerLeft = 10.0
-        self.timer = Timer.scheduledTimer(timeInterval: self.timerInterval, target: self, selector: #selector(self.timerAction), userInfo: nil, repeats: true)
+        self.setupTimer()
+        self.updateLabelsToCurrentClue()
         
         // Print the Clue List
         print(self.clueList)
@@ -66,6 +67,27 @@ class QuestionPageViewController: UIViewController {
         self.microphoneButton.setPreferredSymbolConfiguration(symbolConfiguration, forImageIn: .normal)
     }
     
+    // MARK: - Functions to Set Up New Question
+    func setupNextQuestion() {
+        self.setupTimer()
+        self.updateLabelsToCurrentClue()
+    }
+    
+    func setupTimer() {
+        // Initialize Timer to 10 seconds
+        self.timerLeft = 10.0
+        self.timer = Timer.scheduledTimer(timeInterval: self.timerInterval, target: self, selector: #selector(self.timerAction), userInfo: nil, repeats: true)
+    }
+    
+    func updateLabelsToCurrentClue() {
+        // Get the Current Clue
+        let clue = self.clueList[self.currentClueIndex]
+        
+        // Set the Clue information
+        self.categoryLabel.text = clue.getCategory()
+        self.questionLabel.text = clue.getQuestion()
+    }
+    
     // MARK: Functions to Set Up Timer
     @objc
     func timerAction() {
@@ -81,15 +103,70 @@ class QuestionPageViewController: UIViewController {
         }
     }
     
+    // MARK: - Functions to Dismiss Keyboard
+    
+    // Done on Number of Questions Text Field should dismiss Keyboard
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        if textField == self.answerTextField {
+            self.answerTextField.resignFirstResponder()
+        }
+        
+        return true
+    }
+    
+    // Tap outside should dismiss keyboard
+    func setupToHideKeyboardOnTapOnView()
+        {
+            let tap: UITapGestureRecognizer = UITapGestureRecognizer(
+                target: self,
+                action: #selector(self.dismissKeyboard))
 
-    /*
+            tap.cancelsTouchesInView = false
+            view.addGestureRecognizer(tap)
+        }
+
+    @objc func dismissKeyboard()
+    {
+        view.endEditing(true)
+    }
+    
     // MARK: - Navigation
+    
+    func initiateSegueToAnswerPage(userAnswer: String) {
+        self.userAnswer = userAnswer
+        performSegue(withIdentifier: "AnswerGivenSegue", sender: self)
+    }
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        if segue.identifier == "AnswerGivenSegue" {
+            if let answerVC = segue.destination as? AnswerPageViewController {
+                
+                // Get the Current Clue
+                let clue = self.clueList[self.currentClueIndex]
+                
+                // Set Information
+                answerVC.category = clue.getCategory() ?? ""
+                answerVC.timer = self.timerLeft
+                answerVC.userAnswer = self.userAnswer
+                answerVC.correctAnswer = clue.getAnswer() ?? ""
+                
+                // Determine if user is correct
+                if answerVC.userAnswer == answerVC.correctAnswer {
+                    answerVC.response = "That is correct!"
+                    self.score += 1
+                } else {
+                    answerVC.response = "Not Quite!"
+                }
+                
+                // Set Score
+                answerVC.score = self.score
+            }
+        }
     }
-    */
+    
 
 }

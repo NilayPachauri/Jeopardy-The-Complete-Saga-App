@@ -23,7 +23,7 @@ class AnswerPageViewController: UIViewController {
     // MARK: - Public Class Attributes
     public var score: Int = 0
     public var category: String = ""
-    public var timer: Float = 0.0
+    public var timer: Double = 0.0
     public var userAnswer: String = ""
     public var correctAnswer: String = ""
     public var response: String = ""
