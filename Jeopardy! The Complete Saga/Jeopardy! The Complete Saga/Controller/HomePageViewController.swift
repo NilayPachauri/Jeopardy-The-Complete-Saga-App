@@ -33,13 +33,11 @@ class HomePageViewController: UIViewController {
         // Get the Current Font Size for the Trivia Gauntlet Label
         let triviaGauntletFontSize = ViewControllerUtility.getApproximateMaximumFontSizeThatFitsButton(button: self.triviaGauntletButton, border: true)
         let traditionalFontSize = ViewControllerUtility.getApproximateMaximumFontSizeThatFitsButton(button: self.traditionalButton, border: true)
+        let fontSize = min(triviaGauntletFontSize, traditionalFontSize)
        
         // Update the Font Size for the Buttons
-        self.triviaGauntletButton.titleLabel?.font = self.triviaGauntletButton.titleLabel?.font.withSize(triviaGauntletFontSize)
-        self.traditionalButton.titleLabel?.font = self.traditionalButton.titleLabel?.font.withSize(traditionalFontSize)
-        
-        // Let the Max be the FontSize for the Other Buttons
-        let fontSize = max(triviaGauntletFontSize, traditionalFontSize)
+        self.triviaGauntletButton.titleLabel?.font = self.triviaGauntletButton.titleLabel?.font.withSize(fontSize)
+        self.traditionalButton.titleLabel?.font = self.traditionalButton.titleLabel?.font.withSize(fontSize)
         
         // Create the Symbol Configuration
         let symbolConfiguration = UIImage.SymbolConfiguration(pointSize: fontSize)
