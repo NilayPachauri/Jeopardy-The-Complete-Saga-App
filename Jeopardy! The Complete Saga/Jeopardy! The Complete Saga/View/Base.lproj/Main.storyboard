@@ -670,6 +670,7 @@
                         <outlet property="timerLabel" destination="Q7S-Qo-BYc" id="GWO-AB-Kej"/>
                         <outlet property="userAnswerLabel" destination="FZt-Sr-YHB" id="hiW-Qo-0Fm"/>
                         <outlet property="userAnswerStaticLabel" destination="9iU-yE-73b" id="XH6-VG-KR5"/>
+                        <segue destination="KTM-CL-7JX" kind="presentation" identifier="TriviaGauntletNextQuestionSegue" modalPresentationStyle="fullScreen" id="Of2-su-kVA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3py-FQ-sze" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -677,6 +678,9 @@
             <point key="canvasLocation" x="2953.6731634182911" y="-495.19999999999999"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Of2-su-kVA"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="Home Background" width="640" height="360"/>
         <image name="Question Background" width="426.5" height="240"/>

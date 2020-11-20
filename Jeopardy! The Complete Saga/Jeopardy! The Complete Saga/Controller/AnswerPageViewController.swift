@@ -21,11 +21,8 @@ class AnswerPageViewController: UIViewController {
     @IBOutlet weak var nextQuestionButton: UIButton!
     
     // MARK: - Public Class Attributes
-    public var score: Int = 0
-    public var category: String = ""
     public var timer: Double = 0.0
     public var userAnswer: String = ""
-    public var correctAnswer: String = ""
     public var response: Bool = false
     
     // MARK: - View Did Load
@@ -40,13 +37,15 @@ class AnswerPageViewController: UIViewController {
     
     // MARK: - Functions to Set Up View
     func setupLabelContents() {
-        self.scoreLabel.text = String(format: "Score: %d", self.score)
-        self.categoryLabel.text = self.category
-        self.timerLabel.text = String(format: "Timer: %3.1f", self.timer)
-        self.userAnswerLabel.text = self.userAnswer
-        self.correctAnswerLabel.text = self.correctAnswer
-        self.responseLabel.text = (self.response) ? "That is correct!" : "Not quite!"
-        self.responseLabel.textColor = (self.response) ? UIColor.systemGreen : UIColor.systemRed
+        if let clue = TriviaGauntletGame.shared.getCurrentClue() {
+            self.scoreLabel.text = String(format: "Score: %d", TriviaGauntletGame.shared.getScore())
+            self.categoryLabel.text = clue.category
+            self.timerLabel.text = String(format: "Timer: %3.1f", self.timer)
+            self.userAnswerLabel.text = self.userAnswer
+            self.correctAnswerLabel.text = clue.answer
+            self.responseLabel.text = (self.response) ? "That is correct!" : "Not quite!"
+            self.responseLabel.textColor = (self.response) ? UIColor.systemGreen : UIColor.systemRed
+        }
     }
     
     func setupLabelFormats() {
@@ -87,7 +86,13 @@ class AnswerPageViewController: UIViewController {
     
     // MARK: - Storyboard Navigation
     @IBAction func nextQuestionPressed(_ sender: UIButton) {
-        dismiss(animated: true, completion: nil)
+        
+        if TriviaGauntletGame.shared.hasNextClue() {
+            TriviaGauntletGame.shared.nextClue()
+            performSegue(withIdentifier: "TriviaGauntletNextQuestionSegue", sender: self)
+        } else {
+            print("Finished Trivia Gauntlet")
+        }
     }
     
     /*

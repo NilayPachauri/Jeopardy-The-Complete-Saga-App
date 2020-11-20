@@ -32,6 +32,14 @@ class TriviaGauntletGame: NSObject {
         self.currentIndex = (clueList.count > 0) ? 0 : nil
     }
     
+    func hasNextClue() -> Bool {
+        if let index = self.currentIndex {
+            return index + 1 < self.clueList.count
+        } else {
+            return false
+        }
+    }
+    
     func nextClue() -> Void {
         self.currentIndex = (self.currentIndex != nil) ? self.currentIndex! + 1 : nil
     }

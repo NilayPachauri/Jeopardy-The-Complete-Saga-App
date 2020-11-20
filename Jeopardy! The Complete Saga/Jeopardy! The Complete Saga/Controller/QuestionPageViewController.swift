@@ -20,15 +20,12 @@ class QuestionPageViewController: UIViewController, UITextFieldDelegate {
     
     // MARK: - Public Class Attributes
     public var gameMode: GameMode = .TRIVIA_GAUNTLET
-    public var clueList: [Clue] = []
     
     // MARK: - Private Class Attributes
     private let timerInterval: TimeInterval = 0.1
     private var timerLeft: Double = 0
     private var timer: Timer? = nil
-    private var score: Int = 0
     private var userAnswer: String = ""
-    private var currentClueIndex: Int = -1
     
     // MARK: - ViewController Lifecycle Functions
     override func viewDidLoad() {
@@ -44,17 +41,6 @@ class QuestionPageViewController: UIViewController, UITextFieldDelegate {
         // Set Up Content
         self.setAnswerTextFieldFont()
         self.setMicrophoneButtonSize()
-        
-        // Print the Clue List
-        print(self.clueList)
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        // Go to Next Clue
-        if self.currentClueIndex + 1 < self.clueList.count {
-            self.currentClueIndex += 1
-            setupClue()
-        }
     }
     
     // MARK: Functions to Set Up View
@@ -94,16 +80,17 @@ class QuestionPageViewController: UIViewController, UITextFieldDelegate {
     
     func setupScore() {
         // Set Score Label
-        self.scoreLabel.text = String(format: "Score: %d", self.score)
+        self.scoreLabel.text = String(format: "Score: %d", TriviaGauntletGame.shared.getScore())
     }
     
     func updateLabelsToCurrentClue() {
         // Get the Current Clue
-        let clue = self.clueList[self.currentClueIndex]
-        
-        // Set the Clue information
-        self.categoryLabel.text = clue.getCategory()
-        self.questionLabel.text = clue.getQuestion()
+        if let clue = TriviaGauntletGame.shared.getCurrentClue(){
+            
+            // Set the Clue information
+            self.categoryLabel.text = clue.getCategory()
+            self.questionLabel.text = clue.getQuestion()
+        }
     }
     
     // MARK: Functions to Set Up Timer
@@ -186,20 +173,18 @@ class QuestionPageViewController: UIViewController, UITextFieldDelegate {
             if let answerVC = segue.destination as? AnswerPageViewController {
                 
                 // Get the Current Clue
-                let clue = self.clueList[self.currentClueIndex]
+                if let clue = TriviaGauntletGame.shared.getCurrentClue() {
                 
-                // Set Information
-                answerVC.category = clue.getCategory() ?? ""
-                answerVC.timer = self.timerLeft
-                answerVC.userAnswer = self.userAnswer
-                answerVC.correctAnswer = clue.getAnswer() ?? ""
-                
-                // Determine if the User is Correct
-                answerVC.response = answerVC.userAnswer == answerVC.correctAnswer
-                if answerVC.response {
-                    self.score += 1
+                    // Set Information
+                    answerVC.timer = self.timerLeft
+                    answerVC.userAnswer = self.userAnswer
+                    
+                    // Determine if the User is Correct
+                    answerVC.response = answerVC.userAnswer == clue.getAnswer()
+                    if answerVC.response {
+                        TriviaGauntletGame.shared.incrementScore()
+                    }
                 }
-                answerVC.score = self.score
             }
         }
     }
