@@ -619,6 +619,9 @@
                                 <fontDescription key="fontDescription" name="Korinna-Bold" family="ITC Korinna" pointSize="24"/>
                                 <color key="tintColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Next Question" image="arrowshape.turn.up.left.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="nextQuestionPressed:" destination="VvA-Lr-XWU" eventType="touchUpInside" id="2tE-Vx-zp0"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="goK-F6-Mfw"/>

@@ -62,10 +62,33 @@ class AnswerPageViewController: UIViewController {
     }
     
     func setupButton() {
+        // Inset the Button
+        let contentEdgeInsets: UIEdgeInsets = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
+        self.nextQuestionButton.contentEdgeInsets = contentEdgeInsets
         
+        // Get the Current Font Size for the Next Question Label
+        let nextQuestionFontSize = ViewControllerUtility.getApproximateMaximumFontSizeThatFitsButton(button: self.nextQuestionButton, border: true)
+       
+        // Update the Font Size for the Button Label
+        self.nextQuestionButton.titleLabel?.font = self.nextQuestionButton.titleLabel?.font.withSize(nextQuestionFontSize)
+        
+        // Create the Symbol Configuration
+        let symbolConfiguration = UIImage.SymbolConfiguration(pointSize: nextQuestionFontSize)
+        
+        // Resize the Button Image
+        self.nextQuestionButton.setPreferredSymbolConfiguration(symbolConfiguration, forImageIn: .normal)
+        
+        //  Add Border around Next Question Button
+        self.nextQuestionButton.layer.borderWidth = 3
+        self.nextQuestionButton.layer.borderColor = UIColor(displayP3Red: 255, green: 204, blue: 0, alpha: 1).cgColor
+        self.nextQuestionButton.layer.cornerRadius = 25
     }
     
-
+    // MARK: - Storyboard Navigation
+    @IBAction func nextQuestionPressed(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+    }
+    
     /*
     // MARK: - Navigation
 
