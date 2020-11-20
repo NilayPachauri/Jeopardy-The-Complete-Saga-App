@@ -28,9 +28,9 @@ class QuestionPageViewController: UIViewController, UITextFieldDelegate {
     private var timer: Timer? = nil
     private var score: Int = 0
     private var userAnswer: String = ""
-    private var currentClueIndex: Int = 0
+    private var currentClueIndex: Int = -1
     
-    // MARK: - View Did Load
+    // MARK: - ViewController Lifecycle Functions
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -39,14 +39,22 @@ class QuestionPageViewController: UIViewController, UITextFieldDelegate {
         // Set Up Dismiss Keyboard
         self.answerTextField.delegate = self
         self.setupToHideKeyboardOnTapOnView()
+        self.setupMoveUpScreenIfKeyboardPresent()
         
         // Set Up Content
         self.setAnswerTextFieldFont()
         self.setMicrophoneButtonSize()
-        self.setupClue()
         
         // Print the Clue List
         print(self.clueList)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        // Go to Next Clue
+        if self.currentClueIndex + 1 < self.clueList.count {
+            self.currentClueIndex += 1
+            setupClue()
+        }
     }
     
     // MARK: Functions to Set Up View
@@ -113,7 +121,7 @@ class QuestionPageViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    // MARK: - Functions to Dismiss Keyboard
+    // MARK: - Keyboard Functions
     
     // Done on Number of Questions Text Field should dismiss Keyboard
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -127,21 +135,39 @@ class QuestionPageViewController: UIViewController, UITextFieldDelegate {
     }
     
     // Tap outside should dismiss keyboard
-    func setupToHideKeyboardOnTapOnView()
-        {
-            let tap: UITapGestureRecognizer = UITapGestureRecognizer(
-                target: self,
-                action: #selector(self.dismissKeyboard))
+    func setupToHideKeyboardOnTapOnView() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(
+            target: self,
+            action: #selector(self.dismissKeyboard))
 
-            tap.cancelsTouchesInView = false
-            view.addGestureRecognizer(tap)
-        }
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
 
     @objc func dismissKeyboard()
     {
         view.endEditing(true)
     }
     
+    func setupMoveUpScreenIfKeyboardPresent() {
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+
+    }
+    
+    @objc func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y == 0 {
+                self.view.frame.origin.y -= keyboardSize.height
+            }
+        }
+    }
+
+    @objc func keyboardWillHide(notification: NSNotification) {
+        if self.view.frame.origin.y != 0 {
+            self.view.frame.origin.y = 0
+        }
+    }
     // MARK: - Navigation
     
     func initiateSegueToAnswerPage(userAnswer: String) {
