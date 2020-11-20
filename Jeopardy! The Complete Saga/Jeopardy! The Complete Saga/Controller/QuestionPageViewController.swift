@@ -79,8 +79,8 @@ class QuestionPageViewController: UIViewController, UITextFieldDelegate {
     }
     
     func setupTimer() {
-        // Initialize Timer to 10 seconds
-        self.timerLeft = 10.0
+        // Initialize Timer to 15 seconds
+        self.timerLeft = 15.0
         self.timer = Timer.scheduledTimer(timeInterval: self.timerInterval, target: self, selector: #selector(self.timerAction), userInfo: nil, repeats: true)
     }
     
