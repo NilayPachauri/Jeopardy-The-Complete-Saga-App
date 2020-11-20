@@ -153,6 +153,9 @@
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1LB-kb-cUM">
                                 <rect key="frame" x="0.0" y="0.0" width="667" height="32"/>
                                 <color key="barTintColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <fontDescription key="fontDescription" name="Korinna-Bold" family="ITC Korinna" pointSize="17"/>
+                                </textAttributes>
                                 <items>
                                     <navigationItem title="Choose Settings" id="u7W-VF-t6U">
                                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="YAj-Rq-OAN">
@@ -671,11 +674,85 @@
                         <outlet property="userAnswerLabel" destination="FZt-Sr-YHB" id="hiW-Qo-0Fm"/>
                         <outlet property="userAnswerStaticLabel" destination="9iU-yE-73b" id="XH6-VG-KR5"/>
                         <segue destination="KTM-CL-7JX" kind="presentation" identifier="TriviaGauntletNextQuestionSegue" modalPresentationStyle="fullScreen" id="Of2-su-kVA"/>
+                        <segue destination="zza-4l-ZlN" kind="presentation" identifier="TriviaGauntletResultsSegue" id="Hai-Lh-kDt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3py-FQ-sze" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2953.6731634182911" y="-495.19999999999999"/>
+        </scene>
+        <!--Results Page View Controller-->
+        <scene sceneID="PUV-0T-hXK">
+            <objects>
+                <viewController title="Results Page View Controller" id="zza-4l-ZlN" customClass="ResultsPageViewController" customModule="Jeopardy__The_Complete_Saga" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Slc-mn-J3f">
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Results Background" translatesAutoresizingMaskIntoConstraints="NO" id="pqT-TX-4LG">
+                                <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                            </imageView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U4z-3x-Aiv">
+                                <rect key="frame" x="0.0" y="0.0" width="667" height="32"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <fontDescription key="fontDescription" name="Korinna-Bold" family="ITC Korinna" pointSize="17"/>
+                                    <color key="textColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="Results" id="RJf-XD-PlJ">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="gte-qz-wBO">
+                                            <color key="tintColor" systemColor="systemIndigoColor"/>
+                                            <connections>
+                                                <action selector="doneButtonPressed:" destination="zza-4l-ZlN" id="cJy-gU-qo7"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Play Again" id="ZEz-BI-DNd">
+                                            <color key="tintColor" systemColor="systemIndigoColor"/>
+                                            <connections>
+                                                <action selector="playAgainButtonPressed:" destination="zza-4l-ZlN" id="mS4-Zt-Cpb"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Results" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="07Q-Es-WcK" userLabel="Results Label">
+                                <rect key="frame" x="20" y="40" width="627" height="165"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="07Q-Es-WcK" secondAttribute="height" multiplier="19:5" id="qmC-bQ-I1t"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Korinna-Bold" family="ITC Korinna" pointSize="256"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <size key="shadowOffset" width="5" height="5"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="V8e-na-mub"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="pqT-TX-4LG" firstAttribute="top" secondItem="Slc-mn-J3f" secondAttribute="topMargin" id="5Hh-dg-I41"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="pqT-TX-4LG" secondAttribute="bottom" id="Lbh-ZQ-M6b"/>
+                            <constraint firstAttribute="trailing" secondItem="pqT-TX-4LG" secondAttribute="trailing" id="Nvp-Qk-MZa"/>
+                            <constraint firstItem="07Q-Es-WcK" firstAttribute="leading" secondItem="V8e-na-mub" secondAttribute="leading" constant="20" id="OfD-xW-ecn"/>
+                            <constraint firstItem="07Q-Es-WcK" firstAttribute="top" secondItem="U4z-3x-Aiv" secondAttribute="bottom" constant="8" id="Qq4-MG-BiP"/>
+                            <constraint firstItem="U4z-3x-Aiv" firstAttribute="leading" secondItem="Slc-mn-J3f" secondAttribute="leading" id="Rsq-C7-QiO"/>
+                            <constraint firstItem="pqT-TX-4LG" firstAttribute="leading" secondItem="Slc-mn-J3f" secondAttribute="leading" id="aXk-hm-ej8"/>
+                            <constraint firstItem="U4z-3x-Aiv" firstAttribute="top" secondItem="Slc-mn-J3f" secondAttribute="top" id="e2N-m1-UfO"/>
+                            <constraint firstItem="V8e-na-mub" firstAttribute="trailing" secondItem="07Q-Es-WcK" secondAttribute="trailing" constant="20" id="ixm-s9-Ykb"/>
+                            <constraint firstAttribute="trailing" secondItem="U4z-3x-Aiv" secondAttribute="trailing" id="jfc-Yb-GZx"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="navigationBar" destination="U4z-3x-Aiv" id="54V-CD-ZOw"/>
+                        <outlet property="resultsLabel" destination="07Q-Es-WcK" id="X36-Ue-noI"/>
+                        <segue destination="PZ6-fn-GjX" kind="unwind" identifier="UnwindToTriviaGauntletStartPage" unwindAction="unwindToTriviaGauntletStartPageWithSegue:" id="TNY-xa-Peu"/>
+                        <segue destination="PZ6-fn-GjX" kind="unwind" identifier="UnwindToHomePage" unwindAction="unwindToHomePageWithSegue:" id="UQ4-L1-793"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TkL-ll-sRy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="PZ6-fn-GjX" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="2952.7736131934034" y="402.39999999999998"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
@@ -684,6 +761,7 @@
     <resources>
         <image name="Home Background" width="640" height="360"/>
         <image name="Question Background" width="426.5" height="240"/>
+        <image name="Results Background" width="640" height="360"/>
         <image name="Trivia Gauntlet Background" width="854" height="399"/>
         <image name="gearshape.fill" catalog="system" width="128" height="121"/>
         <image name="info.circle.fill" catalog="system" width="128" height="121"/>

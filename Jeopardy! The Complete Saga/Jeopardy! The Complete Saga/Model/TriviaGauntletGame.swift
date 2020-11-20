@@ -48,6 +48,10 @@ class TriviaGauntletGame: NSObject {
         return (self.currentIndex != nil) ? self.clueList[self.currentIndex!] : nil
     }
     
+    func getNumberOfClues() -> Int {
+        return self.clueList.count
+    }
+    
     func incrementScore() -> Void {
         self.score += 1
     }

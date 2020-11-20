@@ -106,6 +106,13 @@ class QuestionPageViewController: UIViewController, UITextFieldDelegate {
         // Check if time expired
         if self.timerLeft <= 0.01, let timer = self.timer {
             timer.invalidate()
+            
+            if let userAnswer = self.answerTextField.text {
+                self.initiateSegueToAnswerPage(userAnswer: (userAnswer.count > 0) ? userAnswer : "Time Expired")
+            } else {
+                self.initiateSegueToAnswerPage(userAnswer: "Time Expired")
+                
+            }
         }
     }
     
@@ -185,6 +192,9 @@ class QuestionPageViewController: UIViewController, UITextFieldDelegate {
                     if answerVC.response {
                         TriviaGauntletGame.shared.incrementScore()
                     }
+                    
+                    // Reset Text Field
+                    self.answerTextField.text = ""
                 }
             }
         }
