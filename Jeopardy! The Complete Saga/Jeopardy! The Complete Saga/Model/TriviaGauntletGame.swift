@@ -48,7 +48,7 @@ class TriviaGauntletGame: NSObject {
         return self.score
     }
     
-    func finishedGame() -> Void {
+    func resetGame() -> Void {
         self.clueList = []
         self.currentIndex = nil
         self.score = 0

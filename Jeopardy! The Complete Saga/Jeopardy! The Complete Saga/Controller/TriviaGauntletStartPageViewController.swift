@@ -118,6 +118,7 @@ class TriviaGauntletStartPageViewController: UIViewController, UITextFieldDelega
             clueList.append(clue)
         }, {
             if clueList.count == settings.numOfClues  {
+                TriviaGauntletGame.shared.resetGame()
                 TriviaGauntletGame.shared.setClueList(clueList)
                 self.performSegue(withIdentifier: "TriviaGauntletSegue", sender: nil)
             }
@@ -134,7 +135,6 @@ class TriviaGauntletStartPageViewController: UIViewController, UITextFieldDelega
         if segue.identifier == "TriviaGauntletSegue" {
             if let questionVC = segue.destination as? QuestionPageViewController {
                 questionVC.gameMode = .TRIVIA_GAUNTLET
-                questionVC.clueList = self.clueList
             }
         }
     }
