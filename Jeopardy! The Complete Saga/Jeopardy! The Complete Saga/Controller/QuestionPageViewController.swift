@@ -134,6 +134,29 @@ class QuestionPageViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    func transcribeAudio(url: URL) {
+        // Create a New Recognizer and Point it at our Audio
+        let recognizer = SFSpeechRecognizer()
+        let request = SFSpeechURLRecognitionRequest(url: url)
+        
+        // Start Recognition
+        if let recognizer = recognizer {
+            recognizer.recognitionTask(with: request) { [unowned self] (result, error) in
+                //Abort if no Transcription was Received
+                guard let result = result else {
+                    print("There was an error: \(error)")
+                    return
+                }
+                
+                // Transcription Received
+                if result.isFinal {
+                    // Print the Transcription
+                    print(result.bestTranscription.formattedString)
+                }
+            }
+        }
+    }
+    
     
     // MARK: - Keyboard Functions
     
