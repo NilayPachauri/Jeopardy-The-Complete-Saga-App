@@ -8,7 +8,7 @@
 import UIKit
 import Speech
 
-class QuestionPageViewController: UIViewController, UITextFieldDelegate {
+class QuestionPageViewController: UIViewController, UITextFieldDelegate, SFSpeechRecognizerDelegate {
 
     // MARK: - IBOutlet Class Attributes
     @IBOutlet weak var scoreLabel: UILabel!
@@ -52,6 +52,29 @@ class QuestionPageViewController: UIViewController, UITextFieldDelegate {
         
         // Disable Microphone Button until Authorized
         self.microphoneButton.isEnabled = false
+    }
+    
+    override public func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        // Configure the SFSpeechRecognizer object already
+        // stored in a local member variable.
+        speechRecognizer.delegate = self
+        
+        // Asynchronously make the authorization request.
+        SFSpeechRecognizer.requestAuthorization { authStatus in
+
+            // Divert to the app's main thread so that the UI
+            // can be updated.
+            OperationQueue.main.addOperation {
+                switch authStatus {
+                case .authorized:
+                    self.microphoneButton.isEnabled = true
+                    
+                default:
+                    self.microphoneButton.isEnabled = false
+                }
+            }
+        }
     }
     
     // MARK: Functions to Set Up View
