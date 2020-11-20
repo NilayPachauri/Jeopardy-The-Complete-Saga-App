@@ -33,6 +33,7 @@ class QuestionPageViewController: UIViewController, UITextFieldDelegate, SFSpeec
     private var recognitionRequest: SFSpeechAudioBufferRecognitionRequest?
     private var recognitionTask: SFSpeechRecognitionTask?
     private let audioEngine = AVAudioEngine()
+    private var speechAnswer = ""
     
     // MARK: - ViewController Lifecycle Functions
     override func viewDidLoad() {
@@ -152,11 +153,24 @@ class QuestionPageViewController: UIViewController, UITextFieldDelegate, SFSpeec
         if self.timerLeft <= 0.01, let timer = self.timer {
             timer.invalidate()
             
-            if let userAnswer = self.answerTextField.text {
-                self.initiateSegueToAnswerPage(userAnswer: (userAnswer.count > 0) ? userAnswer : "Time Expired")
+            // Determine which answer to use
+            let useAudioAnswer = self.audioEngine.isRunning
+            let useTextAnswer = (self.answerTextField.text != nil) ? self.answerTextField.text?.count ?? 0 > 0 : false
+            
+            // Create Default Expiration Message
+            let expirationMessage = "Time Expired"
+            
+            // Handle Cases
+            if useAudioAnswer && useTextAnswer {
+                self.initiateSegueToAnswerPage(userAnswer: (self.speechAnswer.count > 0) ? self.speechAnswer : expirationMessage)
+            } else if useAudioAnswer {
+                self.initiateSegueToAnswerPage(userAnswer: (self.speechAnswer.count > 0) ? self.speechAnswer : expirationMessage)
+            } else if useTextAnswer {
+                if let userAnswer = self.answerTextField.text {
+                    self.initiateSegueToAnswerPage(userAnswer: (userAnswer.count > 0) ? userAnswer : expirationMessage)
+                }
             } else {
-                self.initiateSegueToAnswerPage(userAnswer: "Time Expired")
-                
+                self.initiateSegueToAnswerPage(userAnswer: expirationMessage)
             }
         }
     }
@@ -193,6 +207,7 @@ class QuestionPageViewController: UIViewController, UITextFieldDelegate, SFSpeec
                 // Print out the best results
                 isFinal = result.isFinal
                 print("Text \(result.bestTranscription.formattedString)")
+                self.speechAnswer = result.bestTranscription.formattedString
             }
             
             if error != nil || isFinal {
@@ -204,7 +219,7 @@ class QuestionPageViewController: UIViewController, UITextFieldDelegate, SFSpeec
                 self.recognitionTask = nil
 
                 self.microphoneButton.isEnabled = true
-                print("Start Recording")
+                print("Stopped Recording Due to Problem")
             }
         }
 
@@ -224,10 +239,10 @@ class QuestionPageViewController: UIViewController, UITextFieldDelegate, SFSpeec
     public func speechRecognizer(_ speechRecognizer: SFSpeechRecognizer, availabilityDidChange available: Bool) {
         if available {
             self.microphoneButton.isEnabled = true
-            print("Start Recording")
+            print("Enabled Microphone Button")
         } else {
             self.microphoneButton.isEnabled = false
-            print("Recognition Not Available")
+            print("Disabled Microphone Button")
         }
         
         self.microphoneButton.isEnabled = available
@@ -238,11 +253,12 @@ class QuestionPageViewController: UIViewController, UITextFieldDelegate, SFSpeec
             audioEngine.stop()
             recognitionRequest?.endAudio()
             self.microphoneButton.isEnabled = false
-            print("Stopping")
+            print("Stopping Recording")
+            initiateSegueToAnswerPage(userAnswer: (self.speechAnswer.count > 0) ? self.speechAnswer : "Nothing Said")
         } else {
             do {
                 try startRecording()
-                print("Stop Recording")
+                print("Started Recording")
             } catch {
                 print("Recording Not Available")
             }
