@@ -205,6 +205,10 @@ class QuestionPageViewController: UIViewController, UITextFieldDelegate, SFSpeec
         try audioEngine.start()
     }
     
+    public func speechRecognizer(_ speechRecognizer: SFSpeechRecognizer, availabilityDidChange available: Bool) {
+        self.microphoneButton.isEnabled = available
+    }
+    
     @IBAction func microphoneButtonPressed(_ sender: UIButton) throws {
         
     }
