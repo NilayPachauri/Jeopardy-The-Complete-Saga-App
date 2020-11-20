@@ -27,7 +27,7 @@ class TriviaGauntletGame: NSObject {
     }
     
     // MARK: - Class Methods
-    func setClueList(clueList: [Clue]) -> Void {
+    func setClueList(_ clueList: [Clue]) -> Void {
         self.clueList = clueList
         self.currentIndex = (clueList.count > 0) ? 0 : nil
     }

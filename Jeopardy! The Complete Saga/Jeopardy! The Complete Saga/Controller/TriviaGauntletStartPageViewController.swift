@@ -21,9 +21,6 @@ class TriviaGauntletStartPageViewController: UIViewController, UITextFieldDelega
     @IBOutlet weak var difficulty4QuestionsSwitch: UISwitch!
     @IBOutlet weak var difficulty5QuestionsSwitch: UISwitch!
     
-    // MARK: - Private Class Attributes
-    private var clueList: [Clue] = []
-    
     // MARK: - View Did Load
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -116,10 +113,12 @@ class TriviaGauntletStartPageViewController: UIViewController, UITextFieldDelega
         
         let settings = TriviaGauntletSettings(numOfClues: self.getIntegerValueFromSlider(slider: self.numberOfQuestionsSlider), useJeopardyQuestions: self.jeopardyQuestionsSwitch.isOn, useDoubleJeopardyQuestions: self.doubleJeopardyQuestionsSwitch.isOn, useFinalJeopardyQuestions: self.finalJeopardySwitch.isOn, useDifficulty1Questions: self.difficulty1QuestionsSwitch.isOn, useDifficulty2Questions: self.difficulty2QuestionsSwitch.isOn, useDifficulty3Questions: self.difficulty3QuestionsSwitch.isOn, useDifficulty4Questions: self.difficulty4QuestionsSwitch.isOn, useDifficulty5Questions: self.difficulty5QuestionsSwitch.isOn)
         
+        var clueList: [Clue] = []
         FirestoreWrapper.getCluesForTriviaGauntlet(triviaGauntletSettings: settings, { (clue) in
-            self.clueList.append(clue)
+            clueList.append(clue)
         }, {
-            if self.clueList.count == settings.numOfClues  {
+            if clueList.count == settings.numOfClues  {
+                TriviaGauntletGame.shared.setClueList(clueList)
                 self.performSegue(withIdentifier: "TriviaGauntletSegue", sender: nil)
             }
         })
