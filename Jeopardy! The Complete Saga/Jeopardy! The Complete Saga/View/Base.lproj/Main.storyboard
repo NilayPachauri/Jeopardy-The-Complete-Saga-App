@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina5_5" orientation="landscape" appearance="light"/>
+    <device id="retina4_7" orientation="landscape" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Image references" minToolsVersion="12.0"/>
@@ -31,14 +31,14 @@
             <objects>
                 <viewController storyboardIdentifier="HomePageViewController" id="BYZ-38-t0r" customClass="HomePageViewController" customModule="Jeopardy__The_Complete_Saga" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Home Background" translatesAutoresizingMaskIntoConstraints="NO" id="9yx-VZ-2le" userLabel="Background Image View">
-                                <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
+                                <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TWQ-sK-HwN" userLabel="Info Button">
-                                <rect key="frame" x="678.33333333333337" y="19.999999999999996" width="37.666666666666629" height="37.666666666666657"/>
+                                <rect key="frame" x="613" y="20" width="34" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="TWQ-sK-HwN" secondAttribute="height" multiplier="1:1" id="mwA-kQ-VMY"/>
                                 </constraints>
@@ -49,7 +49,7 @@
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Zs-w9-rKQ" userLabel="Settings Button">
-                                <rect key="frame" x="20" y="19.999999999999996" width="37.666666666666657" height="37.666666666666657"/>
+                                <rect key="frame" x="20" y="20" width="34" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="4Zs-w9-rKQ" secondAttribute="height" multiplier="1:1" id="Swz-JF-6mZ"/>
                                 </constraints>
@@ -59,7 +59,7 @@
                                 </state>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jeopardy!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="piD-c0-KcP" userLabel="Title Label">
-                                <rect key="frame" x="65.666666666666686" y="20" width="604.66666666666652" height="131.33333333333334"/>
+                                <rect key="frame" x="62" y="20" width="543" height="116.5"/>
                                 <fontDescription key="fontDescription" name="GyparodyHv-Regular" family="Gyparody" pointSize="256"/>
                                 <color key="textColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -67,7 +67,7 @@
                                 <size key="shadowOffset" width="6" height="6"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Complete Saga" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="E8m-ng-3JK" userLabel="Subtitle Label">
-                                <rect key="frame" x="65.666666666666686" y="159.33333333333334" width="604.66666666666652" height="87.333333333333343"/>
+                                <rect key="frame" x="62" y="144.5" width="543" height="78"/>
                                 <fontDescription key="fontDescription" name="GyparodyRg-Regular" family="Gyparody" pointSize="128"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -75,7 +75,7 @@
                                 <size key="shadowOffset" width="6" height="6"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aK4-yW-v4d" userLabel="Trivia Gauntlet Button">
-                                <rect key="frame" x="267.33333333333331" y="254.66666666666666" width="201.33333333333331" height="65.666666666666657"/>
+                                <rect key="frame" x="243" y="230.5" width="181" height="58"/>
                                 <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                 <fontDescription key="fontDescription" name="Korinna-Bold" family="ITC Korinna" pointSize="128"/>
                                 <size key="titleShadowOffset" width="1" height="1"/>
@@ -87,7 +87,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pqd-Pq-KO8" userLabel="Custom Game Button">
-                                <rect key="frame" x="267.33333333333331" y="328.33333333333331" width="201.33333333333331" height="65.666666666666686"/>
+                                <rect key="frame" x="243" y="296.5" width="181" height="58.5"/>
                                 <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                 <fontDescription key="fontDescription" name="Korinna-Bold" family="ITC Korinna" pointSize="128"/>
                                 <size key="titleShadowOffset" width="1" height="1"/>
@@ -151,7 +151,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="667" height="700"/>
                             </imageView>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1LB-kb-cUM">
-                                <rect key="frame" x="0.0" y="0.0" width="667" height="44"/>
+                                <rect key="frame" x="0.0" y="0.0" width="667" height="32"/>
                                 <color key="barTintColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <textAttributes key="titleTextAttributes">
                                     <fontDescription key="fontDescription" name="Korinna-Bold" family="ITC Korinna" pointSize="17"/>
@@ -174,7 +174,7 @@
                                 </items>
                             </navigationBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trivia Gauntlet" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="Nln-6G-Kka" userLabel="Title Label">
-                                <rect key="frame" x="20" y="52" width="627" height="124"/>
+                                <rect key="frame" x="20" y="40" width="627" height="126.5"/>
                                 <fontDescription key="fontDescription" name="GyparodyHv-Regular" family="Gyparody" pointSize="256"/>
                                 <color key="textColor" systemColor="systemIndigoColor"/>
                                 <nil key="highlightedColor"/>
@@ -182,13 +182,13 @@
                                 <size key="shadowOffset" width="5" height="5"/>
                             </label>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ix4-3O-1zA">
-                                <rect key="frame" x="20" y="184" width="627" height="496"/>
+                                <rect key="frame" x="20" y="174.5" width="627" height="505.5"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8fB-gG-Yqe" userLabel="Options View">
                                         <rect key="frame" x="0.0" y="0.0" width="627" height="476"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of Questions: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wy1-jE-FdU" userLabel="Number of Questions Label">
-                                                <rect key="frame" x="8" y="8" width="283" height="44"/>
+                                                <rect key="frame" x="8" y="8" width="304" height="44"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="44" id="Lgo-uN-hrp"/>
                                                 </constraints>
@@ -197,7 +197,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="5" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Tc-k7-3hs" userLabel="Number of Questions Text Field">
-                                                <rect key="frame" x="299" y="8" width="88" height="44"/>
+                                                <rect key="frame" x="320" y="8" width="88" height="44"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="88" id="px7-WA-W2y"/>
@@ -210,7 +210,7 @@
                                                 </connections>
                                             </textField>
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="5" minValue="1" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="mbx-NT-6It" userLabel="Number of Questions Slider">
-                                                <rect key="frame" x="393" y="15" width="228" height="31"/>
+                                                <rect key="frame" x="414" y="15" width="207" height="31"/>
                                                 <color key="tintColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <color key="thumbTintColor" systemColor="systemIndigoColor"/>
                                                 <connections>
@@ -224,7 +224,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oYh-ed-Fqm" userLabel="Jeopardy! Questions Switch">
-                                                <rect key="frame" x="570" y="66.666666666666657" width="51" height="31"/>
+                                                <rect key="frame" x="570" y="66.5" width="51" height="31"/>
                                                 <color key="onTintColor" systemColor="systemIndigoColor"/>
                                             </switch>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Double Jeopardy! Questions: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pu7-Gt-wf8">
@@ -234,7 +234,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AJ5-IR-34o" userLabel="Double Jeopardy! Questions Switch">
-                                                <rect key="frame" x="570" y="118.66666666666669" width="51" height="31"/>
+                                                <rect key="frame" x="570" y="118.5" width="51" height="31"/>
                                                 <color key="onTintColor" systemColor="systemIndigoColor"/>
                                             </switch>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Final Jeopardy! Questions: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WM7-Ge-bfX" userLabel="Final Jeopardy! Questions Label">
@@ -244,7 +244,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NZ9-xe-UQC" userLabel="Final Jeopardy! Questions Switch">
-                                                <rect key="frame" x="570" y="170.66666666666669" width="51" height="31"/>
+                                                <rect key="frame" x="570" y="170.5" width="51" height="31"/>
                                                 <color key="onTintColor" systemColor="systemIndigoColor"/>
                                             </switch>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Difficulty 1 Questions: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sbv-DR-VMy" userLabel="Difficulty 1 Questions Label">
@@ -254,7 +254,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eN1-Wf-KIv" userLabel="Difficulty 1 Questions Switch">
-                                                <rect key="frame" x="570" y="222.66666666666669" width="51" height="31"/>
+                                                <rect key="frame" x="570" y="222.5" width="51" height="31"/>
                                                 <color key="onTintColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             </switch>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Difficulty 2 Questions: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bce-EY-bD8" userLabel="Difficulty 2 Questions Label">
@@ -264,7 +264,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="usQ-ov-ipG" userLabel="Difficulty 2 Questions Switch">
-                                                <rect key="frame" x="570" y="274.66666666666669" width="51" height="31"/>
+                                                <rect key="frame" x="570" y="274.5" width="51" height="31"/>
                                                 <color key="onTintColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             </switch>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Difficulty 3 Questions: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sGb-mG-MVb" userLabel="Difficulty 3 Questions Label">
@@ -274,7 +274,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CqM-gf-Uch" userLabel="Difficulty 3 Questions Switch">
-                                                <rect key="frame" x="570" y="326.66666666666669" width="51" height="31"/>
+                                                <rect key="frame" x="570" y="326.5" width="51" height="31"/>
                                                 <color key="onTintColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             </switch>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Difficulty 4 Questions: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1hB-UO-WiA" userLabel="Difficulty 4 Questions Label">
@@ -284,7 +284,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jnu-5f-9ws" userLabel="Difficulty 4 Questions Switch">
-                                                <rect key="frame" x="570" y="378.66666666666663" width="51" height="31"/>
+                                                <rect key="frame" x="570" y="378.5" width="51" height="31"/>
                                                 <color key="onTintColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             </switch>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Difficulty 5 Questions: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LWN-gi-N2U" userLabel="Difficulty 5 Questions Label">
@@ -294,7 +294,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Brn-hI-Bsw" userLabel="Difficulty 5 Questions Switch">
-                                                <rect key="frame" x="570" y="430.66666666666663" width="51" height="31"/>
+                                                <rect key="frame" x="570" y="430.5" width="51" height="31"/>
                                                 <color key="onTintColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             </switch>
                                         </subviews>
@@ -416,32 +416,32 @@
             <objects>
                 <viewController storyboardIdentifier="QuestionPageViewController" title="Question Page View Controller" id="KTM-CL-7JX" customClass="QuestionPageViewController" customModule="Jeopardy__The_Complete_Saga" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="exP-ca-ZDm">
-                        <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Question Background" translatesAutoresizingMaskIntoConstraints="NO" id="qbs-j6-Qvg" userLabel="Background Image View">
-                                <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
+                                <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: " lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="Czc-1w-7GX" userLabel="Score Label">
-                                <rect key="frame" x="20" y="19.999999999999996" width="136" height="35.666666666666657"/>
+                                <rect key="frame" x="20" y="20" width="122" height="32"/>
                                 <fontDescription key="fontDescription" name="Swiss911BT-Compressed" family="Swiss 911" pointSize="256"/>
                                 <color key="textColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="answer" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="ySF-mb-HiD" userLabel="Answer Text Field">
-                                <rect key="frame" x="120" y="358.33333333333331" width="552.33333333333337" height="35.666666666666686"/>
+                                <rect key="frame" x="110.5" y="323" width="496.5" height="32"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="Swiss911BT-Compressed" family="Swiss 911" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="done"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Timer: " textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="zNN-ZW-1Ll" userLabel="Timer Label">
-                                <rect key="frame" x="580" y="19.999999999999996" width="136" height="35.666666666666657"/>
+                                <rect key="frame" x="525" y="20" width="122" height="32"/>
                                 <fontDescription key="fontDescription" name="Swiss911BT-Compressed" family="Swiss 911" pointSize="256"/>
                                 <color key="textColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rvk-G0-tzJ" userLabel="Microphone Answer Button">
-                                <rect key="frame" x="680.33333333333337" y="358.33333333333331" width="35.666666666666629" height="35.666666666666686"/>
+                                <rect key="frame" x="615" y="323" width="32" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="rvk-G0-tzJ" secondAttribute="height" multiplier="1:1" id="XkA-iR-YSW"/>
                                 </constraints>
@@ -449,7 +449,7 @@
                                 <state key="normal" image="mic.fill" catalog="system"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question" textAlignment="center" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="GlT-r3-xZo">
-                                <rect key="frame" x="20" y="63.666666666666657" width="696" height="286.66666666666674"/>
+                                <rect key="frame" x="20" y="60" width="627" height="255"/>
                                 <fontDescription key="fontDescription" name="Korinna-Regular" family="ITC Korinna" pointSize="128"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -457,7 +457,7 @@
                                 <size key="shadowOffset" width="5" height="4"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What is" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="srm-gA-lUu" userLabel="Answer Label">
-                                <rect key="frame" x="20" y="358.33333333333331" width="92" height="35.666666666666686"/>
+                                <rect key="frame" x="20" y="323" width="82.5" height="32"/>
                                 <fontDescription key="fontDescription" name="Swiss911BT-Compressed" family="Swiss 911" pointSize="128"/>
                                 <color key="textColor" systemColor="systemOrangeColor"/>
                                 <nil key="highlightedColor"/>
@@ -465,7 +465,7 @@
                                 <size key="shadowOffset" width="1" height="2"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CATEGORY" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="hi7-st-M3w" userLabel="Category Label">
-                                <rect key="frame" x="164" y="19.999999999999996" width="408" height="35.666666666666657"/>
+                                <rect key="frame" x="150" y="20" width="367" height="32"/>
                                 <fontDescription key="fontDescription" name="Swiss911BT-Compressed" family="Swiss 911" pointSize="256"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -530,20 +530,20 @@
             <objects>
                 <viewController title="Answer Page View Controller" modalTransitionStyle="flipHorizontal" id="VvA-Lr-XWU" customClass="AnswerPageViewController" customModule="Jeopardy__The_Complete_Saga" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nKV-dF-Zrb">
-                        <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Question Background" translatesAutoresizingMaskIntoConstraints="NO" id="I2T-ZJ-GA0" userLabel="Background Image View">
-                                <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
+                                <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: " lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="rGV-6v-apQ" userLabel="Score Label">
-                                <rect key="frame" x="20" y="19.999999999999996" width="136" height="35.666666666666657"/>
+                                <rect key="frame" x="20" y="20" width="122" height="32"/>
                                 <fontDescription key="fontDescription" name="Swiss911BT-Compressed" family="Swiss 911" pointSize="256"/>
                                 <color key="textColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CATEGORY" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="fZR-yc-k00" userLabel="Category Label">
-                                <rect key="frame" x="164" y="19.999999999999996" width="408" height="35.666666666666657"/>
+                                <rect key="frame" x="150" y="20" width="367" height="32"/>
                                 <fontDescription key="fontDescription" name="Swiss911BT-Compressed" family="Swiss 911" pointSize="256"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -551,28 +551,28 @@
                                 <size key="shadowOffset" width="3" height="3"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Timer: " textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="Q7S-Qo-BYc" userLabel="Timer Label">
-                                <rect key="frame" x="580" y="19.999999999999996" width="136" height="35.666666666666657"/>
+                                <rect key="frame" x="525" y="20" width="122" height="32"/>
                                 <fontDescription key="fontDescription" name="Swiss911BT-Compressed" family="Swiss 911" pointSize="256"/>
                                 <color key="textColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AoD-no-FWV" userLabel="Answer View">
-                                <rect key="frame" x="20" y="63.666666666666657" width="696" height="214.99999999999997"/>
+                                <rect key="frame" x="20" y="60" width="627" height="191.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You answered:" textAlignment="right" lineBreakMode="tailTruncation" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="9iU-yE-73b" userLabel="User Answer Static Label">
-                                        <rect key="frame" x="8" y="8.0000000000000071" width="224" height="95.666666666666686"/>
+                                        <rect key="frame" x="8" y="8" width="201" height="83.5"/>
                                         <fontDescription key="fontDescription" name="Korinna-Bold" family="ITC Korinna" pointSize="256"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Correct answer:" textAlignment="right" lineBreakMode="tailTruncation" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="hcm-Wt-mce" userLabel="Correct Answer Static Label">
-                                        <rect key="frame" x="8" y="111.66666666666669" width="224" height="95.333333333333314"/>
+                                        <rect key="frame" x="8" y="99.5" width="201" height="84"/>
                                         <fontDescription key="fontDescription" name="Korinna-Bold" family="ITC Korinna" pointSize="256"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Answer" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="FZt-Sr-YHB" userLabel="User Answer Label">
-                                        <rect key="frame" x="240" y="8.0000000000000071" width="448" height="95.666666666666686"/>
+                                        <rect key="frame" x="217" y="8" width="402" height="83.5"/>
                                         <fontDescription key="fontDescription" name="Swiss911BT-Compressed" family="Swiss 911" pointSize="256"/>
                                         <color key="textColor" systemColor="systemYellowColor"/>
                                         <nil key="highlightedColor"/>
@@ -580,7 +580,7 @@
                                         <size key="shadowOffset" width="2" height="2"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Correct Answer" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="EfB-5C-6Q1" userLabel="Correct Answer Label">
-                                        <rect key="frame" x="240" y="111.66666666666669" width="448" height="95.333333333333314"/>
+                                        <rect key="frame" x="217" y="99.5" width="402" height="84"/>
                                         <fontDescription key="fontDescription" name="Swiss911BT-Compressed" family="Swiss 911" pointSize="256"/>
                                         <color key="textColor" systemColor="systemTealColor"/>
                                         <nil key="highlightedColor"/>
@@ -608,7 +608,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Response" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="iiG-kd-G0y" userLabel="Response Label">
-                                <rect key="frame" x="20" y="286.66666666666669" width="458.66666666666669" height="107.33333333333331"/>
+                                <rect key="frame" x="20" y="259.5" width="412.5" height="95.5"/>
                                 <fontDescription key="fontDescription" name="Swiss911BT-Compressed" family="Swiss 911" pointSize="128"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -616,7 +616,7 @@
                                 <size key="shadowOffset" width="6" height="6"/>
                             </label>
                             <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dmP-5e-h3f" userLabel="Next Question Button">
-                                <rect key="frame" x="486.66666666666669" y="286.66666666666669" width="229.33333333333331" height="107.33333333333331"/>
+                                <rect key="frame" x="440.5" y="259.5" width="206.5" height="95.5"/>
                                 <color key="backgroundColor" systemColor="systemIndigoColor"/>
                                 <fontDescription key="fontDescription" name="Korinna-Bold" family="ITC Korinna" pointSize="256"/>
                                 <color key="tintColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -674,6 +674,7 @@
                         <outlet property="userAnswerLabel" destination="FZt-Sr-YHB" id="hiW-Qo-0Fm"/>
                         <outlet property="userAnswerStaticLabel" destination="9iU-yE-73b" id="XH6-VG-KR5"/>
                         <segue destination="KTM-CL-7JX" kind="presentation" identifier="TriviaGauntletNextQuestionSegue" modalPresentationStyle="fullScreen" id="Of2-su-kVA"/>
+                        <segue destination="zza-4l-ZlN" kind="presentation" identifier="TriviaGauntletResultsSegue" id="Hai-Lh-kDt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3py-FQ-sze" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -685,12 +686,14 @@
             <objects>
                 <viewController title="Results Page View Controller" id="zza-4l-ZlN" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Slc-mn-J3f">
-                        <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="U4z-3x-Aiv">
-                                <rect key="frame" x="0.0" y="0.0" width="736" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Results Background" translatesAutoresizingMaskIntoConstraints="NO" id="pqT-TX-4LG">
+                                <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                            </imageView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U4z-3x-Aiv">
+                                <rect key="frame" x="0.0" y="0.0" width="667" height="32"/>
                                 <textAttributes key="titleTextAttributes">
                                     <fontDescription key="fontDescription" name="Korinna-Bold" family="ITC Korinna" pointSize="17"/>
                                 </textAttributes>
@@ -705,14 +708,37 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Results" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="128" translatesAutoresizingMaskIntoConstraints="NO" id="07Q-Es-WcK" userLabel="Results Label">
+                                <rect key="frame" x="20" y="40" width="627" height="165"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="07Q-Es-WcK" secondAttribute="height" multiplier="19:5" id="qmC-bQ-I1t"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Korinna-Bold" family="ITC Korinna" pointSize="256"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <size key="shadowOffset" width="5" height="5"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="V8e-na-mub"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="pqT-TX-4LG" firstAttribute="top" secondItem="Slc-mn-J3f" secondAttribute="topMargin" id="5Hh-dg-I41"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="pqT-TX-4LG" secondAttribute="bottom" id="Lbh-ZQ-M6b"/>
+                            <constraint firstAttribute="trailing" secondItem="pqT-TX-4LG" secondAttribute="trailing" id="Nvp-Qk-MZa"/>
+                            <constraint firstItem="07Q-Es-WcK" firstAttribute="leading" secondItem="V8e-na-mub" secondAttribute="leading" constant="20" id="OfD-xW-ecn"/>
+                            <constraint firstItem="07Q-Es-WcK" firstAttribute="top" secondItem="U4z-3x-Aiv" secondAttribute="bottom" constant="8" id="Qq4-MG-BiP"/>
+                            <constraint firstItem="U4z-3x-Aiv" firstAttribute="leading" secondItem="Slc-mn-J3f" secondAttribute="leading" id="Rsq-C7-QiO"/>
+                            <constraint firstItem="pqT-TX-4LG" firstAttribute="leading" secondItem="Slc-mn-J3f" secondAttribute="leading" id="aXk-hm-ej8"/>
+                            <constraint firstItem="U4z-3x-Aiv" firstAttribute="top" secondItem="Slc-mn-J3f" secondAttribute="top" id="e2N-m1-UfO"/>
+                            <constraint firstItem="V8e-na-mub" firstAttribute="trailing" secondItem="07Q-Es-WcK" secondAttribute="trailing" constant="20" id="ixm-s9-Ykb"/>
+                            <constraint firstAttribute="trailing" secondItem="U4z-3x-Aiv" secondAttribute="trailing" id="jfc-Yb-GZx"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TkL-ll-sRy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2954" y="404"/>
+            <point key="canvasLocation" x="2952.7736131934034" y="402.39999999999998"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
@@ -720,8 +746,9 @@
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Home Background" width="640" height="360"/>
-        <image name="Question Background" width="426.66665649414062" height="240"/>
-        <image name="Trivia Gauntlet Background" width="853.33331298828125" height="399"/>
+        <image name="Question Background" width="426.5" height="240"/>
+        <image name="Results Background" width="640" height="360"/>
+        <image name="Trivia Gauntlet Background" width="854" height="399"/>
         <image name="gearshape.fill" catalog="system" width="128" height="121"/>
         <image name="info.circle.fill" catalog="system" width="128" height="121"/>
         <image name="mic.fill" catalog="system" width="108" height="128"/>
