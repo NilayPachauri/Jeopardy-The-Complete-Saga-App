@@ -24,7 +24,10 @@ class ResultsPageViewController: UIViewController {
     
     // MARK: - Functions to Set Up View
     func makeNavigationBarTransparent() {
-        
+        self.navigationBar.setBackgroundImage(UIImage(), for: .default) //UIImage.init(named: "transparent.png")
+        self.navigationBar.shadowImage = UIImage()
+        self.navigationBar.isTranslucent = true
+        view.backgroundColor = .clear
     }
     
     func setResultsLabel() {
