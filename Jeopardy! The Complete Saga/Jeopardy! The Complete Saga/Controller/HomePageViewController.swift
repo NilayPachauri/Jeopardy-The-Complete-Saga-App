@@ -19,7 +19,7 @@ class HomePageViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         setupButtonSizes()
-        setupLabelBorders()
+        setupButtonBorders()
     }
     
     // MARK: Functions to Initialize View
@@ -49,33 +49,21 @@ class HomePageViewController: UIViewController {
         self.infoButton.setPreferredSymbolConfiguration(symbolConfiguration, forImageIn: .normal)
     }
 
-    func setupLabelBorders() {
+    func setupButtonBorders() {
         
         let borderWidth: CGFloat = 3
         let borderColor: CGColor = UIColor.link.cgColor
         let cornerRadius: CGFloat = 25
         
-        //  Add Border around Trivia Gauntlet Button Label
+        //  Add Border around Trivia Gauntlet Button
         self.triviaGauntletButton.layer.borderWidth = borderWidth
         self.triviaGauntletButton.layer.borderColor = borderColor
         self.triviaGauntletButton.layer.cornerRadius = cornerRadius
         
-        //  Add Border around Custom Game Button Label
+        //  Add Border around Custom Game Button
         self.customGameButton.layer.borderWidth = borderWidth
         self.customGameButton.layer.borderColor = borderColor
         self.customGameButton.layer.cornerRadius = cornerRadius
     }
-    
-    // MARK: Functions to Segue to Other Views
-    
-
-    @IBAction func settingsButtonPressed(_ sender: UIButton) {
-        // TODO: Segue into Settings View
-    }
-    
-    @IBAction func infoButtonPressed(_ sender: UIButton) {
-        // TODO: Segue into Info View
-    }
-
 }
 
