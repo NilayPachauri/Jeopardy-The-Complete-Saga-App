@@ -32,6 +32,7 @@ class AnswerPageViewController: UIViewController {
         // Do any additional setup after loading the view.
         self.setupLabelContents()
         self.setupLabelFormats()
+        self.setupResponseLabelTapGestureRecognizer()
         self.setupButton()
     }
     
@@ -59,6 +60,43 @@ class AnswerPageViewController: UIViewController {
         // Adjust the font of Static Labels to whoever is smaller
         self.userAnswerStaticLabel.font = font
         self.correctAnswerStaticLabel.font = font
+    }
+    
+    func setupResponseLabelTapGestureRecognizer() {
+        if !self.response {
+            // Tap outside should dismiss keyboard
+            
+            let tap: UITapGestureRecognizer = UITapGestureRecognizer(
+                target: self,
+                action: #selector(self.responseLabelTapped)
+            )
+
+            self.responseLabel.isUserInteractionEnabled = true
+            self.responseLabel.addGestureRecognizer(tap)
+        }
+    }
+    
+    @objc func responseLabelTapped()
+    {
+        // Create the Alert
+        let alert = UIAlertController(title: "I was right!", message: "Did you actually get this question correct?", preferredStyle: .alert)
+    
+        // Add Actions on the Alert
+        alert.addAction(UIAlertAction(title: "Yes", style: .default) { _ in
+
+            // Update the Data
+            TriviaGauntletGame.shared.incrementScore()
+            self.response = true
+            
+            // Update the Labels
+            self.scoreLabel.text = String(format: "Score: %d", TriviaGauntletGame.shared.getScore())
+            self.responseLabel.text = (self.response) ? "That is correct!" : "Not quite!"
+            self.responseLabel.textColor = (self.response) ? UIColor.systemGreen : UIColor.systemRed
+        })
+        alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
+        
+        // Show the Alert
+        self.present(alert, animated: true, completion: nil)
     }
     
     func setupButton() {
