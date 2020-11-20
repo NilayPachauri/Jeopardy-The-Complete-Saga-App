@@ -153,6 +153,9 @@
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1LB-kb-cUM">
                                 <rect key="frame" x="0.0" y="0.0" width="667" height="32"/>
                                 <color key="barTintColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <fontDescription key="fontDescription" name="Korinna-Bold" family="ITC Korinna" pointSize="17"/>
+                                </textAttributes>
                                 <items>
                                     <navigationItem title="Choose Settings" id="u7W-VF-t6U">
                                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="YAj-Rq-OAN">
@@ -677,9 +680,43 @@
             </objects>
             <point key="canvasLocation" x="2953.6731634182911" y="-495.19999999999999"/>
         </scene>
+        <!--Results Page View Controller-->
+        <scene sceneID="PUV-0T-hXK">
+            <objects>
+                <viewController title="Results Page View Controller" id="zza-4l-ZlN" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Slc-mn-J3f">
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="U4z-3x-Aiv">
+                                <rect key="frame" x="0.0" y="0.0" width="667" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <fontDescription key="fontDescription" name="Korinna-Bold" family="ITC Korinna" pointSize="17"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="Results" id="RJf-XD-PlJ">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="gte-qz-wBO">
+                                            <color key="tintColor" systemColor="systemIndigoColor"/>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Play Again" id="ZEz-BI-DNd">
+                                            <color key="tintColor" systemColor="systemIndigoColor"/>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="V8e-na-mub"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TkL-ll-sRy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2954" y="404"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Of2-su-kVA"/>
+        <segue reference="cBr-Ok-qhF"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Home Background" width="640" height="360"/>
