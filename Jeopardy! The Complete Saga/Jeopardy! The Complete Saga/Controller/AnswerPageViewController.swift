@@ -63,7 +63,7 @@ class AnswerPageViewController: UIViewController {
     
     func setupButton() {
         // Inset the Button
-        let contentEdgeInsets: UIEdgeInsets = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
+        let contentEdgeInsets: UIEdgeInsets = UIEdgeInsets(top: 4, left: 4, bottom: 4, right: 4)
         self.nextQuestionButton.contentEdgeInsets = contentEdgeInsets
         
         // Get the Current Font Size for the Next Question Label
