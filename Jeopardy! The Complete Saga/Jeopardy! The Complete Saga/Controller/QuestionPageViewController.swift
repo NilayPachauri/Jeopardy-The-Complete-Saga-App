@@ -6,8 +6,9 @@
 //
 
 import UIKit
+import Speech
 
-class QuestionPageViewController: UIViewController, UITextFieldDelegate {
+class QuestionPageViewController: UIViewController, UITextFieldDelegate, SFSpeechRecognizerDelegate {
 
     // MARK: - IBOutlet Class Attributes
     @IBOutlet weak var scoreLabel: UILabel!
@@ -27,6 +28,13 @@ class QuestionPageViewController: UIViewController, UITextFieldDelegate {
     private var timer: Timer? = nil
     private var userAnswer: String = ""
     
+    // MARK: - Private Class Speech Attributes
+    private let speechRecognizer = SFSpeechRecognizer(locale: Locale(identifier: "en-US"))!
+    private var recognitionRequest: SFSpeechAudioBufferRecognitionRequest?
+    private var recognitionTask: SFSpeechRecognitionTask?
+    private let audioEngine = AVAudioEngine()
+    private var speechAnswer = ""
+    
     // MARK: - ViewController Lifecycle Functions
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,6 +50,44 @@ class QuestionPageViewController: UIViewController, UITextFieldDelegate {
         self.setAnswerTextFieldFont()
         self.setMicrophoneButtonSize()
         self.setupClue()
+        
+        // Disable Microphone Button until Authorized
+        self.microphoneButton.isEnabled = false
+    }
+    
+    override public func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        // Configure the SFSpeechRecognizer object already
+        // stored in a local member variable.
+        speechRecognizer.delegate = self
+        
+        // Asynchronously make the authorization request.
+        SFSpeechRecognizer.requestAuthorization { authStatus in
+
+            // Divert to the app's main thread so that the UI
+            // can be updated.
+            OperationQueue.main.addOperation {
+                switch authStatus {
+                case .authorized:
+                    self.microphoneButton.isEnabled = true
+                    
+                case .denied:
+                    self.microphoneButton.isEnabled = false
+                    print("User denied access to speech recognition")
+                    
+                case .restricted:
+                    self.microphoneButton.isEnabled = false
+                    print("Speech recognition restricted on this device")
+                    
+                case .notDetermined:
+                    self.microphoneButton.isEnabled = false
+                    print("Speech recognition not yet authorized")
+                    
+                default:
+                    self.microphoneButton.isEnabled = false
+                }
+            }
+        }
     }
     
     // MARK: Functions to Set Up View
@@ -107,14 +153,118 @@ class QuestionPageViewController: UIViewController, UITextFieldDelegate {
         if self.timerLeft <= 0.01, let timer = self.timer {
             timer.invalidate()
             
-            if let userAnswer = self.answerTextField.text {
-                self.initiateSegueToAnswerPage(userAnswer: (userAnswer.count > 0) ? userAnswer : "Time Expired")
+            // Determine which answer to use
+            let useAudioAnswer = self.audioEngine.isRunning
+            let useTextAnswer = (self.answerTextField.text != nil) ? self.answerTextField.text?.count ?? 0 > 0 : false
+            
+            // Create Default Expiration Message
+            let expirationMessage = "Time Expired"
+            
+            // Handle Cases
+            if useAudioAnswer && useTextAnswer {
+                self.initiateSegueToAnswerPage(userAnswer: (self.speechAnswer.count > 0) ? self.speechAnswer : expirationMessage)
+            } else if useAudioAnswer {
+                self.initiateSegueToAnswerPage(userAnswer: (self.speechAnswer.count > 0) ? self.speechAnswer : expirationMessage)
+            } else if useTextAnswer {
+                if let userAnswer = self.answerTextField.text {
+                    self.initiateSegueToAnswerPage(userAnswer: (userAnswer.count > 0) ? userAnswer : expirationMessage)
+                }
             } else {
-                self.initiateSegueToAnswerPage(userAnswer: "Time Expired")
-                
+                self.initiateSegueToAnswerPage(userAnswer: expirationMessage)
             }
         }
     }
+    
+    // MARK: - Functions to Handle User Speech
+    private func startRecording() throws {
+        
+        // Cancel the previous task if it's running.
+        recognitionTask?.cancel()
+        self.recognitionTask = nil
+        
+        // Configure the audio session for the app.
+        let audioSession = AVAudioSession.sharedInstance()
+        try audioSession.setCategory(.record, mode: .measurement, options: .duckOthers)
+        try audioSession.setActive(true, options: .notifyOthersOnDeactivation)
+        let inputNode = audioEngine.inputNode
+
+        // Create and configure the speech recognition request.
+        recognitionRequest = SFSpeechAudioBufferRecognitionRequest()
+        guard let recognitionRequest = recognitionRequest else { fatalError("Unable to create a SFSpeechAudioBufferRecognitionRequest object") }
+        recognitionRequest.shouldReportPartialResults = true
+        
+        // Keep speech recognition data on device
+        if #available(iOS 13, *) {
+            recognitionRequest.requiresOnDeviceRecognition = false
+        }
+        
+        // Create a recognition task for the speech recognition session.
+        // Keep a reference to the task so that it can be canceled.
+        recognitionTask = speechRecognizer.recognitionTask(with: recognitionRequest) { result, error in
+            var isFinal = false
+            
+            if let result = result {
+                // Print out the best results
+                isFinal = result.isFinal
+                print("Text \(result.bestTranscription.formattedString)")
+                self.speechAnswer = result.bestTranscription.formattedString
+            }
+            
+            if error != nil || isFinal {
+                // Stop recognizing speech if there is a problem.
+                self.audioEngine.stop()
+                inputNode.removeTap(onBus: 0)
+
+                self.recognitionRequest = nil
+                self.recognitionTask = nil
+
+                self.microphoneButton.isEnabled = true
+                print("Stopped Recording Due to Problem")
+            }
+        }
+
+        // Configure the microphone input.
+        let recordingFormat = inputNode.outputFormat(forBus: 0)
+        inputNode.installTap(onBus: 0, bufferSize: 1024, format: recordingFormat) { (buffer: AVAudioPCMBuffer, when: AVAudioTime) in
+            self.recognitionRequest?.append(buffer)
+        }
+        
+        audioEngine.prepare()
+        try audioEngine.start()
+        
+        // Let the user know to start talking.
+        print("(Go ahead, I'm listening)")
+    }
+    
+    public func speechRecognizer(_ speechRecognizer: SFSpeechRecognizer, availabilityDidChange available: Bool) {
+        if available {
+            self.microphoneButton.isEnabled = true
+            print("Enabled Microphone Button")
+        } else {
+            self.microphoneButton.isEnabled = false
+            print("Disabled Microphone Button")
+        }
+        
+        self.microphoneButton.isEnabled = available
+    }
+    
+    @IBAction func microphoneButtonPressed(_ sender: UIButton) {
+        if audioEngine.isRunning {
+            audioEngine.stop()
+            recognitionRequest?.endAudio()
+            self.microphoneButton.isEnabled = false
+            print("Stopping Recording")
+            initiateSegueToAnswerPage(userAnswer: (self.speechAnswer.count > 0) ? self.speechAnswer : "Nothing Said")
+        } else {
+            do {
+                try startRecording()
+                print("Started Recording")
+            } catch {
+                print("Recording Not Available")
+            }
+        }
+    }
+    
     
     // MARK: - Keyboard Functions
     

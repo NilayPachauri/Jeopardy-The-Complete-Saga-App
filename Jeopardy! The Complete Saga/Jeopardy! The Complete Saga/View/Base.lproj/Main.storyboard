@@ -447,6 +447,9 @@
                                 </constraints>
                                 <color key="tintColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" image="mic.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="microphoneButtonPressed:" destination="KTM-CL-7JX" eventType="touchUpInside" id="xH0-tS-K8b"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question" textAlignment="center" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="GlT-r3-xZo">
                                 <rect key="frame" x="20" y="60" width="627" height="255"/>
