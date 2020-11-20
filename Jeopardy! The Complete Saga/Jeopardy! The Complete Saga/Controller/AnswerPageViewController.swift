@@ -54,7 +54,7 @@ class AnswerPageViewController: UIViewController {
         let correctAnswerFontSize = ViewControllerUtility.getApproximateAdjustedFontSizeWithLabel(label: self.correctAnswerStaticLabel)
         
         // Create a Custom Font
-        let font = UIFont(name: "ITC Korinna-Bold", size: min(userAnswerFontSize, correctAnswerFontSize))
+        let font = UIFont(name: "ITC Korinna Bold", size: min(userAnswerFontSize, correctAnswerFontSize))
         
         // Adjust the font of Static Labels to whoever is smaller
         self.userAnswerStaticLabel.font = font
