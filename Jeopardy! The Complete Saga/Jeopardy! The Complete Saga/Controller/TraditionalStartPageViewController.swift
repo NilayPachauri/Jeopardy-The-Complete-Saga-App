@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TraditionalStartPageViewController: UIViewController {
+class TraditionalStartPageViewController: UIViewController, UITextFieldDelegate {
 
     // MARK: - IBOutlet Declarations
     @IBOutlet weak var numberOfCategoriesTextField: UITextField!
@@ -24,6 +24,7 @@ class TraditionalStartPageViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        setupUIValues()
     }
     
     func setupUIValues() {
@@ -36,7 +37,18 @@ class TraditionalStartPageViewController: UIViewController {
         self.minutesPerRoundStepper.value = 5.0
     }
     
-
+    // MARK: - Functions to Control View
+    @IBAction func numberOfCategoriesTextFieldEditingDidEnd(_ sender: UITextField) {
+    }
+    
+    @IBAction func numberOfCategoriesSliderValueChanged(_ sender: UISlider) {
+    }
+    
+    @IBAction func minutesPerRoundTextFieldEditingDidEnd(_ sender: Any) {
+    }
+    
+    @IBAction func minutesPerRoundStepperValueChanged(_ sender: UIStepper) {
+    }
     
     // MARK: - Navigation
     @IBAction func cancelButtonPressed(_ sender: UIButton) {

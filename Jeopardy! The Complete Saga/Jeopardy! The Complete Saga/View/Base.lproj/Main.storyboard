@@ -824,11 +824,17 @@
                                                 <color key="textColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="Korinna-Bold" family="ITC Korinna" pointSize="28"/>
                                                 <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                                <connections>
+                                                    <action selector="numberOfCategoriesTextFieldEditingDidEnd:" destination="LqZ-fr-dBc" eventType="editingDidEnd" id="lFi-mT-6lk"/>
+                                                </connections>
                                             </textField>
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="3" minValue="1" maxValue="6" translatesAutoresizingMaskIntoConstraints="NO" id="zVW-CR-3Dn" userLabel="Number of Categories Slider">
                                                 <rect key="frame" x="419" y="15" width="202" height="31"/>
                                                 <color key="tintColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <color key="thumbTintColor" systemColor="systemIndigoColor"/>
+                                                <connections>
+                                                    <action selector="numberOfCategoriesSliderValueChanged:" destination="LqZ-fr-dBc" eventType="valueChanged" id="Q0Z-ku-sou"/>
+                                                </connections>
                                             </slider>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jeopardy! Round: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0ed-N0-ET3" userLabel="Jeopardy! Round Label">
                                                 <rect key="frame" x="8" y="60" width="554" height="44"/>
@@ -875,10 +881,16 @@
                                                 <color key="textColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="Korinna-Bold" family="ITC Korinna" pointSize="28"/>
                                                 <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                                <connections>
+                                                    <action selector="minutesPerRoundTextFieldEditingDidEnd:" destination="LqZ-fr-dBc" eventType="editingDidEnd" id="wIz-pg-pe8"/>
+                                                </connections>
                                             </textField>
                                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="fill" value="5" minimumValue="1" maximumValue="20" translatesAutoresizingMaskIntoConstraints="NO" id="7GU-ul-bZO" userLabel="Minutes Per Round Stepper">
                                                 <rect key="frame" x="525" y="222" width="94" height="32"/>
                                                 <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                                                <connections>
+                                                    <action selector="minutesPerRoundStepperValueChanged:" destination="LqZ-fr-dBc" eventType="valueChanged" id="szH-Yi-oN3"/>
+                                                </connections>
                                             </stepper>
                                         </subviews>
                                         <constraints>
