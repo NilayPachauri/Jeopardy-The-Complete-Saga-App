@@ -860,14 +860,14 @@
                                                 <rect key="frame" x="570" y="170.5" width="51" height="31"/>
                                                 <color key="onTintColor" systemColor="systemIndigoColor"/>
                                             </switch>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time Per Round:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jQj-bo-IIU" userLabel="Time Per Round Label">
-                                                <rect key="frame" x="8" y="216" width="375" height="44"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Minutes Per Round:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jQj-bo-IIU" userLabel="Minutes Per Round Label">
+                                                <rect key="frame" x="8" y="216" width="433" height="44"/>
                                                 <fontDescription key="fontDescription" name="Korinna-Bold" family="ITC Korinna" pointSize="28"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="5" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ly6-BE-da3" userLabel="Time Per Round Text Field">
-                                                <rect key="frame" x="391" y="216" width="68" height="44"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="5" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ly6-BE-da3" userLabel="Minutes Per Round Text Field">
+                                                <rect key="frame" x="449" y="216" width="68" height="44"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="68" id="6Ud-0z-eRE"/>
@@ -876,22 +876,12 @@
                                                 <fontDescription key="fontDescription" name="Korinna-Bold" family="ITC Korinna" pointSize="28"/>
                                                 <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                             </textField>
-                                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="fill" value="5" minimumValue="1" maximumValue="20" translatesAutoresizingMaskIntoConstraints="NO" id="7GU-ul-bZO" userLabel="Time Per Round Stepper">
+                                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="fill" value="5" minimumValue="1" maximumValue="20" translatesAutoresizingMaskIntoConstraints="NO" id="7GU-ul-bZO" userLabel="Minutes Per Round Stepper">
                                                 <rect key="frame" x="525" y="222" width="94" height="32"/>
                                                 <color key="backgroundColor" systemColor="systemIndigoColor"/>
                                             </stepper>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="min" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OTs-q8-Tg5" userLabel="Time Per Round Unit Label">
-                                                <rect key="frame" x="467" y="216" width="50" height="44"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="50" id="EdI-Q2-Mhk"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="Korinna-Bold" family="ITC Korinna" pointSize="28"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="OTs-q8-Tg5" firstAttribute="bottom" secondItem="jQj-bo-IIU" secondAttribute="bottom" id="0m4-KH-zY2"/>
                                             <constraint firstItem="Zfu-ld-E4y" firstAttribute="height" secondItem="rLp-ew-3pY" secondAttribute="height" id="5Ov-Iu-mhg"/>
                                             <constraint firstItem="BTW-dr-gYo" firstAttribute="centerY" secondItem="Zfu-ld-E4y" secondAttribute="centerY" id="7BX-8w-SNT"/>
                                             <constraint firstItem="0ed-N0-ET3" firstAttribute="leading" secondItem="rLp-ew-3pY" secondAttribute="leading" id="8IT-xh-jVR"/>
@@ -901,7 +891,7 @@
                                             <constraint firstItem="rLp-ew-3pY" firstAttribute="leading" secondItem="Ddf-VM-0V8" secondAttribute="leading" constant="8" id="J0a-JY-p4C"/>
                                             <constraint firstItem="6pL-A5-usw" firstAttribute="top" secondItem="Zfu-ld-E4y" secondAttribute="bottom" constant="8" id="Jff-Do-vek"/>
                                             <constraint firstItem="7GU-ul-bZO" firstAttribute="trailing" secondItem="zVW-CR-3Dn" secondAttribute="trailing" id="Joa-Qe-mot"/>
-                                            <constraint firstItem="OTs-q8-Tg5" firstAttribute="height" secondItem="jQj-bo-IIU" secondAttribute="height" id="KJI-tK-Xd3"/>
+                                            <constraint firstItem="7GU-ul-bZO" firstAttribute="leading" secondItem="Ly6-BE-da3" secondAttribute="trailing" constant="8" id="LXp-mV-OVJ"/>
                                             <constraint firstItem="0ed-N0-ET3" firstAttribute="top" secondItem="rLp-ew-3pY" secondAttribute="bottom" constant="8" id="LgZ-6c-sb1"/>
                                             <constraint firstItem="zVW-CR-3Dn" firstAttribute="leading" secondItem="CQp-xe-dh8" secondAttribute="trailing" constant="8" id="Oim-z3-ouv"/>
                                             <constraint firstItem="fmx-kc-EYm" firstAttribute="leading" secondItem="0ed-N0-ET3" secondAttribute="trailing" constant="8" id="PBS-na-TZM"/>
@@ -910,13 +900,11 @@
                                             <constraint firstItem="BTW-dr-gYo" firstAttribute="trailing" secondItem="zVW-CR-3Dn" secondAttribute="trailing" id="Tb2-hv-Itk"/>
                                             <constraint firstItem="NlW-Lu-6EI" firstAttribute="centerY" secondItem="6pL-A5-usw" secondAttribute="centerY" id="ULg-3t-25Y"/>
                                             <constraint firstItem="NlW-Lu-6EI" firstAttribute="trailing" secondItem="zVW-CR-3Dn" secondAttribute="trailing" id="W8T-1Y-wRH"/>
-                                            <constraint firstItem="7GU-ul-bZO" firstAttribute="leading" secondItem="OTs-q8-Tg5" secondAttribute="trailing" constant="8" id="WIL-xe-cXX"/>
                                             <constraint firstItem="jQj-bo-IIU" firstAttribute="height" secondItem="rLp-ew-3pY" secondAttribute="height" id="X1s-He-PdE"/>
                                             <constraint firstItem="zVW-CR-3Dn" firstAttribute="centerY" secondItem="rLp-ew-3pY" secondAttribute="centerY" id="Zj9-EP-UvM"/>
                                             <constraint firstAttribute="bottom" secondItem="jQj-bo-IIU" secondAttribute="bottom" constant="8" id="aQi-9d-Jpi"/>
                                             <constraint firstItem="NlW-Lu-6EI" firstAttribute="leading" secondItem="6pL-A5-usw" secondAttribute="trailing" constant="8" id="ekv-ds-wxz"/>
                                             <constraint firstItem="Ly6-BE-da3" firstAttribute="leading" secondItem="jQj-bo-IIU" secondAttribute="trailing" constant="8" id="gSU-KO-t9l"/>
-                                            <constraint firstItem="OTs-q8-Tg5" firstAttribute="leading" secondItem="Ly6-BE-da3" secondAttribute="trailing" constant="8" id="hS0-dz-tUc"/>
                                             <constraint firstItem="rLp-ew-3pY" firstAttribute="top" secondItem="Ddf-VM-0V8" secondAttribute="top" constant="8" id="jew-Wy-hBp"/>
                                             <constraint firstItem="7GU-ul-bZO" firstAttribute="centerY" secondItem="jQj-bo-IIU" secondAttribute="centerY" id="kST-15-HGb"/>
                                             <constraint firstItem="6pL-A5-usw" firstAttribute="leading" secondItem="rLp-ew-3pY" secondAttribute="leading" id="m8s-D1-cwJ"/>
