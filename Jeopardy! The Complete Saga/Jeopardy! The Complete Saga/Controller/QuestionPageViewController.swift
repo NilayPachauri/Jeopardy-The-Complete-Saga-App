@@ -11,6 +11,7 @@ import Speech
 class QuestionPageViewController: UIViewController, UITextFieldDelegate, SFSpeechRecognizerDelegate {
 
     // MARK: - IBOutlet Class Attributes
+    // UI Components
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var categoryLabel: UILabel!
     @IBOutlet weak var timerLabel: UILabel!
@@ -18,6 +19,10 @@ class QuestionPageViewController: UIViewController, UITextFieldDelegate, SFSpeec
     @IBOutlet weak var answerLabel: UILabel!
     @IBOutlet weak var answerTextField: UITextField!
     @IBOutlet weak var microphoneButton: UIButton!
+    
+    // UI Constraints
+    @IBOutlet weak var answerTextFieldBottomConstraintToSafeArea: NSLayoutConstraint!
+    @IBOutlet weak var questionLabelHeightProportionalToScoreLabel: NSLayoutConstraint!
     
     // MARK: - Public Class Attributes
     public var gameMode: GameMode = .TRIVIA_GAUNTLET
@@ -302,15 +307,19 @@ class QuestionPageViewController: UIViewController, UITextFieldDelegate, SFSpeec
     
     @objc func keyboardWillShow(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
-            if self.view.frame.origin.y == 0 {
-                self.view.frame.origin.y -= keyboardSize.height
-            }
+            UIView.animate(withDuration: 0.1, animations: {
+                self.questionLabelHeightProportionalToScoreLabel.constant -= keyboardSize.size.height
+                self.answerTextFieldBottomConstraintToSafeArea.constant += keyboardSize.size.height
+            })
         }
     }
 
     @objc func keyboardWillHide(notification: NSNotification) {
-        if self.view.frame.origin.y != 0 {
-            self.view.frame.origin.y = 0
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            UIView.animate(withDuration: 0.1, animations: {
+                self.questionLabelHeightProportionalToScoreLabel.constant += keyboardSize.size.height
+                self.answerTextFieldBottomConstraintToSafeArea.constant -= keyboardSize.size.height
+            })
         }
     }
     // MARK: - Navigation

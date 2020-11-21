@@ -501,14 +501,13 @@
                             <constraint firstAttribute="trailing" secondItem="qbs-j6-Qvg" secondAttribute="trailing" id="Zng-Zz-ygn"/>
                             <constraint firstItem="ySF-mb-HiD" firstAttribute="height" secondItem="srm-gA-lUu" secondAttribute="height" id="aQG-9F-XdZ"/>
                             <constraint firstItem="ySF-mb-HiD" firstAttribute="width" secondItem="srm-gA-lUu" secondAttribute="width" multiplier="6" id="dmY-jn-Rol"/>
-                            <constraint firstItem="41I-3Y-dZY" firstAttribute="bottom" secondItem="srm-gA-lUu" secondAttribute="bottom" constant="20" id="eKj-g6-rKe"/>
                             <constraint firstItem="zNN-ZW-1Ll" firstAttribute="trailing" secondItem="GlT-r3-xZo" secondAttribute="trailing" id="eey-yW-nke"/>
                             <constraint firstItem="Czc-1w-7GX" firstAttribute="top" secondItem="41I-3Y-dZY" secondAttribute="top" constant="20" id="flH-MH-ulU"/>
                             <constraint firstItem="GlT-r3-xZo" firstAttribute="leading" secondItem="Czc-1w-7GX" secondAttribute="leading" id="ftG-ne-MnU"/>
                             <constraint firstItem="srm-gA-lUu" firstAttribute="leading" secondItem="Czc-1w-7GX" secondAttribute="leading" id="gvm-KB-rTJ"/>
+                            <constraint firstItem="ySF-mb-HiD" firstAttribute="bottom" secondItem="srm-gA-lUu" secondAttribute="bottom" id="h6T-jo-ve2"/>
                             <constraint firstItem="qbs-j6-Qvg" firstAttribute="leading" secondItem="exP-ca-ZDm" secondAttribute="leading" id="i8Y-hB-GGB"/>
                             <constraint firstItem="ySF-mb-HiD" firstAttribute="height" secondItem="Czc-1w-7GX" secondAttribute="height" id="mg0-YA-xd3"/>
-                            <constraint firstItem="GlT-r3-xZo" firstAttribute="leading" secondItem="Czc-1w-7GX" secondAttribute="leading" id="mux-bz-zPY"/>
                             <constraint firstItem="rvk-G0-tzJ" firstAttribute="height" secondItem="ySF-mb-HiD" secondAttribute="height" id="rNu-M7-Gee"/>
                             <constraint firstItem="GlT-r3-xZo" firstAttribute="height" secondItem="Czc-1w-7GX" secondAttribute="height" multiplier="8" id="vpC-sv-0qu"/>
                         </constraints>
@@ -516,9 +515,11 @@
                     <connections>
                         <outlet property="answerLabel" destination="srm-gA-lUu" id="Prk-fE-hdV"/>
                         <outlet property="answerTextField" destination="ySF-mb-HiD" id="xUz-xa-tm6"/>
+                        <outlet property="answerTextFieldBottomConstraintToSafeArea" destination="TqR-S2-Jig" id="VwQ-58-Daf"/>
                         <outlet property="categoryLabel" destination="hi7-st-M3w" id="ml3-aU-cc2"/>
                         <outlet property="microphoneButton" destination="rvk-G0-tzJ" id="fz3-7y-bHq"/>
                         <outlet property="questionLabel" destination="GlT-r3-xZo" id="kw6-Cd-omr"/>
+                        <outlet property="questionLabelHeightProportionalToScoreLabel" destination="vpC-sv-0qu" id="ic2-ZU-rk6"/>
                         <outlet property="scoreLabel" destination="Czc-1w-7GX" id="4JO-sS-d7U"/>
                         <outlet property="timerLabel" destination="zNN-ZW-1Ll" id="7pp-oS-hsb"/>
                         <segue destination="VvA-Lr-XWU" kind="presentation" identifier="AnswerGivenSegue" modalPresentationStyle="fullScreen" id="MAq-2T-r7p"/>
@@ -759,6 +760,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="MAq-2T-r7p"/>
         <segue reference="Of2-su-kVA"/>
     </inferredMetricsTieBreakers>
     <resources>
