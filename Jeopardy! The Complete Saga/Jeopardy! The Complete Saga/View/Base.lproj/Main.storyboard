@@ -94,6 +94,9 @@
                                 <state key="normal" title="Traditional">
                                     <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <segue destination="LqZ-fr-dBc" kind="presentation" modalPresentationStyle="fullScreen" id="dnP-qc-UXP"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -978,7 +981,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oV8-3J-VL0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="846.9265367316342" y="769.60000000000002"/>
+            <point key="canvasLocation" x="848" y="1019"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
