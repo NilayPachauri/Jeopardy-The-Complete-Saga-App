@@ -24,7 +24,15 @@ class TraditionalStartPageViewController: UIViewController, UITextFieldDelegate 
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        setupUIValues()
+        self.setupDelegates()
+        self.setupUIValues()
+        self.setupToHideKeyboardOnTapOnView()
+    }
+    
+    func setupDelegates() {
+        // Assign Delegates
+        self.numberOfCategoriesTextField.delegate = self
+        self.minutesPerRoundTextField.delegate = self
     }
     
     func setupUIValues() {
@@ -78,6 +86,36 @@ class TraditionalStartPageViewController: UIViewController, UITextFieldDelegate 
         
         // Update the Text Field
         self.minutesPerRoundTextField.text = String(format: "%d", value)
+    }
+    
+    // MARK: - Functions to Dismiss Keyboard
+    
+    // Done on Text Field should dismiss Keyboard
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        if textField == self.numberOfCategoriesTextField {
+            self.numberOfCategoriesTextField.resignFirstResponder()
+        } else if textField == self.minutesPerRoundTextField {
+            self.minutesPerRoundTextField.resignFirstResponder()
+        }
+        
+        return true
+    }
+    
+    // Tap outside should dismiss keyboard
+    func setupToHideKeyboardOnTapOnView()
+        {
+            let tap: UITapGestureRecognizer = UITapGestureRecognizer(
+                target: self,
+                action: #selector(self.dismissKeyboard))
+
+            tap.cancelsTouchesInView = false
+            view.addGestureRecognizer(tap)
+        }
+
+    @objc func dismissKeyboard()
+    {
+        view.endEditing(true)
     }
     
     // MARK: - Navigation

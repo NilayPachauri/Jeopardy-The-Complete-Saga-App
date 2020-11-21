@@ -33,10 +33,6 @@ class TriviaGauntletStartPageViewController: UIViewController, UITextFieldDelega
         
         // Set Up Tap Gesture Recognizer
         self.setupToHideKeyboardOnTapOnView()
-        
-        // Set Navigation Bar to not Hide Content
-        self.edgesForExtendedLayout = []
-        self.extendedLayoutIncludesOpaqueBars = true
     }
     
     // MARK: - Functions to Set Up View
