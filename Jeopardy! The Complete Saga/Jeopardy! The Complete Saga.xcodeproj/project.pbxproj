@@ -22,6 +22,7 @@
 		F05656112567408000DE26E0 /* AnswerPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05656102567408000DE26E0 /* AnswerPageViewController.swift */; };
 		F05656162567681800DE26E0 /* TriviaGauntletGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05656152567681800DE26E0 /* TriviaGauntletGame.swift */; };
 		F05656242567AF6600DE26E0 /* ResultsPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05656232567AF6600DE26E0 /* ResultsPageViewController.swift */; };
+		F056562D2568B7D900DE26E0 /* TraditionalSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F056562C2568B7D900DE26E0 /* TraditionalSettings.swift */; };
 		F0898FF02565363E00593C45 /* Clue.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0898FEF2565363E00593C45 /* Clue.swift */; };
 		F0898FF52565AB7900593C45 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F0898FF42565AB7900593C45 /* GoogleService-Info.plist */; };
 		F0898FF62565AB7900593C45 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F0898FF42565AB7900593C45 /* GoogleService-Info.plist */; };
@@ -80,6 +81,7 @@
 		F05656102567408000DE26E0 /* AnswerPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerPageViewController.swift; sourceTree = "<group>"; };
 		F05656152567681800DE26E0 /* TriviaGauntletGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriviaGauntletGame.swift; sourceTree = "<group>"; };
 		F05656232567AF6600DE26E0 /* ResultsPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsPageViewController.swift; sourceTree = "<group>"; };
+		F056562C2568B7D900DE26E0 /* TraditionalSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraditionalSettings.swift; sourceTree = "<group>"; };
 		F0898FEF2565363E00593C45 /* Clue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Clue.swift; path = "Jeopardy! The Complete Saga/Model/Clue.swift"; sourceTree = SOURCE_ROOT; };
 		F0898FF42565AB7900593C45 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F0A0382F2564848B00B9EC05 /* QuestionPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionPageViewController.swift; sourceTree = "<group>"; };
@@ -257,6 +259,7 @@
 				F010ED7B2565C0A900A74DAC /* FirestoreWrapper.swift */,
 				F0CD94B42566A26100394412 /* Category.swift */,
 				F0CD94AF25667E8600394412 /* TriviaGauntletSettings.swift */,
+				F056562C2568B7D900DE26E0 /* TraditionalSettings.swift */,
 				F05656152567681800DE26E0 /* TriviaGauntletGame.swift */,
 				F0CD94AA256675D900394412 /* ModelUtility.swift */,
 				F0B9BC1E2565C90600581170 /* Counter.swift */,
@@ -534,6 +537,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F056562D2568B7D900DE26E0 /* TraditionalSettings.swift in Sources */,
 				F0A038352564A3C000B9EC05 /* ViewControllerUtility.swift in Sources */,
 				F0898FF02565363E00593C45 /* Clue.swift in Sources */,
 				F010ED7C2565C0A900A74DAC /* FirestoreWrapper.swift in Sources */,
