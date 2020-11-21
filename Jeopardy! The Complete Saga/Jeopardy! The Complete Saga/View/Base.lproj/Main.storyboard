@@ -780,7 +780,7 @@
                                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Lgd-9R-yei">
                                             <color key="tintColor" systemColor="systemIndigoColor"/>
                                             <connections>
-                                                <action selector="cancelButtonPressed:" destination="LqZ-fr-dBc" id="vET-il-R1x"/>
+                                                <action selector="cancelButtonPressed:" destination="LqZ-fr-dBc" id="9I0-fr-ZIk"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="Start" id="Lv4-Bs-09S">

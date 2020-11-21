@@ -9,7 +9,7 @@ import UIKit
 
 class TraditionalStartPageViewController: UIViewController {
 
-    
+    // MARK: - IBOutlet Declarations
     @IBOutlet weak var numberOfCategoriesTextField: UITextField!
     @IBOutlet weak var numberOfCategoriesSlider: UISlider!
     @IBOutlet weak var jeopardyRoundSwitch: UISwitch!
@@ -18,21 +18,36 @@ class TraditionalStartPageViewController: UIViewController {
     @IBOutlet weak var minutesPerRoundTextField: UITextField!
     @IBOutlet weak var minutesPerRoundStepper: UIStepper!
     
+    
+    // MARK: - ViewController Lifecyle Functions
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
+    func setupUIValues() {
+        // Set Up the Number of Categories Components
+        self.numberOfCategoriesTextField.text = "3"
+        self.numberOfCategoriesSlider.value = 3.0
+        
+        // Set Up the Minutes Per Round Components
+        self.minutesPerRoundTextField.text = "5"
+        self.minutesPerRoundStepper.value = 5.0
+    }
+    
 
-    /*
+    
     // MARK: - Navigation
-
+    @IBAction func cancelButtonPressed(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+    }
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
     }
-    */
+    
 
 }
