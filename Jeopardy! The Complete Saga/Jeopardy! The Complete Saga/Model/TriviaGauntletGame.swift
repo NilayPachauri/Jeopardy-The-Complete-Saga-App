@@ -65,7 +65,4 @@ class TriviaGauntletGame: NSObject {
         self.currentIndex = nil
         self.score = 0
     }
-    
-    
-    
 }

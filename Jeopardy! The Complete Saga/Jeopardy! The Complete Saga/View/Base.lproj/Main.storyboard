@@ -761,7 +761,7 @@
         <!--Traditional Start Page View Controller-->
         <scene sceneID="tul-3A-ezR">
             <objects>
-                <viewController storyboardIdentifier="TriviaGauntletStartPageViewController" title="Trivia Gauntlet Start Page View Controller" automaticallyAdjustsScrollViewInsets="NO" id="LqZ-fr-dBc" userLabel="Traditional Start Page View Controller" customClass="TriviaGauntletStartPageViewController" customModule="Jeopardy__The_Complete_Saga" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TraditionalStartPageViewController" title="Trivia Gauntlet Start Page View Controller" automaticallyAdjustsScrollViewInsets="NO" id="LqZ-fr-dBc" userLabel="Traditional Start Page View Controller" customClass="TraditionalStartPageViewController" customModule="Jeopardy__The_Complete_Saga" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hL8-H7-yMQ">
                         <rect key="frame" x="0.0" y="0.0" width="667" height="400"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -824,17 +824,11 @@
                                                 <color key="textColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="Korinna-Bold" family="ITC Korinna" pointSize="28"/>
                                                 <textInputTraits key="textInputTraits" returnKeyType="done"/>
-                                                <connections>
-                                                    <action selector="numberOfQuestionsTextFieldEditingDidEnd:" destination="LqZ-fr-dBc" eventType="editingDidEnd" id="awC-Ul-tUq"/>
-                                                </connections>
                                             </textField>
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="3" minValue="1" maxValue="6" translatesAutoresizingMaskIntoConstraints="NO" id="zVW-CR-3Dn" userLabel="Number of Categories Slider">
                                                 <rect key="frame" x="419" y="15" width="202" height="31"/>
                                                 <color key="tintColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <color key="thumbTintColor" systemColor="systemIndigoColor"/>
-                                                <connections>
-                                                    <action selector="numberOfQuestionsSliderValueChanged:" destination="LqZ-fr-dBc" eventType="valueChanged" id="4oR-KJ-4T2"/>
-                                                </connections>
                                             </slider>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jeopardy! Round: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0ed-N0-ET3" userLabel="Jeopardy! Round Label">
                                                 <rect key="frame" x="8" y="60" width="554" height="44"/>
@@ -881,9 +875,6 @@
                                                 <color key="textColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="Korinna-Bold" family="ITC Korinna" pointSize="28"/>
                                                 <textInputTraits key="textInputTraits" returnKeyType="done"/>
-                                                <connections>
-                                                    <action selector="numberOfQuestionsTextFieldEditingDidEnd:" destination="LqZ-fr-dBc" eventType="editingDidEnd" id="oMM-nO-noc"/>
-                                                </connections>
                                             </textField>
                                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="fill" value="5" minimumValue="1" maximumValue="20" translatesAutoresizingMaskIntoConstraints="NO" id="7GU-ul-bZO" userLabel="Time Per Round Stepper">
                                                 <rect key="frame" x="525" y="222" width="94" height="32"/>
@@ -976,11 +967,13 @@
                     </view>
                     <size key="freeformSize" width="667" height="400"/>
                     <connections>
-                        <outlet property="doubleJeopardyQuestionsSwitch" destination="BTW-dr-gYo" id="qKn-OE-kRn"/>
-                        <outlet property="finalJeopardySwitch" destination="NlW-Lu-6EI" id="S3Z-Gn-Mgb"/>
-                        <outlet property="jeopardyQuestionsSwitch" destination="fmx-kc-EYm" id="S6i-bR-r7l"/>
-                        <outlet property="numberOfQuestionsSlider" destination="zVW-CR-3Dn" id="5zU-bc-80x"/>
-                        <outlet property="numberOfQuestionsTextField" destination="CQp-xe-dh8" id="kFi-TJ-TpH"/>
+                        <outlet property="doubleJeopardyRoundSwitch" destination="BTW-dr-gYo" id="qqR-ww-X9o"/>
+                        <outlet property="finalJeopardyRoundSwitch" destination="NlW-Lu-6EI" id="I9s-vC-H3z"/>
+                        <outlet property="jeopardyRoundSwitch" destination="fmx-kc-EYm" id="IuF-0e-E7I"/>
+                        <outlet property="minutesPerRoundStepper" destination="7GU-ul-bZO" id="TIh-Wy-Woi"/>
+                        <outlet property="minutesPerRoundTextField" destination="Ly6-BE-da3" id="Rdo-qP-YJG"/>
+                        <outlet property="numberOfCategoriesSlider" destination="zVW-CR-3Dn" id="xxf-t1-VFe"/>
+                        <outlet property="numberOfCategoriesTextField" destination="CQp-xe-dh8" id="d9c-Nr-ahi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oV8-3J-VL0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
