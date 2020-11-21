@@ -39,15 +39,45 @@ class TraditionalStartPageViewController: UIViewController, UITextFieldDelegate 
     
     // MARK: - Functions to Control View
     @IBAction func numberOfCategoriesTextFieldEditingDidEnd(_ sender: UITextField) {
+        if let value = self.numberOfCategoriesTextField.text {
+            if let intValue = Int(value)  {
+                if intValue > 0 && intValue <= 6 {
+                    self.numberOfCategoriesSlider.value = Float(intValue)
+                }
+            }
+            
+            // In the event it was a non-parseable String or  not within the bounds, reset text
+            self.numberOfCategoriesTextField.text = String(format: "%d", getIntegerValueFromSlider(slider: self.numberOfCategoriesSlider))
+        }
     }
     
     @IBAction func numberOfCategoriesSliderValueChanged(_ sender: UISlider) {
+        // Get the new value from the Slider
+        let value = getIntegerValueFromSlider(slider: self.numberOfCategoriesSlider)
+        
+        // Update the Text Field
+        self.numberOfCategoriesTextField.text = String(format: "%d", value)
     }
     
-    @IBAction func minutesPerRoundTextFieldEditingDidEnd(_ sender: Any) {
+    @IBAction func minutesPerRoundTextFieldEditingDidEnd(_ sender: UITextField) {
+        if let value = self.minutesPerRoundTextField.text {
+            if let intValue = Int(value)  {
+                if intValue > 0 && intValue <= 20 {
+                    self.minutesPerRoundStepper.value = Double(intValue)
+                }
+            }
+            
+            // In the event it was a non-parseable String or  not within the bounds, reset text
+            self.minutesPerRoundTextField.text = String(format: "%d", getIntegerValueFromStepper(stepper: self.minutesPerRoundStepper))
+        }
     }
     
     @IBAction func minutesPerRoundStepperValueChanged(_ sender: UIStepper) {
+        // Get the new value from the Slider
+        let value = getIntegerValueFromStepper(stepper: self.minutesPerRoundStepper)
+        
+        // Update the Text Field
+        self.minutesPerRoundTextField.text = String(format: "%d", value)
     }
     
     // MARK: - Navigation

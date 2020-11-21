@@ -51,6 +51,21 @@ class ViewControllerUtility {
     }
 }
 
+
+func getIntegerValueFromSlider(slider: UISlider) -> Int {
+    var value = slider.value
+    value.round()
+    
+    return Int(value)
+}
+
+func getIntegerValueFromStepper(stepper: UIStepper) -> Int {
+    var value = stepper.value
+    value.round()
+    
+    return Int(value)
+}
+
 enum GameMode {
     case TRIVIA_GAUNTLET
     case TRADITIONAL_GAME

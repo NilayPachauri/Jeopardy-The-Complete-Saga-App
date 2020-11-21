@@ -46,18 +46,11 @@ class TriviaGauntletStartPageViewController: UIViewController, UITextFieldDelega
         self.numberOfQuestionsTextField.text =  "5"
     }
     
-    // MARK: - Functions to Control View
-    func getIntegerValueFromSlider(slider: UISlider) -> Int {
-        var value = slider.value
-        value.round()
-        
-        return Int(value)
-    }
-    
+    // MARK: - Functions to Control View    
     @IBAction func numberOfQuestionsSliderValueChanged(_ sender: UISlider) {
         
         // Get the new value from the Slider
-        let value = self.getIntegerValueFromSlider(slider: self.numberOfQuestionsSlider)
+        let value = getIntegerValueFromSlider(slider: self.numberOfQuestionsSlider)
         
         // Update the Text Field
         self.numberOfQuestionsTextField.text = String(format: "%d", value)
@@ -65,14 +58,14 @@ class TriviaGauntletStartPageViewController: UIViewController, UITextFieldDelega
     
     @IBAction func numberOfQuestionsTextFieldEditingDidEnd(_ sender: UITextField) {
         if let value = self.numberOfQuestionsTextField.text {
-        if let intValue = Int(value)  {
-            if intValue > 0 && intValue <= 100 {
-                self.numberOfQuestionsSlider.value = Float(intValue)
+            if let intValue = Int(value)  {
+                if intValue > 0 && intValue <= 100 {
+                    self.numberOfQuestionsSlider.value = Float(intValue)
+                }
             }
-        }
-        
-        // In the event it was a non-parseable String or  not within the bounds, reset text
-        self.numberOfQuestionsTextField.text = String(format: "%d", self.getIntegerValueFromSlider(slider: self.numberOfQuestionsSlider))
+            
+            // In the event it was a non-parseable String or  not within the bounds, reset text
+            self.numberOfQuestionsTextField.text = String(format: "%d", getIntegerValueFromSlider(slider: self.numberOfQuestionsSlider))
         }
     }
     
@@ -111,7 +104,7 @@ class TriviaGauntletStartPageViewController: UIViewController, UITextFieldDelega
     
     @IBAction func startButtonPressed(_ sender: UIBarButtonItem) {
         
-        let settings = TriviaGauntletSettings(numOfClues: self.getIntegerValueFromSlider(slider: self.numberOfQuestionsSlider), useJeopardyQuestions: self.jeopardyQuestionsSwitch.isOn, useDoubleJeopardyQuestions: self.doubleJeopardyQuestionsSwitch.isOn, useFinalJeopardyQuestions: self.finalJeopardySwitch.isOn, useDifficulty1Questions: self.difficulty1QuestionsSwitch.isOn, useDifficulty2Questions: self.difficulty2QuestionsSwitch.isOn, useDifficulty3Questions: self.difficulty3QuestionsSwitch.isOn, useDifficulty4Questions: self.difficulty4QuestionsSwitch.isOn, useDifficulty5Questions: self.difficulty5QuestionsSwitch.isOn)
+        let settings = TriviaGauntletSettings(numOfClues: getIntegerValueFromSlider(slider: self.numberOfQuestionsSlider), useJeopardyQuestions: self.jeopardyQuestionsSwitch.isOn, useDoubleJeopardyQuestions: self.doubleJeopardyQuestionsSwitch.isOn, useFinalJeopardyQuestions: self.finalJeopardySwitch.isOn, useDifficulty1Questions: self.difficulty1QuestionsSwitch.isOn, useDifficulty2Questions: self.difficulty2QuestionsSwitch.isOn, useDifficulty3Questions: self.difficulty3QuestionsSwitch.isOn, useDifficulty4Questions: self.difficulty4QuestionsSwitch.isOn, useDifficulty5Questions: self.difficulty5QuestionsSwitch.isOn)
         
         var clueList: [Clue] = []
         FirestoreWrapper.getCluesForTriviaGauntlet(triviaGauntletSettings: settings, { (clue) in
