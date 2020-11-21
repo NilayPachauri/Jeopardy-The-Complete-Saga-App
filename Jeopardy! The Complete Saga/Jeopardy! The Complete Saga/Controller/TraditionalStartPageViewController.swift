@@ -18,7 +18,6 @@ class TraditionalStartPageViewController: UIViewController, UITextFieldDelegate 
     @IBOutlet weak var minutesPerRoundTextField: UITextField!
     @IBOutlet weak var minutesPerRoundStepper: UIStepper!
     
-    
     // MARK: - ViewController Lifecyle Functions
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -119,8 +118,18 @@ class TraditionalStartPageViewController: UIViewController, UITextFieldDelegate 
     }
     
     // MARK: - Navigation
-    @IBAction func cancelButtonPressed(_ sender: UIButton) {
+    @IBAction func cancelButtonPressed(_ sender: UIBarButtonItem) {
         dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func startButtonPressed(_ sender: UIBarButtonItem) {
+        print("Start Pressed")
+        
+        let settings = TraditionalSettings(numOfCategories: getIntegerValueFromSlider(slider: self.numberOfCategoriesSlider), hasJeopardyRound: self.jeopardyRoundSwitch.isOn, hasDoubleJeopardyRound: self.doubleJeopardyRoundSwitch.isOn, hasFinalJeopardyRound: self.finalJeopardyRoundSwitch.isOn, numOfMinutesPerRound: getIntegerValueFromStepper(stepper: self.minutesPerRoundStepper))
+        
+        var jeopardyClues: [String: [Clue]] = [:]
+        var doubleJeopardyClues: [String: [Clue]] = [:]
+        var finalJeopardyClue: Clue? = nil
     }
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation

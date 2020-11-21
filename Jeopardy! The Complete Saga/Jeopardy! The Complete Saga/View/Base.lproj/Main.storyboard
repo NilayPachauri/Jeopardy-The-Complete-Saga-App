@@ -786,7 +786,7 @@
                                         <barButtonItem key="rightBarButtonItem" title="Start" id="Lv4-Bs-09S">
                                             <color key="tintColor" systemColor="systemIndigoColor"/>
                                             <connections>
-                                                <action selector="startButtonPressed:" destination="LqZ-fr-dBc" id="0jX-qs-Umq"/>
+                                                <action selector="startButtonPressed:" destination="LqZ-fr-dBc" id="IrK-GZ-JPS"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
