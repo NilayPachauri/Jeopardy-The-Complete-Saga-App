@@ -19,6 +19,8 @@ class QuestionPageViewController: UIViewController, UITextFieldDelegate, SFSpeec
     @IBOutlet weak var answerTextField: UITextField!
     @IBOutlet weak var microphoneButton: UIButton!
     
+    @IBOutlet weak var answerTextFieldBottomConstraintToSafeArea: NSLayoutConstraint!
+    
     // MARK: - Public Class Attributes
     public var gameMode: GameMode = .TRIVIA_GAUNTLET
     
@@ -302,15 +304,23 @@ class QuestionPageViewController: UIViewController, UITextFieldDelegate, SFSpeec
     
     @objc func keyboardWillShow(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
-            if self.view.frame.origin.y == 0 {
-                self.view.frame.origin.y -= keyboardSize.height
-            }
+//            if self.view.frame.origin.y == 0 {
+//                self.view.frame.origin.y -= keyboardSize.height
+//            }
+            UIView.animate(withDuration: 0.1, animations: {
+                self.answerTextFieldBottomConstraintToSafeArea.constant += keyboardSize.size.height
+            })
         }
     }
 
     @objc func keyboardWillHide(notification: NSNotification) {
-        if self.view.frame.origin.y != 0 {
-            self.view.frame.origin.y = 0
+//        if self.view.frame.origin.y != 0 {
+//            self.view.frame.origin.y = 0
+//        }
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            UIView.animate(withDuration: 0.1, animations: {
+                self.answerTextFieldBottomConstraintToSafeArea.constant -= keyboardSize.size.height
+            })
         }
     }
     // MARK: - Navigation
